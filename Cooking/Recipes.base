@@ -1,0 +1,77 @@
+filters:
+  and:
+    - type == "recipe"
+    - file.inFolder("Cooking/Recipes")
+formulas:
+  cal_display: if(calories, calories + " cal", "—")
+  protein_display: if(protein, protein, "—")
+  macro_summary: if(calories, calories + " cal / " + protein, "—")
+properties:
+  file.name:
+    displayName: Recipe
+  source:
+    displayName: Source
+  category:
+    displayName: Category
+  method:
+    displayName: Method
+  serves:
+    displayName: Serves
+  time:
+    displayName: Time
+  formula.cal_display:
+    displayName: Calories
+  formula.protein_display:
+    displayName: Protein
+  formula.macro_summary:
+    displayName: Macros
+views:
+  - type: table
+    name: Sam's Recipes
+    filters: contains(source, "Sam")
+    order:
+      - file.name
+      - method
+      - serves
+      - time
+      - formula.macro_summary
+    sort:
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: Cookbook
+    filters: contains(source, "Miranda")
+    order:
+      - file.name
+      - category
+      - servings
+      - formula.cal_display
+      - formula.protein_display
+    sort:
+      - property: category
+        direction: ASC
+  - type: table
+    name: High Protein (30g+)
+    filters:
+      and:
+        - contains(source, "Miranda")
+        - calories > 0
+    order:
+      - file.name
+      - category
+      - formula.cal_display
+      - formula.protein_display
+    sort:
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: All Recipes
+    order:
+      - file.name
+      - source
+      - category
+      - formula.cal_display
+      - formula.protein_display
+    sort:
+      - property: file.name
+        direction: ASC

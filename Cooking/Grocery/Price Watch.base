@@ -1,0 +1,65 @@
+filters:
+  and:
+    - type == "product"
+    - file.inFolder("Cooking/Grocery/Products")
+    - min_price > 0
+formulas:
+  price_range: '"$" + min_price.toFixed(2) + " – $" + max_price.toFixed(2)'
+  price_swing: ((max_price / min_price - 1) * 100).round()
+  swing_display: ((max_price / min_price - 1) * 100).round() + "%"
+  avg_display: '"$" + avg_price.toFixed(2)'
+  spend_display: '"$" + total_spend.toFixed(2)'
+properties:
+  file.name:
+    displayName: Product
+  category:
+    displayName: Category
+  formula.avg_display:
+    displayName: Avg Price
+  formula.price_range:
+    displayName: Price Range
+  formula.swing_display:
+    displayName: Swing
+  total_orders:
+    displayName: Orders
+  formula.spend_display:
+    displayName: Total Spent
+views:
+  - type: table
+    name: Biggest Price Swings
+    filters: (max_price / min_price - 1) > 0.2
+    order:
+      - file.name
+      - category
+      - formula.avg_display
+      - formula.price_range
+      - formula.swing_display
+      - total_orders
+    sort:
+      - property: formula.price_swing
+        direction: DESC
+  - type: table
+    name: Most Expensive
+    order:
+      - file.name
+      - category
+      - formula.avg_display
+      - formula.price_range
+      - total_orders
+      - formula.spend_display
+    sort:
+      - property: avg_price
+        direction: DESC
+    limit: 25
+  - type: table
+    name: Highest Total Spend
+    order:
+      - file.name
+      - category
+      - formula.avg_display
+      - total_orders
+      - formula.spend_display
+    sort:
+      - property: total_spend
+        direction: DESC
+    limit: 25

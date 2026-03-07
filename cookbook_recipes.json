@@ -1,0 +1,2617 @@
+{
+  "source": "Cooking Lighter by Miranda & Noa",
+  "extracted_date": "2026-01-05",
+  "total_recipes": 103,
+  "categories": {
+    "Asian Inspired": 9,
+    "Breakfasts": 12,
+    "Burgers": 4,
+    "Curries": 5,
+    "Essentials & Sauces": 8,
+    "Grab & Go Breakfasts": 11,
+    "Lighter Meals": 10,
+    "Main Meals & Soups": 6,
+    "Mexican": 7,
+    "One Pot Meals": 7,
+    "Pasta": 14,
+    "Sides & Entertaining": 10
+  },
+  "avg_nutrition": {
+    "calories": 341,
+    "protein_g": 24.7
+  },
+  "recipes": [
+    {
+      "name": "Bang bang salmon",
+      "page": 176,
+      "category": "Asian Inspired",
+      "servings": 4,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 301,
+        "carbs_g": 12.1,
+        "fat_g": 10.8,
+        "protein_g": 45.3
+      },
+      "ingredients": [
+        "2 cloves garlic, minced",
+        "2 medium carrots, sliced",
+        "150g snow peas, cut into thirds",
+        "1 red capsicum, sliced",
+        "20g lemongrass paste",
+        "25g ginger paste",
+        "3/4 tsp rice wine vinegar",
+        "2 tbs soy sauce",
+        "1 tbs brown sugar",
+        "1 cup canned coconut milk and brown sugar.",
+        "550g chicken breast, diced"
+      ],
+      "notes": "We use Ayam Coconut Milk Light for these macros. Nutritional information is for the stir-fry only, serve with rice of choice. For a vegetarian option, we recommend substituting the chicken with 2 packets of Malaysian tofu."
+    },
+    {
+      "name": "Chinese lemon chicken",
+      "page": 168,
+      "category": "Asian Inspired",
+      "servings": 1,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 473,
+        "carbs_g": 39.7,
+        "fat_g": 17.9,
+        "protein_g": 36.8
+      },
+      "ingredients": [
+        "1 cup rice",
+        "125g salmon fillet drizzle over the tamari and maple",
+        "1 tbs tamari/ soy sauce syrup",
+        "1 tbs maple syrup/ honey",
+        "1 sprig spring onion, diced",
+        "1 tsp light kewpie mayo/ Top with the",
+        "1 nori sheet, optional salmon"
+      ],
+      "notes": "We use Steeves Maples Sugar Free Maple Syrup and Kewpie Mayonnaise 50% Reduced Fat for these macros. Salmon can be substituted with tuna, chicken or tofu."
+    },
+    {
+      "name": "Easy satay chicken",
+      "page": 174,
+      "category": "Asian Inspired",
+      "servings": 4,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 546,
+        "carbs_g": 51.0,
+        "fat_g": 24.4,
+        "protein_g": 30.0
+      },
+      "ingredients": [
+        "4 salmon fillets, skinless",
+        "1 tsp paprika",
+        "2 cloves garlic, minced",
+        "2 tbs soy sauce",
+        "1 tbsp brown sugar coated",
+        "1 tsp sriracha",
+        "2 tsp olive oil",
+        "3 tbs whole egg or Japanese",
+        "3 tbs Greek yoghurt (45g)",
+        "2 tbs sweet chilli sauce (30g)",
+        "1-2 tsp sriracha",
+        "1 tbs honey",
+        "2 tsp rice vinegar",
+        "1/4 tsp salt",
+        "3 cups",
+        "1-2 carrots, julienned",
+        "2 sprigs spring onion"
+      ],
+      "notes": "We use Praise Whole Egg Mayonnaise for these macros. Optional to replace the salmon with chicken or tofu."
+    },
+    {
+      "name": "Easy teriyaki chicken",
+      "page": 172,
+      "category": "Asian Inspired",
+      "servings": 4,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 459,
+        "carbs_g": 33.3,
+        "fat_g": 20.6,
+        "protein_g": 35.9
+      },
+      "ingredients": [
+        "1 tsp olive oil",
+        "500g chicken breast, diced",
+        "1 red capsicum, diced 5",
+        "1 bunch broccolini",
+        "400-500g",
+        "200ml canned light coconut",
+        "1/4 cup peanut butter",
+        "2 tbs sweet chilli sauce (35g)",
+        "1-2 tsp curry powder",
+        "1 tsp brown sugar",
+        "1/2 - 3/4 cup chicken stock"
+      ],
+      "notes": "We use Ayam Coconut Milk Light, Ayam Thai Sweet Chilli Sauce Light and Mayver\u2019s Smooth Natural Peanut Butter for these macros. For a vegetarian option, substitute the chicken with plant-based chicken or tofu. Add more or less veggies of your choice."
+    },
+    {
+      "name": "Lazy gal satay noodles",
+      "page": 164,
+      "category": "Asian Inspired",
+      "servings": 4,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 383,
+        "carbs_g": 55.0,
+        "fat_g": 8.9,
+        "protein_g": 23.5
+      },
+      "ingredients": [
+        "250g rice noodles",
+        "1 tsp olive oil",
+        "200g chicken breast, diced",
+        "1-2 cups vegetables of directions",
+        "1/4 cup light soy sauce/",
+        "2 tbs natural peanut",
+        "2 tbs sweet chilli sauce",
+        "1 tbs rice wine vinegar",
+        "1 tbs sesame oil",
+        "2 tbs",
+        "20ml maple syrup",
+        "1 tsp each fresh garlic &"
+      ],
+      "notes": "We use Steeves Maples Sugar Free Syrup, Ayam Thai Sweet Chilli Sauce Light and Roll\u2019D Rice Noodles for these macros. For a vegetarian or vegan option, replace the chicken with tofu or plant-based chicken."
+    },
+    {
+      "name": "Sweet chilli peanut noodles",
+      "page": 166,
+      "category": "Asian Inspired",
+      "servings": 4,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 426,
+        "carbs_g": 58.9,
+        "fat_g": 7.3,
+        "protein_g": 35.51
+      },
+      "ingredients": [
+        "500g chicken breast, diced",
+        "1 egg, whisked",
+        "1/4 cup corn flour",
+        "1/4 tsp each salt & pepper salt and pepper",
+        "1-2 tbs olive oil, for frying",
+        "3 cups",
+        "1 tsp sesame seeds over medium",
+        "1/3 cup lemon juice",
+        "2 tbs honey",
+        "2 tbs granulated brown",
+        "1-2 tsp garlic, minced",
+        "1/4 cup soy sauce",
+        "1/2 cup chicken stock",
+        "1 tbs corn flour"
+      ],
+      "notes": "For a vegetarian or vegan option, replace the chicken with tofu or plant-based chicken. Optional to omit the egg from the batter."
+    },
+    {
+      "name": "Teriyaki salmon sushi bowl",
+      "page": 170,
+      "category": "Asian Inspired",
+      "servings": 2,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 432,
+        "carbs_g": 47.4,
+        "fat_g": 7.5,
+        "protein_g": 41.4
+      },
+      "ingredients": [
+        "1/2 tbs olive oil",
+        "1 garlic clove, minced",
+        "300g chicken breast",
+        "250g cooked rice pan over medium",
+        "1 tsp sesame seeds, chicken",
+        "1 sprig spring onion, finely",
+        "1/4 cup tamari/ soy sauce caramelised",
+        "1/4 cup",
+        "1/2 - 1 tbs honey/ maple and slice",
+        "1 tbs Dijon mustard",
+        "1 tsp ginger, minced",
+        "1 tsp sesame oil, optional"
+      ],
+      "notes": "We like to pair this with seamed green vegetables. For a vegetarian or vegan option, substitute the chicken with salmon or tofu. If you prefer a thicker sauce, combine 1 tsp of corn starch with a splash of water until it forms a smooth paste and mix into the sauce."
+    },
+    {
+      "name": "Thai ginger & coconut stir-fry",
+      "page": 178,
+      "category": "Asian Inspired",
+      "servings": 4,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 469,
+        "carbs_g": 59.0,
+        "fat_g": 13.0,
+        "protein_g": 28.0
+      },
+      "ingredients": [
+        "250g vermicelli rice noodles",
+        "400g chicken tenderloins",
+        "2 tsp tamari/ soy sauce",
+        "1 tsp curry powder aside",
+        "1/2 tbs olive oil",
+        "1-2 carrots shredded",
+        "2 cups ice berg lettuce, finely",
+        "1 tbs crushed peanuts spring onion and satay chicken",
+        "100ml canned coconut milk",
+        "20ml tamari/ soy sauce",
+        "40ml sweet Chilli sauce",
+        "40g peanut butter",
+        "1 tsp curry powder",
+        "1/4 tsp garlic powder"
+      ],
+      "notes": "We use Chang\u2019s Vermicelli Rice Noodles, Ayam Light Sweet Chilli Sauce and Ayam Light Coconut Milk for these macros."
+    },
+    {
+      "name": "Vietnamese satay noodle salad",
+      "page": 162,
+      "category": "Asian Inspired",
+      "servings": 4,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 396,
+        "carbs_g": 40.7,
+        "fat_g": 10.6,
+        "protein_g": 32.4
+      },
+      "ingredients": [
+        "440g shelf fresh Singapore",
+        "350g chicken breast, diced",
+        "2-3 cups vegetables of",
+        "1/4 cup",
+        "2 tbs natural peanut for 5",
+        "3 tbs canned coconut milk",
+        "20g stir-fry sauce/ soy",
+        "2 tbs sweet chilli sauce",
+        "2 tbs maple syrup (30ml)"
+      ],
+      "notes": "We use Wokka Noodles Singapore Style Shelf Fresh, Ayam Coconut Milk Light and Steeves Maples Sugar Free Maple Syrup for these macros. Our favourite plant-based chicken alternatives are Get Plant\u2019d Vegan Roast Chicken or Plant Asia Plant-Based Roast Chicken."
+    },
+    {
+      "name": "Apple & custard",
+      "page": 9,
+      "category": "Breakfasts",
+      "servings": 1,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 384,
+        "carbs_g": 46.6,
+        "fat_g": 10.9,
+        "protein_g": 20.0
+      },
+      "ingredients": [
+        "40g oats",
+        "20g vanilla protein powder",
+        "1 tsp baking powder",
+        "1/2 small banana (40g)",
+        "100ml milk",
+        "1tbs maple syrup (15ml)",
+        "1-2 tbs thick custard",
+        "10g Biscoff spread",
+        "50g tinned apple, sliced"
+      ],
+      "notes": "You can use tinned or fresh apple slices. You can omit the Biscoff spread of replace it with almond butter or caramel sauce. We use Red Tractor Creamy Protein Oats, Macro Mike Vanilla Buttercream Almond Protein powder, Almond Breeze Unsweetened Almond Milk, Steeves Maples Sugar Free Maple Syrup and Pauls Premium Custard for these macros."
+    },
+    {
+      "name": "Apple & custard baked oats",
+      "page": 11,
+      "category": "Breakfasts",
+      "servings": 1,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 346,
+        "carbs_g": 44.0,
+        "fat_g": 9.3,
+        "protein_g": 22.0
+      },
+      "ingredients": [
+        "1/2 ripe banana (50g)",
+        "1/2 cup oats (40g)",
+        "20g salted caramel/",
+        "3/4 tsp baking powder",
+        "1 tbs maple syrup (15ml)",
+        "1/3 cup milk",
+        "1/3 banana, sliced (30g)",
+        "10g chocolate, chopped"
+      ],
+      "notes": "We use Red Tractor Creamy Protein Oats, Steeves Maples Sugar Free Maple Syrup, Lindt No Sugar Milk Chocolate, Almond Breeze Unsweetened Almond Milk, Truvia sweetener and Macromike Vanilla Buttercream Almond Protein Powder for these macros."
+    },
+    {
+      "name": "Banana bread baked oats",
+      "page": 13,
+      "category": "Breakfasts",
+      "servings": 1,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 334,
+        "carbs_g": 38.2,
+        "fat_g": 9.5,
+        "protein_g": 20.6
+      },
+      "ingredients": [
+        "1/2 banana (50g)",
+        "1/3 cup milk",
+        "1/2 oats (40g)",
+        "20g vanilla protein powder (approx. 13 cm), reserving 1 tbs",
+        "1 tbs maple syrup (15ml)",
+        "3/4 tsp baking powder granulated sweetener and cinnamon",
+        "10-15g Biscoff spread"
+      ],
+      "notes": "We use Red Tractor Creamy Protein Oats, Steeves Maples Sugar Free Maple Syrup, Almond Breeze Unsweetened Almond Milk, Truvia sweetener and Macromike Vanilla Buttercream Almond Protein Powder for these macros."
+    },
+    {
+      "name": "Biscoff donut baked oats",
+      "page": 15,
+      "category": "Breakfasts",
+      "servings": 1,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 343,
+        "carbs_g": 41.4,
+        "fat_g": 10.2,
+        "protein_g": 21.0
+      },
+      "ingredients": [
+        "1/2 banana (50g)",
+        "1/3 cup milk",
+        "1/2 oats (40g)",
+        "20g vanilla protein powder (approx. 13 cm), reserving 1 tbs",
+        "1 tbs maple syrup (15ml)",
+        "3/4 tsp baking powder granulated sweetener and cinnamon",
+        "10-15g chocolate"
+      ],
+      "notes": "We use Red Tractor Creamy Protein Oats, Steeves Maples Sugar Free Maple Syrup, Almond Breeze Unsweetened Almond Milk, Lindt No Sugar Milk Chocolate, Truvia Sweetener and Macromike Vanilla Buttercream Almond Protein Powder for these macros."
+    },
+    {
+      "name": "Blueberry protein pancakes",
+      "page": 21,
+      "category": "Breakfasts",
+      "servings": 1,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 347,
+        "carbs_g": 37.0,
+        "fat_g": 10.8,
+        "protein_g": 23.0
+      },
+      "ingredients": [
+        "2 slices soft white bread Spread the jam over the bread",
+        "1-2 tbs jam",
+        "1 egg",
+        "40ml milk the egg, milk, protein powder",
+        "20g vanilla protein",
+        "1 tsp butter",
+        "1 tbs granulated sweetener medium"
+      ],
+      "notes": "We use Natvia Reduced Sugar Jam, Macro Mike Vanilla Buttercream Almond Protein, Nuttelex Lite, Almond Breeze Unsweetened Almond Milk and Natvia Natural Sweetener for these macros. Jam can be substituted for your favourite spread. We recommend trying it with Nutella and Biscoff too."
+    },
+    {
+      "name": "Caramelised banana protein pancakes",
+      "page": 19,
+      "category": "Breakfasts",
+      "servings": 2,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 243,
+        "carbs_g": 34.9,
+        "fat_g": 4.5,
+        "protein_g": 13.5
+      },
+      "ingredients": [
+        "80g white spelt flour",
+        "2 tsp baking powder",
+        "1/4 cup vanilla protein",
+        "1 egg milk. Adjust the milk as needed",
+        "1 tsp vanilla extract",
+        "1 tsp lemon juice",
+        "1 tbs maple syrup (15ml)",
+        "1/2 cup milk (125ml)"
+      ],
+      "notes": "We use Steeves Maples Sugar Free Maple Syrup, Almond Breeze Unsweetened Almond Milk and Macromike Vanilla Buttercream Almond Protein Powder for these macros. We find vegan protein powder creates a softer pancake texture than whey protein. If using whey, you may need to reduce the milk slightly."
+    },
+    {
+      "name": "Churro baked oats",
+      "page": 17,
+      "category": "Breakfasts",
+      "servings": 2,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 296,
+        "carbs_g": 41.8,
+        "fat_g": 5.6,
+        "protein_g": 19.5
+      },
+      "ingredients": [
+        "80g plain flour To prepare the buttermilk",
+        "40g vanilla protein",
+        "2 tsp baking powder",
+        "1 egg together",
+        "20ml maple syrup",
+        "1 tsp vanilla extract",
+        "3/4 cup milk (180ml)",
+        "1 tsp lemon juice pan, top with sliced banana",
+        "1 banana, sliced (80g)",
+        "2 tbs maple syrup"
+      ],
+      "notes": ""
+    },
+    {
+      "name": "Creamy avocado toast",
+      "page": 31,
+      "category": "Breakfasts",
+      "servings": 2,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 339,
+        "carbs_g": 37.9,
+        "fat_g": 12.9,
+        "protein_g": 15.2
+      },
+      "ingredients": [
+        "1/2 medium avocado (60g)",
+        "2 tbs light cream cheese",
+        "2 eggs, boiled",
+        "1 tsp lemon juice",
+        "4 slices sourdough"
+      ],
+      "notes": "We use Stone Baked white sourdough and Philadelphia 40% Less Fat Light Spreadable Cream Cheese for these macros."
+    },
+    {
+      "name": "Jam donut french toast",
+      "page": 23,
+      "category": "Breakfasts",
+      "servings": 1,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 325,
+        "carbs_g": 18.5,
+        "fat_g": 8.7,
+        "protein_g": 38.0
+      },
+      "ingredients": [
+        "100g low fat cottage",
+        "30g yoghurt Blend all ingredients (except",
+        "1 egg",
+        "30g vanilla protein powder",
+        "1-2 tbs sweetener with a few raspberries",
+        "100g raspberries, fresh or"
+      ],
+      "notes": "We use Yopro Vanilla Yoghurt, Macro Mike Vanilla Buttercream Almond Protein Powder and Natvia Natural Sweetener for these macros. Raspberries can be substituted for strawberries, blueberries or blackberries. Optional to add 1/2 tbs sweetener and 1/2 tsp chia seeds to the raspberries to make it more of a jam/jelly."
+    },
+    {
+      "name": "Pesto eggs on toast",
+      "page": 29,
+      "category": "Breakfasts",
+      "servings": 2,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 314,
+        "carbs_g": 37.0,
+        "fat_g": 12.5,
+        "protein_g": 10.2
+      },
+      "ingredients": [
+        "1 medium avocado (120g)",
+        "2 tbs light cream cheese",
+        "4 slices sourdough",
+        "Salt & pepper"
+      ],
+      "notes": "We use Stone Baked white sourdough and Philadelphia 40% Less Fat Light Spreadable Cream Cheese for these macros."
+    },
+    {
+      "name": "The best scrambled eggs",
+      "page": 25,
+      "category": "Breakfasts",
+      "servings": 2,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 310,
+        "carbs_g": 33.4,
+        "fat_g": 11.6,
+        "protein_g": 16.8
+      },
+      "ingredients": [
+        "4 eggs Melt the butter",
+        "1/4 tsp salt",
+        "4 slices bread, toasted",
+        "60 seconds in total"
+      ],
+      "notes": "We use Lite Nuttelex for these macros. The trick to the best scrambled eggs is to cook them low and slow. Don\u2019t viciously scramble, try stirring and folding instead. When they begin to form, remove from heat and allow to continue cooking on their own. For extra yum, whisk 1/4 cup cottage cheese with the eggs."
+    },
+    {
+      "name": "The best scrambled eggs",
+      "page": 27,
+      "category": "Breakfasts",
+      "servings": 1,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 329,
+        "carbs_g": 25.5,
+        "fat_g": 16.7,
+        "protein_g": 17.7
+      },
+      "ingredients": [
+        "2 tbs pesto (30-40g)",
+        "2 eggs",
+        "2 slices bread/ sourdough",
+        "1 tbs light ricotta/ cream"
+      ],
+      "notes": "You can use basil or sun-dried tomato pesto. We use Leggos Sun-Dried Tomato Pesto, Coles Light Cream Cheese and Country Split Bread for these macros."
+    },
+    {
+      "name": "Big Mac",
+      "page": 181,
+      "category": "Burgers",
+      "servings": 4,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 474,
+        "carbs_g": 42.1,
+        "fat_g": 17.2,
+        "protein_g": 35.2
+      },
+      "ingredients": [
+        "500g extra lean beef mince",
+        "4 burger cheese slices/ pepper, mould into 8 balls (2",
+        "4 burger buns",
+        "2 burger thins, halved -",
+        "1 cup lettuce, shredded",
+        "1/4 cup pickles",
+        "1/4 cup mayonnaise (60g)",
+        "1 tbs ketchup/ tomato",
+        "1 tbs mustard",
+        "1 tbs pickles, finely diced",
+        "1 tbs pickle juice patty, pickles and close with the",
+        "1/4 tsp each garlic powder, top bun lid"
+      ],
+      "notes": "We use Chobani 0% Yoghurt, Praise 99% Fat Free Mayonnaise, Aldi Brioche Buns, Tiptop Burger Thins, French\u2019s Classic Yellow American Mustard, Masterfoods Reduced Salt & Sugar Tomato Sauce and Dairylea Burger Cheese Slices for these macros."
+    },
+    {
+      "name": "Fillet-o-fish",
+      "page": 185,
+      "category": "Burgers",
+      "servings": 2,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 421,
+        "carbs_g": 42.6,
+        "fat_g": 12.1,
+        "protein_g": 35.6
+      },
+      "ingredients": [
+        "250g chicken breast, sliced",
+        "2 burger buns",
+        "1 cup lettuce, shredded",
+        "5ml olive oil spray",
+        "1-2 tbs fine breadcrumbs",
+        "2 tbs rice flour/ corn starch",
+        "1/4 tsp each - onion powder, garlic",
+        "1/4 cup",
+        "1 tbs rice flour/ corn starch",
+        "2-3 tbs Greek yoghurt",
+        "1 tbs whole egg mayonnaise",
+        "1/4 tsp Dijon mustard",
+        "1/8 tsp each - onion powder, salt"
+      ],
+      "notes": "We use Chobani 0% Greek Yoghurt, Praise Whole Egg Mayonnaise Light and Tip Top Gourmet Burger Buns for these macros."
+    },
+    {
+      "name": "McChicken",
+      "page": 187,
+      "category": "Burgers",
+      "servings": 6,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 345,
+        "carbs_g": 31.5,
+        "fat_g": 12.3,
+        "protein_g": 27.3
+      },
+      "ingredients": [
+        "400g turkey breast mince",
+        "1 egg ingredients except the oil together",
+        "2 small carrots, grated",
+        "1 tbs Dijon mustard into six patties",
+        "1 tsp garlic",
+        "1 tsp each onion powder & over medium",
+        "1/4 cup fresh parsley",
+        "1-2 tbs olive oil",
+        "6 x burger buns",
+        "6 x cheese slices",
+        "2 cups lettuce, shredded",
+        "2 tomatoes, sliced",
+        "1/2 onion, sliced",
+        "3-6 tbs sauce of choice"
+      ],
+      "notes": "We use Aldi Brioche Buns and Bega 50% Less Fat cheese for these macros. We recommend serving with our homemade sweet chilli mayo (not included in the macros). To make the burgers extra yum, add 1/4 cup of grated cheese into the patty mixture."
+    },
+    {
+      "name": "Turkey burgers",
+      "page": 189,
+      "category": "Burgers",
+      "servings": 2,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 482,
+        "carbs_g": 34.1,
+        "fat_g": 22.4,
+        "protein_g": 40.7
+      },
+      "ingredients": [
+        "2 burger buns",
+        "250g chicken breast, sliced medium-high",
+        "1/2 tsp dried mixed/",
+        "50g brie cheese, sliced on both sides",
+        "1 tomato, sliced",
+        "2-3 tbs cranberry sauce",
+        "1-2 tbs herbed mayo (20g)"
+      ],
+      "notes": "We use Aldi Brioche Buns, Ocean Spray Fruit Sauce Cranberry Jellied and Birch & Waite Free Range Seafood Sauce Parsley Dill & Tarragon for these macros."
+    },
+    {
+      "name": "Butter chicken",
+      "page": 151,
+      "category": "Curries",
+      "servings": 4,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 463,
+        "carbs_g": 36.6,
+        "fat_g": 16.3,
+        "protein_g": 41.0
+      },
+      "ingredients": [
+        "600g chicken breast, diced",
+        "1/2 cup Greek yogurt",
+        "2 tsp garam masala",
+        "1 tsp each - turmeric &",
+        "1/4 tsp cayenne pepper",
+        "1 tbs fresh ginger, minced",
+        "2 cloves garlic, minced",
+        "1 1/2 tbs butter (20g)",
+        "1 cup tomato puree /",
+        "1 cup light",
+        "1 tbs sweetener",
+        "1 tsp salt",
+        "150g rice, uncooked"
+      ],
+      "notes": "We use Chobani 0% Greek Yoghurt, Bulla Light Thickened Cooking Cream, Nuttelex Lite Margarine Spread and Natvia Natural Sweetener for these macros. MARINATE METHOD 600g chicken breast, diced Place chicken in a bowl with 1/2 cup Greek yogurt remaining marinate ingredients, (120g) toss to coat. Refrigerate for 2 tsp garam masala minimum 1 hour or overnight. 1 tsp each - turmeric & Melt the butter in a fry pan over ground cumin medium-high heat. Add the 1/4 tsp cayenne pepper chicken and cook for 5 minutes 1 tbs fresh ginger, minced until browned. 2 cloves garlic, minced Add tomato passata, cream, sweetener and salt, stir to CURRY combine. Simmer for 15-20 minutes until the chicken is 1 1/2 tbs butter (20g) cooked through and sauce 1 cup tomato puree / passata (250ml) thickens. 1 cup light cooking cream Serve with rice. (250ml) 1 tbs sweetener 1 tsp salt 150g rice, uncooked Nutrition SERVINGS 4 SIZE 1 CALORIES 463 CARBS 36.6G FAT 16.3G PROTEIN 41G 151"
+    },
+    {
+      "name": "Butter chicken",
+      "page": 153,
+      "category": "Curries",
+      "servings": 4,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 403,
+        "carbs_g": 35.9,
+        "fat_g": 8.3,
+        "protein_g": 54.2
+      },
+      "ingredients": [
+        "600g chicken breast",
+        "1/4 cup Greek yogurt (60g)",
+        "1 tsp each - garam masala, toss to coat. Refrigerate for",
+        "1 onion, diced",
+        "1 tsp each - turmeric &",
+        "1/2 tsp each - garam",
+        "1/2 cup canned tomatoes To the same pan",
+        "20g almonds/ cashews browned",
+        "150ml chicken stock for an additional 2",
+        "80ml light",
+        "1 tbs sweetener 15",
+        "1 tsp salt",
+        "150g rice, uncooked"
+      ],
+      "notes": "We use Chobani 0% Greek Yoghurt, Bulla Light Thickened Cooking Cream and Natvia Natural Sweetener for these macros. MARINATE METHOD 600g chicken breast Place chicken in a bowl with 1/4 cup Greek yogurt (60g) remaining marinate ingredients, 1 tsp each - garam masala, toss to coat. Refrigerate for turmeric, paprika, fresh minimum 1 hour or overnight. ginger & fresh garlic Add the onion to a pan over medium heat, saut\u00e9 for 2-3 CURRY minutes until softened. Add 1 onion, diced spices, almonds and tomatoes, 1 tsp each - turmeric & cook for 1 minute. Transfer the fresh garlic mixture to a blender and blitz 1/2 tsp each - garam masala, cumin, paprika until it forms a paste, set aside. 1/2 cup canned tomatoes To the same pan, cook the (150g) chicken for 5 minutes until 20g almonds/ cashews browned. Add the paste and cook 150ml chicken stock for an additional 2 minutes. 80ml light cooking cream Add the stock and simmer for 1 tbs sweetener 15 minutes until the chicken is cooked through and sauce has 1 tsp salt thickened. Stir in the cream, 150g rice, uncooked sweetener and salt, simmer until heated through. Nutrition Serve with rice. SERVINGS 4 SIZE 1 CALORIES 403 CARBS 35.9G FAT 8.3G PROTEIN 54.2G 153"
+    },
+    {
+      "name": "Chicken korma",
+      "page": 155,
+      "category": "Curries",
+      "servings": 4,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 465,
+        "carbs_g": 40.9,
+        "fat_g": 12.1,
+        "protein_g": 54.8
+      },
+      "ingredients": [
+        "2 tsp each - paprika",
+        "1 tsp each - turmeric",
+        "1/4 tsp chilli powder, with yoghurt, oil, 1/2 the spice",
+        "600g chicken breast, diced Melt the butter",
+        "1/2 cup Greek yogurt medium",
+        "1/2 tbs each \u2013 butter & oil",
+        "2 garlic cloves, minced",
+        "1 tbs ginger, minced",
+        "1/2 onion, diced",
+        "400g canned diced",
+        "150ml light",
+        "150g rice, uncooked"
+      ],
+      "notes": "We use Chobani 0% Greek Yoghurt, Bulla Light Thickened Cooking Cream and Nuttelex Lite for these macros. SPICE MIX METHOD 2 tsp each - paprika, Mix the spice ingredients together garam masala, cumin in a small bowl. 1 tsp each - turmeric, coriander, salt Place the chicken in a large bowl 1/4 tsp chilli powder, with yoghurt, oil, 1/2 the spice optional mix, 1/2 the garlic and 1/2 the ginger, mix to coat. Refrigerate for minimum 1 hour or overnight. CURRY 600g chicken breast, diced Melt the butter in a pan over 1/2 cup Greek yogurt medium heat. Add the onion (120g) and saut\u00e9 for 1-2 minutes. Add 1/2 tbs each \u2013 butter & oil remaining spice mix, garlic and ginger, cook for 30 seconds. Add 2 garlic cloves, minced tomatoes and cream, stir and 1 tbs ginger, minced simmer for 5 minutes. Transfer to 1/2 onion, diced a blender and blitz until smooth, 400g canned diced set aside. tomatoes/ passata To the same pan, add the chicken 150ml light cooking cream and cook for 5 minutes until 150g rice, uncooked browned. Add the sauce and simmer for 10 minutes until Nutrition chicken is cooked through. Serve with rice. SERVINGS 4 SIZE 1 CALORIES 465 CARBS 40.9G FAT 12.1G PROTEIN 54.8G 155"
+    },
+    {
+      "name": "Chicken tikka masala",
+      "page": 157,
+      "category": "Curries",
+      "servings": 4,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 448,
+        "carbs_g": 42.5,
+        "fat_g": 13.8,
+        "protein_g": 35.6
+      },
+      "ingredients": [
+        "270ml canned coconut",
+        "4-6 tbs green curry",
+        "500g chicken breast/ tofu",
+        "125-180ml chicken/ sweetener, fish sauce and lime leaves",
+        "4 kaffir lime leaves, torn",
+        "1 zucchini, sliced",
+        "2 cups snow peas chicken is",
+        "1 red chilli, optional",
+        "150g rice, uncooked",
+        "1 lime, cut into wedges",
+        "1 sprig spring onion, diced"
+      ],
+      "notes": "We use Ayam Coconut Milk Light, Maesri Green Curry Paste and Natvia Brown Sweetener for theses macros. You can use coconut sugar, brown sugar, white sugar or maple syrup to sweeten the curry and adjust to your taste preference. SPICE MIX METHOD 270ml canned coconut Add 3 tbs of coconut milk to a saucepan milk over medium heat, simmer for 1 minute until 4-6 tbs green curry paste thickened. Add the curry paste and cook for 1-2 (112g) minutes. 500g chicken breast/ tofu, diced Add the remaining coconut milk, stock, 125-180ml chicken/ sweetener, fish sauce and lime leaves. Stir and vegetable stock simmer for 2 minutes. \u00bd tbs sweetener Add the chicken, reduce the heat to low and \u00bd tbs fish sauce simmer for 7 minutes. 4 kaffir lime leaves, torn Add the zucchini and simmer for another 5 1 zucchini, sliced minutes until vegetables have softened and 2 cups snow peas chicken is cooked through, 1 red chilli, optional Add snow peas, chilli and Thai basil leaves, \u00bc cup Thai basil leaves simmer for another 2 minutes. 150g rice, uncooked Serve with rice, a squeeze of lime juice and 1 lime, cut into wedges garnish with spring onion. 1 sprig spring onion, diced Nutrition SERVINGS 4 SIZE 1 CALORIES 448 CARBS 42.5G FAT 13.8G PROTEIN 35.6G 157"
+    },
+    {
+      "name": "Thai green curry",
+      "page": 159,
+      "category": "Curries",
+      "servings": 5,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 439,
+        "carbs_g": 43.0,
+        "fat_g": 20.4,
+        "protein_g": 21.0
+      },
+      "ingredients": [
+        "1 tbs olive oil",
+        "1 broccoli, chopped",
+        "1 red capsicum, sliced",
+        "1 onion, diced browned",
+        "2 carrots, sliced into half",
+        "2 tsp minced garlic",
+        "4 tbs Thai red curry",
+        "380ml canned coconut milk",
+        "1 tbs brown sugar/ sweetener",
+        "1 tbs tamari/ soy sauce",
+        "2 tsp fresh ginger, minced",
+        "1 vegetable stock cube",
+        "150g rice, uncooked",
+        "1 \u20132 tbs cottage cheese/"
+      ],
+      "notes": "We use Ayam Coconut Milk Light, Ayam Thai Red Curry Paste, Natvia Brown Sweetener and chicken breast for theses macros."
+    },
+    {
+      "name": "Basmati rice",
+      "page": 234,
+      "category": "Essentials & Sauces",
+      "servings": 4,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 177,
+        "carbs_g": 39.4,
+        "fat_g": 0.3,
+        "protein_g": 4.3
+      },
+      "ingredients": [
+        "1 2/3 cup water (420ml)",
+        "1 tsp turmeric"
+      ],
+      "notes": "We use Sunrice White Basmati Rice for these macros. Optional to replace water with same amounts of chicken or vegetable stock for extra flavour. Rinsing the rice is not required for this recipe."
+    },
+    {
+      "name": "Garlic butter rice",
+      "page": 237,
+      "category": "Essentials & Sauces",
+      "servings": 4,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 194,
+        "carbs_g": 39.6,
+        "fat_g": 2.2,
+        "protein_g": 4.5
+      },
+      "ingredients": [
+        "1 cup basmati rice, Melt butter",
+        "1 1/2 cups water (375ml) fragrant",
+        "1 tbs butter (15g)",
+        "2-3 cloves garlic, minced",
+        "1/4 tsp salt"
+      ],
+      "notes": "We use Sunrice White Basmati Rice and Lite Nuttelex for these macros. Rinsing the rice is not required for this recipe."
+    },
+    {
+      "name": "Garlic naan",
+      "page": 242,
+      "category": "Essentials & Sauces",
+      "servings": 4,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 91,
+        "carbs_g": 14.1,
+        "fat_g": 2.8,
+        "protein_g": 1.9
+      },
+      "ingredients": [
+        "1-2 tsp olive oil",
+        "1-2 garlic cloves, minced",
+        "4 small flour or gluten- sure not to overlap them"
+      ],
+      "notes": "We use 4 x Old El Paso Mini Tortillas for these macros. These are the perfect side to any of our curry recipes."
+    },
+    {
+      "name": "Guacamole dip",
+      "page": 245,
+      "category": "Essentials & Sauces",
+      "servings": 2,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 41,
+        "carbs_g": 2.8,
+        "fat_g": 1.9,
+        "protein_g": 3.3
+      },
+      "ingredients": [
+        "1 tbs whole egg bowl",
+        "1-2 tbs sweet chilli sauce store"
+      ],
+      "notes": "We use Chobani 0% Greek Yoghurt, Praise 25% Less Sugar Light Mayonnaise and Ayam Thai Sweet Chilli Sauce Light for these macros."
+    },
+    {
+      "name": "Homemade flatbread",
+      "page": 238,
+      "category": "Essentials & Sauces",
+      "servings": 4,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 148,
+        "carbs_g": 27.5,
+        "fat_g": 0.6,
+        "protein_g": 6.6
+      },
+      "ingredients": [
+        "150g self-raising flour",
+        "125g Greek yoghurt dough onto a floured surface",
+        "Pinch of salt"
+      ],
+      "notes": "We use The Healthy Baker Flour and Chobani 0% Greek Yoghurt for theses macros. Different brands of yoghurts contain more/less moisture than others and can make the dough too sticky. If this happens, gradually add more flour until you have a consistency you can work with."
+    },
+    {
+      "name": "Homemade flatbread",
+      "page": 240,
+      "category": "Essentials & Sauces",
+      "servings": 5,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 136,
+        "carbs_g": 22.2,
+        "fat_g": 2.5,
+        "protein_g": 5.3
+      },
+      "ingredients": [
+        "150g self-raising flour",
+        "125g Greek yoghurt the dough onto a floured surface",
+        "Pinch of salt",
+        "1-2 garlic cloves, minced",
+        "1-2 tbs butter, melted (20g)",
+        "1 tbs fresh parsley/ of baking paper or lightly floured"
+      ],
+      "notes": "We use The Healthy Baker Flour, Chobani 0% Greek Yoghurt and Nuttelex Lite for theses macros. Self-raising flour can be replaced with an equal amount of plain flour plus 1 tsp baking powder. If you find the consistency of the dough is too sticky, please refer to the notes of our homemade flatbread recipe."
+    },
+    {
+      "name": "Satay dipping sauce",
+      "page": 249,
+      "category": "Essentials & Sauces",
+      "servings": 4,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 170,
+        "carbs_g": 8.3,
+        "fat_g": 11.8,
+        "protein_g": 6.2
+      },
+      "ingredients": [
+        "60% Less Fat Light",
+        "1 tbs butter Melt butter",
+        "300g mushrooms, sliced",
+        "2 cloves garlic, minced",
+        "1 cup light",
+        "30g parmesan cheese"
+      ],
+      "notes": "We use Western Star Chef\u2019s Choice Unsalted butter, Philadelphia 60% Less Fat Light Cooking Cream and Perfect Italiano Parmesan Cheese for these macros."
+    },
+    {
+      "name": "Turmeric basmati rice",
+      "page": 236,
+      "category": "Essentials & Sauces",
+      "servings": 4,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 232,
+        "carbs_g": 40.4,
+        "fat_g": 5.2,
+        "protein_g": 4.2
+      },
+      "ingredients": [
+        "1 cup jasmine rice, Rinse the rice thoroughly",
+        "1 cup water (250ml)",
+        "1-2 tsp granulated a lid on and reduce the",
+        "1/4 tsp salt"
+      ],
+      "notes": "We use Sunrice White Jasmine Rice, Ayam Coconut Milk Light and Natvia Natural Sweetener for these macros."
+    },
+    {
+      "name": "Apple & cinnamon",
+      "page": 34,
+      "category": "Grab & Go Breakfasts",
+      "servings": 4,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 374,
+        "carbs_g": 44.0,
+        "fat_g": 11.3,
+        "protein_g": 20.0
+      },
+      "ingredients": [
+        "2 cups oats (160g)",
+        "2 small ripe bananas (160-",
+        "70g vanilla protein powder",
+        "2 tsp baking powder vanilla & milk",
+        "2 tbs maple syrup (30ml)",
+        "1 tsp vanilla extract",
+        "1 \u00bd cups milk with the reserved",
+        "1 tsp cinnamon Top with sliced apples, granulated sweetener",
+        "120g tinned apples",
+        "100g custard",
+        "45-60g Biscoff spread",
+        "1/2-1 tsp cinnamon",
+        "2 tsp granulated"
+      ],
+      "notes": "We use Macromike Vanilla Buttercream Almond Protein Powder, Steeves Maples Sugar Free Maple Syrup, Red Tractor Protein Oats, Pauls Premium Custard and Almond Breeze Unsweetened Almond Milk for these macros."
+    },
+    {
+      "name": "Apple & cinnamon tray baked oatmeal",
+      "page": 36,
+      "category": "Grab & Go Breakfasts",
+      "servings": 1,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 351,
+        "carbs_g": 32.7,
+        "fat_g": 12.0,
+        "protein_g": 24.7
+      },
+      "ingredients": [
+        "1/2 cup oats (40g)",
+        "20g vanilla protein powder",
+        "1/2 tbs chia seeds",
+        "2 tbs yoghurt (30g)",
+        "1/2 cup unsweetened",
+        "50g raspberries/",
+        "10-15g Biscoff spread"
+      ],
+      "notes": "We use Steeves Maples Sugar Free Maple Syrup, YoPro Vanilla Yoghurt, Red Tractor Protein Creamy Oats and Macromike Vanilla Buttercream Almond Protein Powder for these macros."
+    },
+    {
+      "name": "Bacon & egg mini quiches",
+      "page": 56,
+      "category": "Grab & Go Breakfasts",
+      "servings": 6,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 335,
+        "carbs_g": 22.8,
+        "fat_g": 15.7,
+        "protein_g": 24.5
+      },
+      "ingredients": [
+        "6 eggs Lay the bacon on a lined baking",
+        "100g Greek yoghurt/",
+        "180\u00b0C for 10-15",
+        "6 English muffins",
+        "6 slices cheese"
+      ],
+      "notes": "We use Tiptop Wholemeal English Muffins, Chobani 0% Greek Yoghurt and Coles Australian Smokey Individually Wrapped Slices for these macros. If using cottage cheese or ricotta, we like to blend it first for a smoother consistency, this is completely optional and won\u2019t alter the taste."
+    },
+    {
+      "name": "Best ever banana bread",
+      "page": 50,
+      "category": "Grab & Go Breakfasts",
+      "servings": 12,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 172,
+        "carbs_g": 18.0,
+        "fat_g": 7.7,
+        "protein_g": 6.2
+      },
+      "ingredients": [
+        "1 cup milk",
+        "1/4 cup Greek yoghurt (60g)",
+        "1/4 cup olive oil (55g)",
+        "2 cups plain flour (260g) baking soda, salt and pepper",
+        "1 1/2 tsp baking powder",
+        "1/2 tsp baking soda",
+        "1/2 tsp salt into the prepared tin",
+        "1/4 tsp black pepper",
+        "200g baby spinach",
+        "150g feta, crumbled",
+        "2 tbs fresh herbs - dill"
+      ],
+      "notes": "We use Chobani 0% Greek Yoghurt, Almond Breeze Unsweetened Almond Milk, The Healthy Baker Flour and Danish feta for these macros. Muffins can be frozen for meal prep."
+    },
+    {
+      "name": "Biscoff overnight Weet-Bix",
+      "page": 44,
+      "category": "Grab & Go Breakfasts",
+      "servings": 1,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 325,
+        "carbs_g": 33.6,
+        "fat_g": 7.0,
+        "protein_g": 27.3
+      },
+      "ingredients": [
+        "2 Weet-Bix Crush Weet-Bix",
+        "80ml milk",
+        "1 tbs sweetener to form the base",
+        "1 shot of espresso",
+        "130g yoghurt",
+        "30g light cream cheese refridgerate for a",
+        "15g vanilla protein powder",
+        "1/2 - 1 tbs sweetener",
+        "1-2 tsp chocolate protein/"
+      ],
+      "notes": "We use Almond Breeze Unsweetened Almond Milk, Yopro Vanilla Yoghurt, Philadelphia 40% Less Fat Light Spreadable Cream Cheese, Macro Mike Vanilla Buttercream Almond Protein Powder, Steeves Maples Sugar Free Maple Syrup and Avalanche Sugar Free Drinking Chocolate for these macros. BASE METHOD 2 Weet-Bix Crush Weet-Bix in a bowl, then mix in the coffee, sweetener and 80ml milk water. Smooth over with a spoon 1 tbs sweetener to form the base. 1 shot of espresso In a separate bowl, mix together yoghurt, cream cheese, protein powder and sweetener. Spread CREAM over the base. 130g yoghurt Dust with chocolate powder and 30g light cream cheese refridgerate for a minimum of 1 hour or overnight. 15g vanilla protein powder 1/2 - 1 tbs sweetener, optional CHOCOLATE 1-2 tsp chocolate protein/ cacao powder Nutrition SERVINGS 1 SIZE 1 CALORIES 325 CARBS 33.6G FAT 7G PROTEIN 27.3G 44"
+    },
+    {
+      "name": "Mars bar inspired overnight oats",
+      "page": 42,
+      "category": "Grab & Go Breakfasts",
+      "servings": 1,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 328,
+        "carbs_g": 34.4,
+        "fat_g": 7.5,
+        "protein_g": 28.4
+      },
+      "ingredients": [
+        "2 Weet-Bix Crush Weet-bix",
+        "80-100ml milk",
+        "1 tbs maple syrup the base",
+        "160g yoghurt",
+        "15g protein powder",
+        "10g Biscoff, melted",
+        "10g yoghurt/ milk"
+      ],
+      "notes": "Optional to sprinkle over 1/2 crushed lotus biscuit or top with some fruit (we like to add 1/2 sliced banana for a Banoffee vibe). To make this recipe gluten free, use gluten free Weet-Bix and substitute Biscoff spread for almond/ peanut butter. We use Almond Breeze Unsweetened Almond Milk, Yopro Salted Caramel Yoghurt, Steeves Maples Sugar Free Maple Syrup and Macro Mike Salted Caramel Almond Protein Powder for these macros. BASE METHOD 2 Weet-Bix Crush Weet-bix in a bowl, then mix in the milk and maple syrup. 80-100ml milk Smooth over with a spoon to form 1 tbs maple syrup the base. In a separate bowl, mix the CREAM yoghurt and protein powder together until smooth. Spread 160g yoghurt over the base. 15g protein powder Mix biscoff and yoghurt/milk together until smooth. Optional to add a dash of milk/ water to thin. CARAMEL Spread caramel over the top of 10g Biscoff, melted the cream layer. 10g yoghurt/ milk Place in the fridge for a minimum of 1 hour or overnight. Nutrition SERVINGS 1 SIZE 1 CALORIES 328 CARBS 34.4G FAT 7.5G PROTEIN 28.4G 42"
+    },
+    {
+      "name": "Pumpkin & pesto muffins",
+      "page": 54,
+      "category": "Grab & Go Breakfasts",
+      "servings": 6,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 117,
+        "carbs_g": 5.9,
+        "fat_g": 5.5,
+        "protein_g": 11.0
+      },
+      "ingredients": [
+        "2 wraps",
+        "3 eggs",
+        "75g rindless short cut bowl",
+        "1/2 tsp salt",
+        "1/4 tsp pepper",
+        "1/4 cup light cheese, for 15-20"
+      ],
+      "notes": "We use Bega 50% Less Fat Cheese, Mountain Bread Rye Wraps and Chobani 0% Greek Yoghurt for these macros. For a vegetarian version, omit the bacon and add veggies of choice."
+    },
+    {
+      "name": "Raspberry & biscoff overnight oats",
+      "page": 38,
+      "category": "Grab & Go Breakfasts",
+      "servings": 2,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 359,
+        "carbs_g": 29.7,
+        "fat_g": 12.3,
+        "protein_g": 26.9
+      },
+      "ingredients": [
+        "1/4 yoghurt (60g) Slice strawberries",
+        "2 tbs maple syrup (30ml)",
+        "40g light cream cheese",
+        "1 cup oats (80g)",
+        "30g vanilla protein powder",
+        "1 tbs chia seeds (10g)",
+        "3 tbs yoghurt (45g)",
+        "100g + sliced strawberries",
+        "1 lotus biscuit, optional decorate with"
+      ],
+      "notes": "We use Steeves Maples Sugar Free Maple Syrup, YoPro Vanilla Yoghurt, Red Tractor Protein Creamy Oats, Macromike Vanilla Buttercream Almond Protein Powder and Vitawerx White Chocolate for these macros. Feel free to swap the strawberries out for another fruit of choice."
+    },
+    {
+      "name": "Spinach & feta muffins",
+      "page": 52,
+      "category": "Grab & Go Breakfasts",
+      "servings": 12,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 153,
+        "carbs_g": 19.8,
+        "fat_g": 5.3,
+        "protein_g": 6.2
+      },
+      "ingredients": [
+        "400g pumpkin, peeled",
+        "1 egg Place pumpkin cubes on the baking tray",
+        "1 cup milk",
+        "1/4 cup Greek yoghurt",
+        "1/3 cup basil pesto (100g) together",
+        "2 cups plain flour (260g)",
+        "1 1/2 tsp baking powder",
+        "1/2 tsp baking soda",
+        "1/4 tsp black pepper",
+        "100g spinach, chopped",
+        "150g feta, crumbled skewer comes out clean",
+        "1/4 cup fresh basil leaves",
+        "1-2 tbs pine nuts, optional"
+      ],
+      "notes": "We use Chobani 0% Greek Yoghurt, Almond Breeze Unsweetened Almond Milk, The Healthy Baker Flour, Leggo\u2019s Traditional Basil Pesto and Danish feta for these macros. Muffins can be frozen for meal prep."
+    },
+    {
+      "name": "Strawberry cheesecake overnight oats",
+      "page": 40,
+      "category": "Grab & Go Breakfasts",
+      "servings": 2,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 373,
+        "carbs_g": 37.0,
+        "fat_g": 15.8,
+        "protein_g": 20.2
+      },
+      "ingredients": [
+        "1/4 cup of yoghurt (60g )",
+        "1-2 tbs maple syrup (20-",
+        "30ml) Cover",
+        "1 cup milk",
+        "1 tbs chia seeds (10g)",
+        "1 cup oats (80g) Biscoff spread",
+        "20-30g chocolate protein",
+        "20g maple syrup",
+        "20ml Biscoff or almond butter",
+        "25g milk chocolate",
+        "1/2 tbs milk SERVINGS 2 SIZE 1 CALORIES 373",
+        "35g yoghurt CARBS 37G FAT 15.8G PROTEIN 20.2G"
+      ],
+      "notes": "We use Yopro Vanilla Yoghurt (for the filling), Macromike Choc Caramel Bar Protein Powder, Steeves Maples Sugar Free Maple Syrup, Lindt No Sugar Milk Chocolate, Red Tractor Creamy Protein Oats and Cocobella Vanilla Coconut Yoghurt (for the ganache) for these macros. We recommend using coconut yoghurt for the ganache, as it will be a creamier texture, however Greek style yoghurt will also work. Please note you will not need the milk in the ganache if using coconut yoghurt."
+    },
+    {
+      "name": "Tiramisu overnight Weet-Bix",
+      "page": 46,
+      "category": "Grab & Go Breakfasts",
+      "servings": 1,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 353,
+        "carbs_g": 38.9,
+        "fat_g": 7.9,
+        "protein_g": 27.6
+      },
+      "ingredients": [
+        "2 Weet-Bix For the jam",
+        "80ml milk",
+        "1 tbs sweetener",
+        "130g yoghurt",
+        "30g light cream cheese Smooth over with a spoon to form",
+        "15g vanilla protein powder",
+        "1 tsp sweetener, optional",
+        "1 tsp lemon juice/zest, to smooth. Spread over the base",
+        "100g strawberries, sliced Nutrition",
+        "1/2 tbs sweetener",
+        "1/2 tsp chia seeds"
+      ],
+      "notes": "We use Almond Breeze Unsweetened Almond Milk, Yopro Vanilla Yoghurt, Philadelphia 40% Less Fat Light Spreadable Cream Cheese, Macro Mike Vanilla Buttercream Almond Protein Powder and Steeves Maples Sugar Free Maple Syrup for these macros. Feel free to swap the strawberries out for another fruit of choice. BASE METHOD 2 Weet-Bix For the jam, add 50g strawberries and sweetener to a saucepan or 80ml milk microwave safe bowl, heat until 1 tbs sweetener softened. Mash with a fork, then sprinkle over the chia seeds and set aside to cool. CREAM Crush Weet-Bix in a bowl, then 130g yoghurt mix in the milk and sweetener. 30g light cream cheese Smooth over with a spoon to form the base. Top with remaining 15g vanilla protein powder, strawberries. optional In a separate bowl, mix cream 1 tsp sweetener, optional filling ingredients together until 1 tsp lemon juice/zest, to smooth. Spread over the base. taste Spread the jam on top and place in the fridge for a minimum of 1 hour or overnight. JAM 100g strawberries, sliced Nutrition 1/2 tbs sweetener 1/2 tsp chia seeds SERVINGS 1 SIZE 1 CALORIES 353 CARBS 38.9G FAT 7.9G PROTEIN 27.6G 46"
+    },
+    {
+      "name": "Big mac salad",
+      "page": 77,
+      "category": "Lighter Meals",
+      "servings": 2,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 422,
+        "carbs_g": 41.7,
+        "fat_g": 12.4,
+        "protein_g": 36.7
+      },
+      "ingredients": [
+        "250g chicken breast thick",
+        "2 tbs Greek yoghurt (30g) pepper",
+        "1 tsp Dijon mustard",
+        "1/4 tsp each paprika,",
+        "1/4 tsp garlic powder",
+        "1/2 tbsp fresh lemon juice",
+        "1/2 tsp Dijon mustard instructions",
+        "1/2 tsp Worcestershire sauce",
+        "1 tbs parmesan, finely grated (15g)",
+        "1/2 anchovy fillet, finely chopped",
+        "Salt & black pepper, to taste",
+        "100g dried pasta",
+        "1 egg (optional)",
+        "2-3 cups cos lettuce"
+      ],
+      "notes": "We use Chobani 0% Greek Yoghurt and San Remo Penne Pasta for these macros."
+    },
+    {
+      "name": "Light & tasty zucchini slice",
+      "page": 59,
+      "category": "Lighter Meals",
+      "servings": 9,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 86,
+        "carbs_g": 7.9,
+        "fat_g": 2.9,
+        "protein_g": 6.6
+      },
+      "ingredients": [
+        "3 eggs",
+        "80g self-raising flour",
+        "1/2 brown onion, diced",
+        "1 zucchini, grated & excess",
+        "100g ham/ bacon, diced",
+        "40g cheese, grated",
+        "1 tsp salt"
+      ],
+      "notes": "We use The Healthy Baker flour and Bega 50% Less Fat cheese for these macros."
+    },
+    {
+      "name": "Mango & halloumi salad",
+      "page": 75,
+      "category": "Lighter Meals",
+      "servings": 1,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 305,
+        "carbs_g": 16.2,
+        "fat_g": 9.9,
+        "protein_g": 34.5
+      },
+      "ingredients": [
+        "150g extra lean beef mince",
+        "25g cheese, sliced or",
+        "1 cup lettuce, chopped",
+        "1 tomato, diced cover the pan with a lid",
+        "1 tbs pickles",
+        "1 tbs fat free mayo (20g)",
+        "1 tsp ketchup/tomato",
+        "1 tsp mustard (5g)",
+        "1 tsp pickles, finely diced",
+        "1 tsp pickle juice (5ml)",
+        "Pinch each salt, garlic"
+      ],
+      "notes": "We use Praise 99% Fat Free Mayonnaise, French\u2019s Classic Yellow American Mustard, Masterfoods Reduced Salt & Sugar Tomato Sauce and Dairylea Cheese Singles Light 25% Less Fat for these macros."
+    },
+    {
+      "name": "Peri-peri chicken salad",
+      "page": 73,
+      "category": "Lighter Meals",
+      "servings": 3,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 389,
+        "carbs_g": 28.4,
+        "fat_g": 23.7,
+        "protein_g": 14.8
+      },
+      "ingredients": [
+        "2 ears of corn",
+        "180g halloumi, sliced",
+        "1-2 tbsp honey",
+        "1 mango, diced pan",
+        "1 \u00bd cups cherrytomatoes",
+        "1/2 red onion, dcied",
+        "2 cups rocket",
+        "2 tbsp olive oil",
+        "1-2 tbsp lemon juice",
+        "1/4 tsp each cumin &",
+        "Salt & pepper, to taste"
+      ],
+      "notes": "We use Lemnos Salt Reduced Haloumi for these macros."
+    },
+    {
+      "name": "Spinach & cheese rolls",
+      "page": 71,
+      "category": "Lighter Meals",
+      "servings": 2,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 430,
+        "carbs_g": 37.6,
+        "fat_g": 13.4,
+        "protein_g": 37.7
+      },
+      "ingredients": [
+        "250g chicken breast, diced Coat chicken with peri-peri",
+        "2 tsp peri-peri seasoning",
+        "1-2 cups lettuce, chopped for 7-10",
+        "1/2 cup cherry tomatoes",
+        "1/2 red capsicum, diced water at a time",
+        "1/2 red onion, diced",
+        "1/4 cup sweet corn",
+        "1/2 cup black beans, chicken and dressing. Toss to",
+        "1 cup tortilla/ corn chips",
+        "1/2 avocado (50g)",
+        "1/4 cup Greek yoghurt",
+        "1/4 cup fresh coriander",
+        "1/2 tsp garlic powder",
+        "Salt & pepper, to taste"
+      ],
+      "notes": "We use Tostitos Cantina Tortilla Corn Chips and Chobani 0% Greek Yoghurt for these macros."
+    },
+    {
+      "name": "Sweet potato falafels",
+      "page": 65,
+      "category": "Lighter Meals",
+      "servings": 4,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 367,
+        "carbs_g": 44.1,
+        "fat_g": 10.3,
+        "protein_g": 26.6
+      },
+      "ingredients": [
+        "2 x 185g can tuna in spring",
+        "1 egg or",
+        "1/2 cup onion, diced",
+        "1/2 cup fresh parsley or",
+        "1 tbsp Dijon mustard",
+        "1 cup breadcrumbs (120g)",
+        "1/2 tsp each garlic & onion",
+        "Salt & pepper, to taste",
+        "2-3 tbsp extra virgin olive (approx 1.5cm thick)"
+      ],
+      "notes": "We recommend serving with our homemade sweet chilli mayo. Patties can be frozen for meal prep."
+    },
+    {
+      "name": "Sweet potato tuna patties",
+      "page": 67,
+      "category": "Lighter Meals",
+      "servings": 4,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 166,
+        "carbs_g": 23.3,
+        "fat_g": 4.6,
+        "protein_g": 5.9
+      },
+      "ingredients": [
+        "2 medium carrots, grated",
+        "150g frozen peas",
+        "1/3 cup spring onion",
+        "1 tsp mustard Using your hands, shape the",
+        "1/2 tsp cumin",
+        "2 tsp curry powder/",
+        "50g chickpea flour",
+        "50g self-raising flour",
+        "1-2 tbs olive oil sour cream"
+      ],
+      "notes": "We use The Healthy Baker Flour for these macros."
+    },
+    {
+      "name": "Veggie pakoras",
+      "page": 69,
+      "category": "Lighter Meals",
+      "servings": 15,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 56,
+        "carbs_g": 4.7,
+        "fat_g": 4.1,
+        "protein_g": 2.1
+      },
+      "ingredients": [
+        "250g frozen spinach",
+        "1 egg Thaw",
+        "1/3 cup spring onion",
+        "250g low fat cottage",
+        "75g light cheese, grated",
+        "1 clove garlic, optional tightly",
+        "3 sheets pastry",
+        "1-2 tbs milk",
+        "1/2 tbs sesame seeds"
+      ],
+      "notes": "We use Art of Pastry Frozen Fillo Pastry Sheets and Coles light tasty cheese for these macros."
+    },
+    {
+      "name": "Zucchini fritters",
+      "page": 63,
+      "category": "Lighter Meals",
+      "servings": 3,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 285,
+        "carbs_g": 43.8,
+        "fat_g": 5.9,
+        "protein_g": 11.1
+      },
+      "ingredients": [
+        "225g sweet potato, peeled",
+        "400g canned chickpeas",
+        "1/3 cup plain flour and firm up",
+        "180\u00b0C and line a baking tray",
+        "2 cloves garlic, minced",
+        "1 tsp each - smoked aside",
+        "12-16 balls, toss",
+        "3 tbs sesame seeds, to"
+      ],
+      "notes": "We use The Healthy Baker Flour for these macros. Falafels can be frozen for meal prep."
+    },
+    {
+      "name": "Zucchini slice",
+      "page": 61,
+      "category": "Lighter Meals",
+      "servings": 3,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 355,
+        "carbs_g": 35.5,
+        "fat_g": 17.2,
+        "protein_g": 17.4
+      },
+      "ingredients": [
+        "1 tbs olive oil",
+        "3 eggs",
+        "2/3 cup self-raising flour",
+        "1 cup peas",
+        "1 cup corn kernels",
+        "1 zucchini, grated",
+        "75g feta cheese"
+      ],
+      "notes": "We use The Healthy Baker Flour and danish feta for these macros."
+    },
+    {
+      "name": "BBQ chicken loaded fries",
+      "page": 121,
+      "category": "Main Meals & Soups",
+      "servings": 1,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 535,
+        "carbs_g": 62.0,
+        "fat_g": 11.0,
+        "protein_g": 46.0
+      },
+      "ingredients": [
+        "500g turkey mince",
+        "1 egg together",
+        "50g feta, crumbled",
+        "1/3 cup breadcrumbs (35g)",
+        "1/4 cup onion, diced",
+        "1/2 tsp each garlic powder",
+        "3 tbs fresh parsley",
+        "200g Greek yoghurt",
+        "1 tbs mayo or olive oil",
+        "2 tsp lemon juice",
+        "1 tsp zest",
+        "1 garlic clove, grated",
+        "1 cup basmati rice",
+        "1 tsp turmeric"
+      ],
+      "notes": "We use Lemnos smooth Fetta, Coles Australian Wheat Bread Crumbs and Chobani Natural Greek Yogurt for these macros."
+    },
+    {
+      "name": "Cheesy baked meatballs",
+      "page": 115,
+      "category": "Main Meals & Soups",
+      "servings": 2,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 411,
+        "carbs_g": 44.0,
+        "fat_g": 8.4,
+        "protein_g": 37.9
+      },
+      "ingredients": [
+        "100g frozen chips",
+        "2 tbs tzatziki (30g)",
+        "1 tomato, sliced",
+        "1 cup lettuce, chopped Coat the chicken",
+        "2 small Lebanese wraps/",
+        "250g chicken breast Meanwhile",
+        "1/2 tbs olive oil non-stick fry pan for 10",
+        "1 tbs Greek yoghurt",
+        "1-2 tsp dried oregano",
+        "1 clove garlic, minced",
+        "1 tbs lemon juice",
+        "1 tsp white wine vinegar",
+        "1/4 tsp salt chips"
+      ],
+      "notes": "We use Chobani 0% Greek Yoghurt, Black Swan Tzatziki Dip Skinny, Coles Frozen Straight Cut Potato Chips and Nana Bakery Traditional Lebanese Bread White for these macros. Chicken breast can be substituted with chicken thigh, lamb or beef."
+    },
+    {
+      "name": "Chicken gyros",
+      "page": 117,
+      "category": "Main Meals & Soups",
+      "servings": 3,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 370,
+        "carbs_g": 47.3,
+        "fat_g": 10.8,
+        "protein_g": 17.1
+      },
+      "ingredients": [
+        "6-8 medium potatoes",
+        "1 tbs olive oil",
+        "1 small carrot, grated",
+        "2 garlic cloves, finely a fork",
+        "1 brown onion, diced soften",
+        "400g canned butter beans",
+        "1 tsp each cumin &",
+        "50g tomato",
+        "3/4 cup vegetable stock",
+        "pepper.",
+        "1 1/2 cups slaw",
+        "3 tbs light sour cream",
+        "1 tbs parsley"
+      ],
+      "notes": "If you don\u2019t have a microwave, skip step 2 and increase the baking time for the potatoes to a total of 35 minutes. For a healthier homemade slaw dressing, mix 1 tsp each of Dijon mustard, olive oil and vinegar. You can use white potato or sweet potato for this recipe. We use Spud Lite Potatoes and Bega 50% Less Fat cheese for these macros."
+    },
+    {
+      "name": "Creamy pumpkin soup",
+      "page": 129,
+      "category": "Main Meals & Soups",
+      "servings": 4,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 339,
+        "carbs_g": 40.0,
+        "fat_g": 9.2,
+        "protein_g": 22.4
+      },
+      "ingredients": [
+        "2 x 420g cans creamed",
+        "4 cups chicken stock (1",
+        "2 tsp soy sauce",
+        "2 tsp fresh ginger, finely",
+        "1 tbs corn flour",
+        "2 eggs, beaten",
+        "2 cups rotisserie chicken, Meanwhile",
+        "80g vermicelli rice noodles",
+        "1/4 cup spring onion",
+        "1-2 tsp sesame oil",
+        "pepper."
+      ],
+      "notes": "We use Trident Rice Vermicelli Noodles for these macros."
+    },
+    {
+      "name": "Greek turkey meatballs",
+      "page": 123,
+      "category": "Main Meals & Soups",
+      "servings": 4,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 421,
+        "carbs_g": 38.8,
+        "fat_g": 13.5,
+        "protein_g": 38.3
+      },
+      "ingredients": [
+        "4 soft hotdog rolls",
+        "500g extra lean beef mince with salt and pepper, mix",
+        "1 tsp each \u2013 salt, Italian",
+        "4 slices cheese",
+        "2 tbs creamy ranch",
+        "1 cup mixed lettuce"
+      ],
+      "notes": "We use Coles soft hot dog rolls, Coles Light Mozzarella cheese and Praise Ranch Dressing for these macros."
+    },
+    {
+      "name": "Veggie loaded spuds",
+      "page": 119,
+      "category": "Main Meals & Soups",
+      "servings": 1,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 426,
+        "carbs_g": 46.3,
+        "fat_g": 9.7,
+        "protein_g": 34.7
+      },
+      "ingredients": [
+        "250g potato, thinly sliced",
+        "100g chicken breast Slice the potatoes into fries",
+        "1 tsp olive oil",
+        "1/4 tsp each - garlic",
+        "2 tbs barbecue sauce",
+        "1 cup baby spinach",
+        "1/2 tomato, diced fry for an additional 10",
+        "1 tbs fresh parsley, golden and crispy",
+        "1 tsp vinegar",
+        "20g cheese, grated ingredients together",
+        "1/2 tbs light mayo"
+      ],
+      "notes": "We use Bega 50% Less Fat cheese, Bull\u2019s-eye Original BBQ Sauce and Praise 99% Fat Free Mayonnaise for these macros."
+    },
+    {
+      "name": "Chicken enchiladas",
+      "page": 194,
+      "category": "Mexican",
+      "servings": 4,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 474,
+        "carbs_g": 35.2,
+        "fat_g": 17.0,
+        "protein_g": 45.5
+      },
+      "ingredients": [
+        "500g chicken breast, diced (or 325g",
+        "1 1/3 cup light cheese, grated (120g)",
+        "6 flour tortillas",
+        "500-700ml Enchilada sauce, divided",
+        "1/2 tbs olive oil",
+        "1/2 onion, diced through",
+        "1 capsicum, thinly diced",
+        "1/3 cup light cream cheese (80g)"
+      ],
+      "notes": "We use Bega 50% Less Fat cheese, 6 x Old El Paso Mini Tortillas and Old El Paso Enchilada sauce for these macros. For a vegetarian version, replace the chicken with Plant Based Chicken. If you are using rotisserie chicken, you can skip the cooking time of the chicken. Optional to make your own enchilada sauce (refer to our Chicken Enchilada recipe)."
+    },
+    {
+      "name": "Enchilada bake",
+      "page": 196,
+      "category": "Mexican",
+      "servings": 4,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 469,
+        "carbs_g": 21.9,
+        "fat_g": 17.2,
+        "protein_g": 47.7
+      },
+      "ingredients": [
+        "1 tbs olive oil",
+        "400g chicken breast, diced",
+        "1 onion, diced garlic, onion powder, salt & pepper",
+        "1 tsp each cumin & paprika",
+        "1 red capsicum, diced garlic",
+        "8 tortillas/ low carb tortillas",
+        "100g cheese, grated",
+        "1 bunch spring onion, diced",
+        "1 bunch coriander, finely"
+      ],
+      "notes": "We use Bega 50% Less Fat cheese and Mission Low Carb Wraps for these macros. You can use 4-8 small to medium or 8 larger tortillas. For a vegetarian version, substitute the chicken with beans of choice or plant based chicken."
+    },
+    {
+      "name": "Loaded fajita bowl",
+      "page": 204,
+      "category": "Mexican",
+      "servings": 1,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 420,
+        "carbs_g": 27.2,
+        "fat_g": 14.5,
+        "protein_g": 43.2
+      },
+      "ingredients": [
+        "1-2 wraps",
+        "125g extra lean beef mince",
+        "2 tsp taco seasoning",
+        "1/3 cup can diced tomatoes/ Mexican",
+        "25g cheese, grated breaking it up with a spatula",
+        "2 tbs Greek yoghurt/ light sour Once the wraps are toasted",
+        "1/2 tomato, diced 3-5"
+      ],
+      "notes": "We use 1.5 Mountain Bread Rye Wraps, Bega 50% Less Fat cheese and Chobani 0% Greek Yoghurt for these macros."
+    },
+    {
+      "name": "Low carb quesadillas",
+      "page": 198,
+      "category": "Mexican",
+      "servings": 3,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 415,
+        "carbs_g": 60.0,
+        "fat_g": 8.9,
+        "protein_g": 17.4
+      },
+      "ingredients": [
+        "2 potatoes, diced",
+        "1 red onion, sliced into wedges",
+        "2 tsp olive oil",
+        "400g can chickpeas",
+        "70g tomato",
+        "1 cup vegetable stock",
+        "10-15g fajita seasoning",
+        "1 garlic clove, minced",
+        "125g can sweet corn",
+        "1 tomato, diced 3 bowls. Top with the corn salsa, tomato",
+        "30g cheese, grated",
+        "3 tbs sour cream/ ricotta"
+      ],
+      "notes": "You can use white potato or sweet potato for this recipe. We use Spud Lite Potatoes and Bega 50% Less Fat cheese for these macros. CHICKPEA SALSA METHOD 2 potatoes, diced Preheat the oven to 200\u00b0C. 1 red onion, sliced into wedges Add potatoes and onion to an oven safe dish. 2 tsp olive oil Drizzle with 1/2 the olive oil and season with 400g can chickpeas, drained & salt & pepper. Place in the oven for 25 minutes rinsed or until crispy. 70g tomato paste Meanwhile, add the corn to a fry pan 1 cup vegetable stock over high heat and cook for 2-3 minutes 10-15g fajita seasoning until charred. Transfer to a bowl, add the 1 garlic clove, minced cucumber, lemon juice and season with salt & pepper. Mix to combine and set aside. To the same pan, heat remaining oil then add CORN SALSA the chickpeas, tomato paste, fajita seasoning 125g can sweet corn, drained and garlic. Mix and saut\u00e9 for 1-2 minutes. 1/2 cucumber, diced Add the stock and simmer for another 5 Lemon/ lime juice, to taste minutes. Add the roasted potatoes to the pan, mix to combine then remove from the heat and cover with a lid. Rest for 1-2 minutes. TO SERVE 300g cooked rice Divide the rice and chickpea mixture between 1 tomato, diced 3 bowls. Top with the corn salsa, tomato and a tablespoon of sour cream. Sprinkle over the Fresh coriander, chopped cheese and garnish with corainder to serve. 30g cheese, grated 3 tbs sour cream/ ricotta Nutrition SERVINGS 3 SIZE 1 CALORIES 415 CARBS 60G FAT 8.9G PROTEIN 17.4G 198"
+    },
+    {
+      "name": "Mexican fiesta",
+      "page": 192,
+      "category": "Mexican",
+      "servings": 4,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 447,
+        "carbs_g": 43.6,
+        "fat_g": 10.1,
+        "protein_g": 45.0
+      },
+      "ingredients": [
+        "500g chicken breast, diced (or 325g",
+        "1/2 onion, diced",
+        "1 capsicum, diced",
+        "400g canned kidney beans",
+        "1/2 cup corn kernals tomato passata and stock",
+        "1/2 cup cheese, grated (50g)",
+        "4-6 wraps/ tortillas",
+        "1 tbs each - paprika, cumin, oregano chicken and",
+        "2 tsp each - onion powder, garlic",
+        "1/2 tbs olive oil",
+        "1 tbs plain flour",
+        "1 1/2 cups tomato passata Repeat with",
+        "1 cup chicken/ vegetable stock"
+      ],
+      "notes": "We use Bega 50% Less Fat cheese and Old El Paso Regular Tortillas for these macros. Kidney beans can be replaced with four bean mix, chickpeas, black beans or left out completely. For a vegetarian version, replace the chicken with Plant Based Chicken or an additional can of beans . If you are using rotisserie chicken, you can skip the cooking time of the chicken. Optional to use store bought enchilada sauce for convenience."
+    },
+    {
+      "name": "Mexican soul bowl",
+      "page": 200,
+      "category": "Mexican",
+      "servings": 4,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 525,
+        "carbs_g": 42.4,
+        "fat_g": 21.9,
+        "protein_g": 44.3
+      },
+      "ingredients": [
+        "2 large sweet potatoes",
+        "2 tsp olive oil taco seasoning",
+        "1 packet taco seasoning (30g)",
+        "3 tomatoes, diced",
+        "1/3 cup red onion, diced",
+        "1 small jalape\u00f1o, diced & seeds",
+        "1/2 cup coriander, finely chopped",
+        "1-2 tbs lime or lemon juice",
+        "Salt & pepper, to taste",
+        "2 cups lettuce, chopped",
+        "80g light cheese, grated",
+        "4 tbs light sour cream or Greek"
+      ],
+      "notes": "We use Old El Paso Reduced Salt Spice Mix Taco and Coles Light Mozzarella cheese for these macros. You can use white potato or sweet potato, to make it lower carb use Spud Lite Potatoes. For extra yum, add a drizzle of Nando\u2019s Perinaise sauce."
+    },
+    {
+      "name": "Sweet potato burrito bowl",
+      "page": 202,
+      "category": "Mexican",
+      "servings": 4,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 525,
+        "carbs_g": 42.4,
+        "fat_g": 21.9,
+        "protein_g": 44.3
+      },
+      "ingredients": [
+        "4 small sweet potatoes, diced into",
+        "2 tsp olive oil",
+        "500g extra lean beef mince",
+        "1 packet of taco seasoning (30g) Meanwhile",
+        "1 tsp olive oil",
+        "2 capsicums (1 red + 1 yellow), sliced",
+        "1 brown onion, sliced",
+        "1 tsp brown sugar browned",
+        "80g light cheese, grated 5",
+        "4 tbs light sour cream or Greek"
+      ],
+      "notes": "We use Old El Paso Reduced Salt Spice Mix Taco and Bega 50% Less Fat cheese for these macros. You can use white potato or sweet potato, to make it lower carb use Spud Lite Potatoes."
+    },
+    {
+      "name": "Creamy chickpea curry",
+      "page": 140,
+      "category": "One Pot Meals",
+      "servings": 3,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 422,
+        "carbs_g": 58.0,
+        "fat_g": 14.0,
+        "protein_g": 15.0
+      },
+      "ingredients": [
+        "1 tsp olive oil",
+        "1 onion, diced",
+        "2 garlic cloves, minced 5",
+        "1 punnet cherry tomatoes",
+        "2 tbs tomato paste",
+        "1 cup Arborio rice (200g)",
+        "2 cups chicken stock",
+        "1/2 cup light",
+        "1/4 tsp paprika",
+        "1 cup mozzarella, grated/"
+      ],
+      "notes": "We use Philadelphia 60% Less Fat Light Cooking Cream and Perfect Italiano Mozzarella Cheese for these macros."
+    },
+    {
+      "name": "Creamy tomato risotto",
+      "page": 142,
+      "category": "One Pot Meals",
+      "servings": 4,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 443,
+        "carbs_g": 43.8,
+        "fat_g": 14.2,
+        "protein_g": 34.0
+      },
+      "ingredients": [
+        "1/2 tbs olive oil",
+        "500g chicken and pepper",
+        "1/2 tsp paprika medium-high",
+        "1 tbs unsalted butter",
+        "1 small onion, diced",
+        "2 garlic cloves, minced (or",
+        "1 tsp powder) medium-high",
+        "1 cup orzo pasta/ risoni",
+        "1 medium zucchini, grated for an additional 2",
+        "2 cups chicken stock",
+        "1/2 tsp dried thyme",
+        "1/2 cup light",
+        "1/3 cup mozzarella, grated",
+        "30g feta, crumbled"
+      ],
+      "notes": "We use Philadelphia 60% Less Fat Light Cooking Cream, Perfect Italiano Grated Mozzarella Cheese, Riverina Fetta Greek Style and Barilla Risoni for these macros."
+    },
+    {
+      "name": "Greek chicken orzo",
+      "page": 148,
+      "category": "One Pot Meals",
+      "servings": 5,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 437,
+        "carbs_g": 37.4,
+        "fat_g": 16.3,
+        "protein_g": 35.3
+      },
+      "ingredients": [
+        "1 tbs olive oil",
+        "3 garlic cloves, minced medium",
+        "1 small onion, diced",
+        "1 carrot, grated",
+        "1 zucchini, diced",
+        "2 celery stalks, chopped",
+        "500g lean beef mince",
+        "500g tomato passata",
+        "1 can diced tomatoes (400g)",
+        "6 lasagna sheets (150g)",
+        "1/2 tsp each garlic powder",
+        "1/2 cup mozzarella, grated (50g)",
+        "1/4 cup parmesan, grated (25g)"
+      ],
+      "notes": "We use Vetta Smart Fibre Instant Lasagna Sheets, Perfect Italiano Grated Mozzarella Cheese and Parmesan for these macros. Optional to add b\u00e9chamel sauce for extra yums (not included in the macros)."
+    },
+    {
+      "name": "Lemon chicken orzo",
+      "page": 144,
+      "category": "One Pot Meals",
+      "servings": 4,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 436,
+        "carbs_g": 42.5,
+        "fat_g": 14.0,
+        "protein_g": 32.7
+      },
+      "ingredients": [
+        "500g chicken tenderloins",
+        "3 garlic cloves, minced high",
+        "80g sun-dried tomatoes",
+        "1 tsp Italian seasoning",
+        "1 1/2 tsp paprika",
+        "1 cup orzo/ risoni (200-",
+        "210g) Cover with a lid, reduce the",
+        "2 1/2 cups chicken stock low",
+        "1/2 cup light",
+        "1 cup baby spinach"
+      ],
+      "notes": "We use Philadelphia 60% Less Fat Light Cooking Cream, Perfect Italiano Parmesan Cheese and Barilla Risoni for these macros."
+    },
+    {
+      "name": "Lighter alfredo",
+      "page": 138,
+      "category": "One Pot Meals",
+      "servings": 4,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 364,
+        "carbs_g": 44.5,
+        "fat_g": 15.2,
+        "protein_g": 10.7
+      },
+      "ingredients": [
+        "1 tbs olive oil",
+        "1 brown onion, diced and onion over medium-high",
+        "2-3 garlic cloves, minced",
+        "400g canned diced",
+        "1 tbs garam masala",
+        "1/4 tsp each turmeric & Lower the",
+        "1/2 tsp curry powder and the onions soften",
+        "400g canned chickpeas",
+        "1 cup canned coconut milk",
+        "1 cup spinach, chopped \u2013",
+        "150g rice, uncooked"
+      ],
+      "notes": "We use Ayam Coconut Milk Light for these macros."
+    },
+    {
+      "name": "Marry me chicken orzo",
+      "page": 146,
+      "category": "One Pot Meals",
+      "servings": 4,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 456,
+        "carbs_g": 46.8,
+        "fat_g": 13.9,
+        "protein_g": 41.4
+      },
+      "ingredients": [
+        "1 tbsp olive oil",
+        "4 garlic cloves, minced lemon zest, salt & pepper",
+        "2 tsp dried oregano",
+        "1/2 tbsp lemon juice medium high",
+        "1 tsp lemon zest",
+        "1 onion, diced",
+        "1 zucchini, grated",
+        "1 red capsicum, diced",
+        "1 cup cherry tomatoes",
+        "1 2/3 cups chicken stock",
+        "1 cup canned crushed",
+        "1 tbsp tomato",
+        "1 cup orzo/risoni (200g)",
+        "80g feta, crumbled"
+      ],
+      "notes": "We use Coles Danish Style Feta and Barilla Risoni for these macros. You can roast the tomatoes in the oven/air fryer for 10 minutes and add them at the end or blister them in the pan with the other vegetables."
+    },
+    {
+      "name": "Pulled Mexican chicken",
+      "page": 132,
+      "category": "One Pot Meals",
+      "servings": 4,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 422,
+        "carbs_g": 40.5,
+        "fat_g": 6.9,
+        "protein_g": 44.4
+      },
+      "ingredients": [
+        "1 tbs olive oil",
+        "1 brown onion, diced",
+        "2 garlic cloves, minced",
+        "1-2 tbs Mexican seasoning",
+        "1-2 tbs tomato paste (25g) for 30 seconds",
+        "800g canned diced",
+        "125g canned sweet corn",
+        "3/4 cup vegetable/",
+        "600g chicken breast",
+        "120g rice, uncooked",
+        "1 cup slaw/ lettuce",
+        "30g cheese, grated"
+      ],
+      "notes": "We use Bega 50% Less Fat cheese and Chobani 0% Greek Yoghurt for these macros. The Mexican chicken can also be used in tacos, burritos or nachos."
+    },
+    {
+      "name": "4-ingredient spaghetti",
+      "page": 80,
+      "category": "Pasta",
+      "servings": 4,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 409,
+        "carbs_g": 51.0,
+        "fat_g": 8.3,
+        "protein_g": 26.8
+      },
+      "ingredients": [
+        "4- ingredient",
+        "350g dried pasta",
+        "60g light cream cheese",
+        "420g canned tomato soup"
+      ],
+      "notes": "Cream cheese can be substituted with milk. Optional to add in extra veggies or protein of choice (bacon, chicken etc). We use Heinz Big Red Salt Reduced Condensed Tomato Soup, Vetta Protein Pasta, Philadelphia 40% Less Fat Light Spreadable Cream Cheese and Bega 50% Less Fat cheese for these macros."
+    },
+    {
+      "name": "4- ingredient spaghetti",
+      "page": 82,
+      "category": "Pasta",
+      "servings": 4,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 361,
+        "carbs_g": 41.0,
+        "fat_g": 14.0,
+        "protein_g": 14.0
+      },
+      "ingredients": [
+        "2 punnets cherry",
+        "3-4 garlic cloves",
+        "1 tbs olive oil",
+        "1/3 cup sun-dried Once the tomatoes are",
+        "1 packet Grand Italian"
+      ],
+      "notes": "We use Grand Italian Gnocchi and Lemnos Low Fat Fetta for these macros. The sauce serves 4, adjust the gnocchi quantity to satisfy you."
+    },
+    {
+      "name": "Cajun chicken pasta",
+      "page": 96,
+      "category": "Pasta",
+      "servings": 2,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 412,
+        "carbs_g": 50.9,
+        "fat_g": 12.1,
+        "protein_g": 21.4
+      },
+      "ingredients": [
+        "150g dried spaghetti",
+        "1/2 cup reserved pasta",
+        "50-75g short cut bacon",
+        "1 egg (at room",
+        "1 egg yolk (at room",
+        "pepper"
+      ],
+      "notes": "We use Vetta Smart Protein Spaghetti and Zanetti Parmasen Cheese for these macros."
+    },
+    {
+      "name": "Carbonara",
+      "page": 98,
+      "category": "Pasta",
+      "servings": 4,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 414,
+        "carbs_g": 55.7,
+        "fat_g": 10.7,
+        "protein_g": 16.0
+      },
+      "ingredients": [
+        "400g cherry tomatoes",
+        "1/2-1 tbs olive oil",
+        "2 cloves garlic, minced",
+        "1 shallot, diced",
+        "4 tbs tomato paste (60g)",
+        "3/4 cup",
+        "1/2 tsp each onion powder",
+        "1/2 tbs Italian seasoning they release their juices",
+        "25- 50g parmesan, grated",
+        "280-300g dried pepper"
+      ],
+      "notes": "We used Philadelphia 60% less fat cooking cream and Guzzi\u2019s Pappardelle for these macros."
+    },
+    {
+      "name": "Cheesy pasta bake",
+      "page": 88,
+      "category": "Pasta",
+      "servings": 4,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 407,
+        "carbs_g": 29.7,
+        "fat_g": 9.9,
+        "protein_g": 44.9
+      },
+      "ingredients": [
+        "1/2 red onion, diced",
+        "500g chicken breast, diced",
+        "1 tsp paprika",
+        "1 tsp dried oregano/ fragrant",
+        "200g dried penne pasta paprika and oregano",
+        "50g sun-dried tomato",
+        "1-2 cups baby spinach",
+        "90g light cream cheese taste",
+        "125ml milk Turn off the",
+        "15g parmesan, grated",
+        "1/4 tsp garlic powder",
+        "1/4 tsp onion powder",
+        "1/4 tsp dried oregano/",
+        "Salt & pepper, to taste"
+      ],
+      "notes": "We use Vetta Smart Protein Penne Pasta, Philadelphia 40% Less Fat Light Spreadable Cream Cheese and Almond Breeze Unsweetened Almond Milk for these macros."
+    },
+    {
+      "name": "Creamy Nando's chicken pasta",
+      "page": 94,
+      "category": "Pasta",
+      "servings": 4,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 473,
+        "carbs_g": 37.0,
+        "fat_g": 10.4,
+        "protein_g": 49.6
+      },
+      "ingredients": [
+        "500g chicken breast",
+        "1-2 tbs Cajun/ Fajita",
+        "1/2 tbs olive oil",
+        "1 red onion, diced",
+        "2 x red capsicums, diced",
+        "240g dried pasta",
+        "1 tbs fresh parsley browned",
+        "70g tomato",
+        "350ml chicken stock",
+        "150g light cream cheese and pasta to the pan, mix",
+        "30g cheese, grated"
+      ],
+      "notes": "We use Vetta Smart Protein pasta, Philadelphia 40% Less Fat Light Spreadable Cream Cheese and Bega 50% Less Fat cheese for these macros."
+    },
+    {
+      "name": "Creamy red pasta",
+      "page": 92,
+      "category": "Pasta",
+      "servings": 4,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 432,
+        "carbs_g": 34.1,
+        "fat_g": 8.0,
+        "protein_g": 57.3
+      },
+      "ingredients": [
+        "500g chicken breast, diced",
+        "1 tbs peri-peri/ all-",
+        "1 red onion, diced",
+        "2 x capsicums (red/ season with paprika and oregano",
+        "1 clove garlic, minced",
+        "200g dried pasta",
+        "70g tomato",
+        "60g Nando\u2019s sauce",
+        "350ml chicken stock",
+        "150g light cream cheese"
+      ],
+      "notes": "We use Vetta Smart Protein Pasta and Nando\u2019s Medium or Mild Peri-Peri Chilli Sauce for these macros. You can substitute the peri seasoning with 1 tsp each paprika, coriander, onion powder and garlic powder."
+    },
+    {
+      "name": "Creamy sun-dried tomato chicken pasta",
+      "page": 90,
+      "category": "Pasta",
+      "servings": 4,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 405,
+        "carbs_g": 42.0,
+        "fat_g": 15.4,
+        "protein_g": 19.6
+      },
+      "ingredients": [
+        "250g dried pasta",
+        "1 tbs olive oil",
+        "1 red onion, diced",
+        "3 tbs tomato paste onion and saut\u00e9 for 2",
+        "1 cup light",
+        "1/2 cup mozzarella, grated",
+        "1/2 cup reserved pasta",
+        "1/2-1 tsp paprika pasta"
+      ],
+      "notes": "We use Philadelphia 60% Less Fat Light Cooking Cream, Perfect Italiano Grated Mozzarella Cheese and Vetta Smart Protein Pasta for these macros. To increase the protein you can add chicken or protein of choice."
+    },
+    {
+      "name": "Hidden veggie pasta",
+      "page": 102,
+      "category": "Pasta",
+      "servings": 4,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 462,
+        "carbs_g": 44.9,
+        "fat_g": 17.2,
+        "protein_g": 29.5
+      },
+      "ingredients": [
+        "16-20 cannelloni tubes",
+        "100-120g mozzarella, high",
+        "1 tsp olive oil",
+        "pepper and simmer on medium-",
+        "1 clove garlic, minced",
+        "1/2 onion, diced PREPARE THE FILLING mozzarella",
+        "600g tomato passata",
+        "1 tsp dried oregano/",
+        "250g spinach, chopped",
+        "375g light ricotta",
+        "20g parmesan, grated",
+        "20g mozzarella, grated",
+        "1 egg"
+      ],
+      "notes": "We use Perfect Italiano Mozzarella for these macros."
+    },
+    {
+      "name": "Italian sausage pasta",
+      "page": 110,
+      "category": "Pasta",
+      "servings": 4,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 502,
+        "carbs_g": 39.6,
+        "fat_g": 20.5,
+        "protein_g": 33.0
+      },
+      "ingredients": [
+        "250g dried pasta continuously",
+        "2 garlic cloves, minced instructions",
+        "80g sun-dried tomatoes, cup of pasta water)",
+        "1 tbs olive oil (from sun-",
+        "250-300g chicken breast",
+        "1/4 tsp paprika",
+        "1/4 tsp salt leaving the oil",
+        "1 cup light",
+        "2/3 cup mozzarella, Season the chicken with paprika",
+        "1-2 tsp Italian herbs",
+        "1/4 tsp chilli flakes"
+      ],
+      "notes": "We use Philadelphia 60% Less Fat Light Cooking Cream, Perfect Italiano Mozzarella Cheese and Vetta Smart Protein Pasta for these macros."
+    },
+    {
+      "name": "Pesto pasta bake",
+      "page": 86,
+      "category": "Pasta",
+      "servings": 4,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 477,
+        "carbs_g": 33.8,
+        "fat_g": 13.7,
+        "protein_g": 47.5
+      },
+      "ingredients": [
+        "200g dried penne pasta",
+        "1/2 tbs olive oil",
+        "1/2 onion",
+        "1 tsp garlic",
+        "300g extra lean beef",
+        "2 cups jarred pasta sauce",
+        "1 egg",
+        "1 cup low fat cottage a bowl",
+        "1 cup light grated cheese",
+        "1 tsp Italian seasoning Cover with foil"
+      ],
+      "notes": "We use Vetta Smart Protein Penne Pasta and Bega 50% Less Fat cheese for these macros. Optional to add extra vegetables, we recommend grated carrot or zucchini."
+    },
+    {
+      "name": "Sun-dried tomato & feta gnocchi",
+      "page": 84,
+      "category": "Pasta",
+      "servings": 4,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 452,
+        "carbs_g": 35.0,
+        "fat_g": 13.3,
+        "protein_g": 48.0
+      },
+      "ingredients": [
+        "1/2 tbs olive oil",
+        "1 clove garlic, minced",
+        "300g chicken breast, diced",
+        "1 red onion, diced",
+        "1 1/2 cups mushrooms, chicken",
+        "3 tbs basil pesto (50g)",
+        "1 cup milk",
+        "2 tbs light cream cheese",
+        "2/3 cup mozzarella",
+        "250g dried penne pasta with"
+      ],
+      "notes": "We use Vetta Smart Protein Pasta, Coles Light Mozzarella and Almond Breeze Unsweetened Almond Milk for these macros. Optional to add extra vegetables, we recommend spinach, cherry tomatoes or sun-dried tomatoes."
+    },
+    {
+      "name": "Tomato burst parpadelle",
+      "page": 100,
+      "category": "Pasta",
+      "servings": 4,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 434,
+        "carbs_g": 47.0,
+        "fat_g": 14.7,
+        "protein_g": 24.0
+      },
+      "ingredients": [
+        "400-500g cherry tomatoes",
+        "2 sweet-pointed",
+        "1 block light cream cheese",
+        "1/2 tbs olive oil",
+        "3 garlic cloves the pasta per packet directions",
+        "1/4 tsp each - dried",
+        "Pinch of chilli flakes",
+        "1-2 cups spinach well",
+        "300g dried pasta"
+      ],
+      "notes": "We use Vetta Smart Protein Pasta and Philadelphia 40% Less Fat Light Spreadable Cream Cheese for these macros. To make the pasta extra yum, use a sweet chilli cream cheese. The sauce is generous if you wish to add more pasta. Optional to add chicken for extra protein."
+    },
+    {
+      "name": "Vegetarian lasagna",
+      "page": 108,
+      "category": "Pasta",
+      "servings": 5,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 468,
+        "carbs_g": 36.6,
+        "fat_g": 20.7,
+        "protein_g": 30.4
+      },
+      "ingredients": [
+        "300g dried pasta",
+        "5-6 Italian pork sausages",
+        "5 tbs tomato paste (80g)",
+        "250g light thickened",
+        "1 cup baby spinach",
+        "1/4-1/3 cup parmesan"
+      ],
+      "notes": "We use Vetta Smart Protein Pasta, Coles Finest Australian Pork Sausages (Italian Style) and Philadelphia 60% Less Fat Light Cooking Cream for these macros. For a lower calorie and lower fat option, replace cooking cream with plain Greek yoghurt."
+    },
+    {
+      "name": "Air fryer carrot chips",
+      "page": 221,
+      "category": "Sides & Entertaining",
+      "servings": 2,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 171,
+        "carbs_g": 26.6,
+        "fat_g": 3.4,
+        "protein_g": 3.5
+      },
+      "ingredients": [
+        "500g potatoes, thinly Slice the potatoes into thin strips",
+        "1 tbs corn/ rice flour",
+        "1 tsp salt 200\u00b0C",
+        "salt and seasoning. Toss to evenly"
+      ],
+      "notes": "You can use white potato or sweet potato for this recipe. We use Spud Lite Potatoes for these macros."
+    },
+    {
+      "name": "Cheesy stuffed crust pizza",
+      "page": 227,
+      "category": "Sides & Entertaining",
+      "servings": 4,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 207,
+        "carbs_g": 24.7,
+        "fat_g": 9.5,
+        "protein_g": 9.9
+      },
+      "ingredients": [
+        "1 tbs butter Melt the butter",
+        "3 cups frozen corn",
+        "2 cloves garlic, minced",
+        "1/2 cup coriander",
+        "1/2 red onion, diced",
+        "1 cup spring onion, sliced",
+        "pepper to taste.",
+        "1/4 cup sour cream/ chips or as a side salad",
+        "2 tbs mayonnaise (30g)",
+        "20g parmesan, finely",
+        "2 tbs lime juice",
+        "1/4 tsp each paprika & salt"
+      ],
+      "notes": "We use Chobani 0% Greek Yoghurt, Praise Whole Egg Mayonnaise Light and Danish feta for these macros."
+    },
+    {
+      "name": "Crispy fries",
+      "page": 223,
+      "category": "Sides & Entertaining",
+      "servings": 6,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 165,
+        "carbs_g": 16.4,
+        "fat_g": 7.8,
+        "protein_g": 8.0
+      },
+      "ingredients": [
+        "2 zucchinis",
+        "200\u00b0C",
+        "2 eggs",
+        "1/3 cup plain flour (45g) and pat dry with paper towel, set",
+        "1 cup panko breadcrumbs",
+        "1 tbs dried herbs",
+        "1 tsp salt bowl. Beat the eggs",
+        "1/4 cup parmesan, grated",
+        "1 tsp olive oil (5ml) baking tray or into the air fryer",
+        "2 tbs herbed mayo (30g)"
+      ],
+      "notes": "For the dried herbs, we recommend 1 tsp each rosemary, oregano, basil and thyme. We use the Birch & Waite Free Range Seafood Sauce Parsley Dill & Tarragon for these macros."
+    },
+    {
+      "name": "Garlic bread pizza tray",
+      "page": 219,
+      "category": "Sides & Entertaining",
+      "servings": 2,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 133,
+        "carbs_g": 14.2,
+        "fat_g": 6.9,
+        "protein_g": 1.6
+      },
+      "ingredients": [
+        "4-5 carrots, thinly sliced",
+        "1 tbs olive oil",
+        "1/4 tsp each - garlic evenly coat",
+        "1/2 tsp salt"
+      ],
+      "notes": "We recommend serving with our homemade sweet chilli mayo."
+    },
+    {
+      "name": "Honey glazed haloumi",
+      "page": 211,
+      "category": "Sides & Entertaining",
+      "servings": 24,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 49,
+        "carbs_g": 3.1,
+        "fat_g": 1.5,
+        "protein_g": 5.6
+      },
+      "ingredients": [
+        "500g extra lean beef mince",
+        "1/2 onion, finely diced",
+        "1/2 carrot, grated",
+        "1/2 zucchini, grated",
+        "1-2 garlic cloves, minced",
+        "3 tbs tomato paste/ bbq sauce thoroughly with a fork",
+        "1 tsp dried thyme/ mixed herbs",
+        "1 tbs fresh parsley, chopped/ 1 tsp",
+        "1/4 cup dried breadcrumbs",
+        "1 egg, whisked",
+        "1/2 tbs salt",
+        "4-5 sheets mountain bread sprinkle over the sesame seeds",
+        "2 tbs sesame seeds, optional"
+      ],
+      "notes": "We use 5 sheets of Mountain Bread Rye Wraps for these macros. You can use puff pastry or your preferred wrap, including gluten free."
+    },
+    {
+      "name": "Mexican street corn salad",
+      "page": 229,
+      "category": "Sides & Entertaining",
+      "servings": 12,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 60,
+        "carbs_g": 4.9,
+        "fat_g": 2.8,
+        "protein_g": 2.9
+      },
+      "ingredients": [
+        "600g potatoes, peeled &",
+        "1 tbs garlic butter, melted",
+        "1 tbs mild taco seasoning",
+        "80g parmesan cheese",
+        "2-3 tbs smokey chipotle",
+        "1-2 tsp fresh chives, finely"
+      ],
+      "notes": "We use Spud Light Potatoes and Perfect Italiano Parmesan Cheese for these macros. We use Masterfoods Smokey Chipotle sauce to make these stacks extra yum (not included in the macros)."
+    },
+    {
+      "name": "Nandos spicy rice",
+      "page": 209,
+      "category": "Sides & Entertaining",
+      "servings": 4,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 165,
+        "carbs_g": 6.8,
+        "fat_g": 11.4,
+        "protein_g": 8.6
+      },
+      "ingredients": [
+        "180g haloumi",
+        "2 tbs honey (30g) shallow bowl",
+        "1 tbs lemon juice together",
+        "1 tsp fresh rosemary/ over the haloumi. Marinate for 15"
+      ],
+      "notes": "We use Lemnos Salt Reduced Haloumi for these macros."
+    },
+    {
+      "name": "Sausage rolls",
+      "page": 213,
+      "category": "Sides & Entertaining",
+      "servings": 7,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 56,
+        "carbs_g": 8.3,
+        "fat_g": 1.7,
+        "protein_g": 1.5
+      },
+      "ingredients": [
+        "1 crusty loaf bread/ roll",
+        "20g butter, softened Slice the bread 1.5 -2cm portions",
+        "1 tsp minced garlic"
+      ],
+      "notes": "We use a plain white sourdough roll and Lite Nuttelex for these macros."
+    },
+    {
+      "name": "Small batch garlic bread",
+      "page": 215,
+      "category": "Sides & Entertaining",
+      "servings": 7,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 61,
+        "carbs_g": 8.4,
+        "fat_g": 2.1,
+        "protein_g": 1.9
+      },
+      "ingredients": [
+        "1 crusty loaf bread/ roll",
+        "20g butter,",
+        "1 tsp minced garlic butter, parmesan and garlic",
+        "10g parmesan, grated"
+      ],
+      "notes": "We use a plain white sourdough roll and Lite Nuttelex for these macros."
+    },
+    {
+      "name": "Zucchini fries",
+      "page": 225,
+      "category": "Sides & Entertaining",
+      "servings": 1,
+      "serving_size": "1",
+      "nutrition": {
+        "calories": 410,
+        "carbs_g": 56.1,
+        "fat_g": 12.1,
+        "protein_g": 34.3
+      },
+      "ingredients": [
+        "70g self-raising flour",
+        "80g plain thick yoghurt",
+        "1/4 tsp salt",
+        "20g Babybel cheese/",
+        "2 tbs tomato paste (30g) the dough into a circle",
+        "30g+ mozzarella, grated To create the stuffed crust"
+      ],
+      "notes": "We use Chobani 0% Greek Yoghurt, The Healthy Baker Flour, Coles Light Mozzarella and Babybel Mini Cheese for these macros."
+    }
+  ]
+}

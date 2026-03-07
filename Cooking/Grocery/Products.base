@@ -1,0 +1,92 @@
+filters:
+  and:
+    - type == "product"
+    - file.inFolder("Cooking/Grocery/Products")
+formulas:
+  order_rate: (total_orders / 43 * 100).round() + "%"
+  price_display: '"$" + avg_price.toFixed(2)'
+  spend_display: '"$" + total_spend.toFixed(2)'
+properties:
+  file.name:
+    displayName: Product
+  category:
+    displayName: Category
+  formula.price_display:
+    displayName: Avg Price
+  unit:
+    displayName: Unit
+  total_orders:
+    displayName: Orders
+  formula.order_rate:
+    displayName: Frequency
+  formula.spend_display:
+    displayName: Total Spent
+  last_ordered:
+    displayName: Last Ordered
+  heb_name:
+    displayName: HEB Name
+views:
+  - type: table
+    name: All Products
+    order:
+      - file.name
+      - category
+      - formula.price_display
+      - unit
+      - total_orders
+      - formula.order_rate
+      - formula.spend_display
+      - last_ordered
+    sort:
+      - property: total_orders
+        direction: DESC
+    columnSize:
+      file.name: 400
+  - type: table
+    name: Protein
+    filters: category == "protein"
+    order:
+      - file.name
+      - formula.price_display
+      - total_orders
+      - formula.spend_display
+      - last_ordered
+    sort:
+      - property: total_orders
+        direction: DESC
+  - type: table
+    name: Produce
+    filters: category == "produce"
+    order:
+      - file.name
+      - formula.price_display
+      - total_orders
+      - formula.spend_display
+      - last_ordered
+    sort:
+      - property: total_orders
+        direction: DESC
+  - type: table
+    name: Pantry
+    filters: category == "pantry"
+    order:
+      - file.name
+      - formula.price_display
+      - total_orders
+      - formula.spend_display
+      - last_ordered
+    sort:
+      - property: total_orders
+        direction: DESC
+  - type: table
+    name: Beverages
+    filters: category == "beverages"
+    order:
+      - file.name
+      - formula.price_display
+      - total_orders
+      - formula.spend_display
+      - last_ordered
+    sort:
+      - property: total_orders
+        direction: DESC

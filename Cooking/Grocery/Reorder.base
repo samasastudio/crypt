@@ -1,0 +1,53 @@
+filters:
+  and:
+    - type == "product"
+    - file.inFolder("Cooking/Grocery/Products")
+    - total_orders >= 6
+formulas:
+  days_since: (now() - date(last_ordered)).toString()
+  price_display: '"$" + avg_price.toFixed(2)'
+  frequency: (total_orders / 43 * 100).round() + "% of orders"
+  status: if(date(last_ordered) < now() - "45d", "overdue", if(date(last_ordered) < now() - "30d", "due soon", "recent"))
+properties:
+  file.name:
+    displayName: Product
+  category:
+    displayName: Category
+  formula.price_display:
+    displayName: Price
+  formula.frequency:
+    displayName: Frequency
+  last_ordered:
+    displayName: Last Ordered
+  formula.days_since:
+    displayName: Days Ago
+  formula.status:
+    displayName: Status
+views:
+  - type: table
+    name: Needs Reorder
+    filters: date(last_ordered) < now() - "30d"
+    order:
+      - file.name
+      - category
+      - formula.price_display
+      - formula.frequency
+      - last_ordered
+      - formula.days_since
+      - formula.status
+    sort:
+      - property: last_ordered
+        direction: ASC
+  - type: table
+    name: All Staples
+    order:
+      - file.name
+      - category
+      - formula.price_display
+      - total_orders
+      - formula.frequency
+      - last_ordered
+      - formula.days_since
+    sort:
+      - property: total_orders
+        direction: DESC

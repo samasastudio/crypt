@@ -1,0 +1,51 @@
+filters:
+  and:
+    - type == "order"
+    - file.inFolder("Cooking/Grocery/Orders")
+formulas:
+  total_display: '"$" + total.toFixed(2)'
+  subtotal_display: '"$" + subtotal.toFixed(2)'
+  savings_display: '"-$" + savings.toFixed(2)'
+  avg_item_cost: '"$" + (subtotal / item_count).toFixed(2)'
+properties:
+  file.name:
+    displayName: Order
+  date:
+    displayName: Date
+  order_id:
+    displayName: Order ID
+  item_count:
+    displayName: Items
+  formula.subtotal_display:
+    displayName: Subtotal
+  formula.savings_display:
+    displayName: Savings
+  formula.total_display:
+    displayName: Total
+  formula.avg_item_cost:
+    displayName: Avg/Item
+views:
+  - type: table
+    name: All Orders
+    order:
+      - date
+      - order_id
+      - item_count
+      - formula.subtotal_display
+      - formula.savings_display
+      - formula.total_display
+      - formula.avg_item_cost
+    sort:
+      - property: date
+        direction: DESC
+  - type: table
+    name: Big Orders ($200+)
+    filters: total >= 200
+    order:
+      - date
+      - item_count
+      - formula.total_display
+      - formula.avg_item_cost
+    sort:
+      - property: total
+        direction: DESC
