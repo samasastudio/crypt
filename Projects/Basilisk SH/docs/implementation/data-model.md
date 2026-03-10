@@ -11,9 +11,12 @@ type BasiliskRun = {
   startedAt: string
   endedAt?: string
   version: string
+  responseMode: 'choice' | 'text' | 'hybrid'
   scenesVisited: SceneVisit[]
+  responses: ResponseRecord[]
   choicesMade: ChoiceRecord[]
   ritualStateHistory: RitualStateSnapshot[]
+  orchestrationHistory: OrchestrationDecision[]
   audioScore: AudioScore
   visualScore: VisualScore
   ending: EndingResult
@@ -29,10 +32,12 @@ type Scene = {
   title: string
   body: string[]
   choices: Choice[]
+  responseMode?: 'choice' | 'text' | 'hybrid'
   entryEffects?: RitualStateDelta[]
   exitEffects?: RitualStateDelta[]
   audioCue?: AudioCueRef
   visualCue?: VisualCueRef
+  orchestrationTags?: string[]
   conditions?: SceneCondition[]
   nextSceneResolver?: string
 }
@@ -47,8 +52,32 @@ type Choice = {
   description?: string
   effects: RitualStateDelta[]
   tags?: string[]
+  intentTags?: string[]
   nextSceneId?: string
   conditions?: SceneCondition[]
+}
+```
+
+## Response and orchestration models
+
+```ts
+type ResponseRecord = {
+  id: string
+  sceneId: string
+  mode: 'choice' | 'text' | 'hybrid'
+  rawText?: string
+  selectedChoiceIds?: string[]
+  inferredIntentTags: string[]
+}
+
+type OrchestrationDecision = {
+  sceneId: string
+  selectedSegmentId: string
+  selectedAudioFamily: string
+  selectedVisualFamily: string
+  motifTags: string[]
+  pacingBand: 'low' | 'medium' | 'high'
+  rationaleTags: string[]
 }
 ```
 
@@ -82,6 +111,7 @@ type AudioScore = {
   textureProfile: string[]
   pulseProfile: string[]
   motifTokens: string[]
+  orchestrationFamilies: string[]
   sceneCues: AudioSceneCue[]
   tensionCurve: number[]
   assetPalette: string[]
@@ -97,6 +127,7 @@ type VisualScore = {
   motion: number
   contrast: number
   feedback: number
+  familyHistory: string[]
   geometryTags: string[]
   sceneCues: VisualSceneCue[]
 }
@@ -118,6 +149,7 @@ type BasiliskExport = {
 
 - `BasiliskRun` should be the canonical serialized record of a completed session.
 - `RitualState` should stay compact and legible so writers and engineers can reason about its effects.
+- `ResponseRecord` and `OrchestrationDecision` should preserve how the run was interpreted and arranged, not just what state totals came out of it.
 - `AudioScore` and `VisualScore` should represent authored output intent rather than low-level runtime implementation state.
 - Export models should be versioned early to keep basilisk-av compatibility manageable over time.
 

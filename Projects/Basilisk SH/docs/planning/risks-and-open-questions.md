@@ -13,10 +13,10 @@ Keep Basilisk constrained and guided. Let basilisk-av handle open-ended experime
 
 ### Risk 2: Generated output feels arbitrary
 
-If state mappings are weak, export will feel disconnected from the narrative.
+If orchestration policies are weak, output will feel disconnected from the narrative even if the ritual state model is sound.
 
 Mitigation:
-Make symbolic choices map to motif tokens, palettes, and cue families in a deliberate way.
+Make player responses map to intent tags, then map those tags to segment candidates, motif tokens, palettes, and cue families in a deliberate way.
 
 ### Risk 3: Web performance issues
 
@@ -32,9 +32,16 @@ Occult fiction can become empty if it only gestures at mystery.
 Mitigation:
 Each scene needs concrete symbols, concrete stakes, and concrete consequences.
 
+### Risk 5: Orchestration dilutes authored voice
+
+If the orchestration layer is too free, the experience may lose tone consistency and feel like generic AI assembly.
+
+Mitigation:
+Constrain orchestration to curated banks, explicit policies, and strong authored segment voice.
+
 ## Implementation principles
 
-1. Compile intent, do not improvise everything live.
+1. Orchestrate from curated banks, do not free-write the whole experience live.
 2. Prefer templates plus mutation over unconstrained generation.
 3. Narrative consequence must affect AV consequence.
 4. Export should feel like a relic, not a logfile.
@@ -45,7 +52,8 @@ Each scene needs concrete symbols, concrete stakes, and concrete consequences.
 ### Authoring and content
 
 - What authoring format should scenes use in practice: JSON, TypeScript, or MDX?
-- How much scene variation is authored versus derived from ritual state?
+- What mix of authored choices, short text prompts, and hybrid responses should v1 support?
+- How much scene variation is authored versus selected by orchestration policy?
 - How many unique endings should ship in the first public release?
 
 ### Runtime systems
@@ -53,6 +61,7 @@ Each scene needs concrete symbols, concrete stakes, and concrete consequences.
 - What level of determinism should be guaranteed across browsers for seeded runs?
 - Which Strudel and Hydra feature subsets are safe to rely on for v1?
 - How should transition smoothing be specified so AV behavior remains consistent scene to scene?
+- How much orchestration history should be preserved for export and debugging?
 
 ### Export and integration
 
@@ -71,6 +80,6 @@ Each scene needs concrete symbols, concrete stakes, and concrete consequences.
 If the next step is implementation prep, the highest-value additions would be:
 
 1. A concrete scene schema with one or two fully authored example scenes.
-2. A state-to-score mapping table for each ritual variable.
-3. An export payload contract for basilisk-av.
-4. A vertical-slice build checklist that maps this spec to engineering tasks.
+2. A response-to-intent and intent-to-segment orchestration table.
+3. A state-to-score mapping table for each ritual variable.
+4. An export payload contract for basilisk-av.

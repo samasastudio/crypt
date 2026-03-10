@@ -23,6 +23,7 @@ Chronicle should summarize:
 - dominant symbolic themes
 - ending type
 - notable choices
+- notable orchestration turns
 - overall ritual signature
 
 Tone should be poetic but legible.
@@ -74,6 +75,7 @@ The session should include:
 - sound asset references
 - tempo, root, and mode
 - Hydra family and palette references
+- orchestration history or condensed orchestration signature
 - original chronicle summary
 
 ## Related docs

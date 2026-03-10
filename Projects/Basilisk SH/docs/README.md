@@ -1,6 +1,6 @@
 ﻿# Basilisk SH Spec Hub
 
-This documentation set breaks the original master spec into files that are easier to extend during implementation planning.
+This documentation set breaks the original master spec into files that are easier to extend during implementation planning, especially as Basilisk shifts toward a curated orchestration model.
 
 ## Source material
 
@@ -12,7 +12,7 @@ This documentation set breaks the original master spec into files that are easie
 - Working on product framing or scope: [Product foundation](product/foundation.md)
 - Working on the player journey: [Experience loop](product/experience-loop.md)
 - Working on scenes, chapters, choices, or endings: [Narrative design](product/narrative-design.md)
-- Working on hidden variables and state-to-output mapping: [Ritual state and score](systems/ritual-state-and-score.md)
+- Working on hidden variables, orchestration logic, and state-to-output mapping: [Ritual state and score](systems/ritual-state-and-score.md)
 - Working on sound behavior: [Audio system](systems/audio-system.md)
 - Working on Hydra behavior: [Visual system](systems/visual-system.md)
 - Working on export flow or basilisk-av handoff: [Export and integration](systems/export-and-integration.md)
@@ -25,7 +25,6 @@ This documentation set breaks the original master spec into files that are easie
 ## Documentation model
 
 - `product/` answers "why this exists" and "what the player should feel."
-- `systems/` answers "how the experience transforms choices into AV output."
-- `implementation/` answers "how we would structure the app and data."
+- `systems/` answers "how the experience transforms player responses into orchestrated story and AV output."
+- `implementation/` answers "how we would structure the app, orchestration layer, and data."
 - `planning/` answers "what to build first" and "what still needs decisions."
-

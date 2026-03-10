@@ -29,7 +29,7 @@ Suggested stack:
 Responsibilities:
 
 - scene progression
-- choice evaluation
+- response intake and normalization
 - event triggering
 - ending resolution
 - run logging
@@ -42,13 +42,23 @@ Responsibilities:
 - maintain hidden occult variables
 - derive narrative and AV-facing parameters
 - smooth transitions
-- expose selectors for scoring and renderer updates
+- expose selectors for orchestration, scoring, and renderer updates
+
+### Orchestration engine
+
+Responsibilities:
+
+- interpret player response in context of ritual state, pacing, and run history
+- select the next valid story segment from a curated bank
+- choose audio and visual family adjustments within authored guardrails
+- maintain continuity, motif recurrence, and emotional arc
+- emit orchestration plans that downstream systems can apply deterministically
 
 ### Score compiler
 
 Responsibilities:
 
-- convert run state into canonical audio and visual score data
+- convert orchestration history and run state into canonical audio and visual score data
 - maintain scene timeline and chapter cues
 - preserve deterministic output
 - feed live runtime and end-of-run exporters
@@ -90,6 +100,7 @@ Recommended slices:
 - run state
 - narrative state
 - ritual state
+- orchestration state
 - audio state
 - visual state
 - export state
@@ -117,15 +128,20 @@ src/
     providers/
   game/
     narrative/
-      scenes/
+      segments/
       engine/
-      choices/
+      responses/
       endings/
     ritual/
       state.ts
       reducers.ts
       selectors.ts
       mapping.ts
+    orchestration/
+      engine.ts
+      planner.ts
+      policies.ts
+      history.ts
     run/
       runStore.ts
       serialization.ts
@@ -156,10 +172,11 @@ src/
     typography/
     overlays/
   content/
-    scenes/
+    storySegments/
     symbols/
     audioFamilies/
     visualFamilies/
+    orchestration/
   shared/
     types/
     utils/
@@ -168,7 +185,7 @@ src/
 
 ## Architectural rule of thumb
 
-Compile intent, do not improvise everything live. Runtime engines should consume a stable score model instead of owning the story logic themselves.
+Orchestrate from curated banks, then compile intent. Runtime engines should consume a stable score model instead of owning the story logic themselves, and the orchestration layer should arrange rather than freely author the whole experience.
 
 ## Related docs
 

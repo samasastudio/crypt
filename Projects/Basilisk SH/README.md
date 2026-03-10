@@ -1,6 +1,6 @@
 ﻿# Basilisk SH
 
-Basilisk SH is the product and implementation spec workspace for Basilisk's browser-based occult text adventure experience.
+Basilisk SH is the product and implementation spec workspace for Basilisk's browser-based occult text adventure experience, centered on an orchestration intelligence that arranges story, sound, and visuals from curated banks.
 
 ## Start here
 
@@ -16,7 +16,7 @@ Basilisk SH is the product and implementation spec workspace for Basilisk's brow
 
 ## Suggested editing workflow
 
-1. Update product docs when the fantasy, scope, or player experience changes.
-2. Update system docs when state mappings, AV behavior, or export behavior changes.
-3. Update implementation docs when the architecture or data structures change.
+1. Update product docs when the fantasy, scope, response model, or player experience changes.
+2. Update system docs when orchestration rules, state mappings, AV behavior, or export behavior changes.
+3. Update implementation docs when the architecture, orchestration boundaries, or data structures change.
 4. Update planning docs when priorities, risks, or open decisions change.

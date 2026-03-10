@@ -1,14 +1,14 @@
-# Basilisk Product Specification
+﻿# Basilisk Product Specification
 
 ## 1. Product overview
 
-**Basilisk** is a browser-based occult text adventure that generates an audiovisual ritual from the player’s choices. As the player moves through the narrative, the game compiles their journey into a structured **sound script** and **visual script**. At the end of a run, Basilisk exports these outputs into **basilisk-av**, where the player can continue exploring, performing, and modifying the generated Strudel and Hydra code.
+**Basilisk** is a browser-based occult text adventure that uses an orchestration intelligence to generate an audiovisual ritual from the player's responses. As the player moves through the narrative, the orchestration layer selects and sequences story segments, sound behaviors, and visual mutations from curated banks, then compiles the journey into a structured **sound script** and **visual script**. At the end of a run, Basilisk exports these outputs into **basilisk-av**, where the player can continue exploring, performing, and modifying the generated Strudel and Hydra code.
 
 Basilisk is not just a narrative game and not just a live-coding toy. It is a **ritual journey that becomes an instrument**.
 
 ### Core product promise
 
-A player enters an eerie text-based world, makes choices, accumulates hidden occult states, experiences adaptive sound and visuals, and leaves with a playable artifact generated from their story.
+A player enters an eerie text-based world, responds to an unseen ritual intelligence, accumulates hidden occult states, experiences story, sound, and visuals that are arranged in real time, and leaves with a playable artifact generated from the path they co-authored.
 
 ---
 
@@ -31,7 +31,7 @@ The product sits between:
 
 ### Vision statement
 
-**Basilisk transforms narrative choice into a living audiovisual score, then hands that score back to the player as a script they can perform, remix, and study.**
+**Basilisk transforms player response into an orchestrated audiovisual score, then hands that score back to the player as a script they can perform, remix, and study.**
 
 ---
 
@@ -75,7 +75,7 @@ The product sits between:
 
 * Existing basilisk-av users
 * Strudel/Hydra curious creatives
-* People who like “artifact-generating” experiences
+* People who like â€œartifact-generatingâ€ experiences
 * Design-forward web art enthusiasts
 
 ### User motivations
@@ -97,11 +97,11 @@ Everything should feel ceremonial, uncanny, and intentional.
 
 ### 2. Choice becomes score
 
-Choices do not only affect text. They affect sound, visuals, pacing, and export structure.
+Player responses do not only affect text. They affect sound, visuals, pacing, and export structure through an orchestration layer.
 
 ### 3. Constrained generativity
 
-The output should feel alive, but never chaotic or broken.
+The output should feel alive, but never chaotic or broken. Basilisk should arrange from curated banks rather than invent the entire experience from scratch at runtime.
 
 ### 4. Artifact afterlife
 
@@ -118,11 +118,11 @@ The experience should feel premium in-browser, not like a compromised prototype.
 ### During play
 
 1. Player enters Basilisk.
-2. Player reads narrative passages and makes decisions.
-3. Hidden ritual state changes.
-4. Sound and visuals adapt in response.
-5. Story advances through scenes and chambers.
-6. The run accumulates symbolic, musical, and visual structure.
+2. Player reads the current passage and responds through a ritual prompt, authored choice set, or hybrid input.
+3. An orchestration layer interprets that response against the current ritual state, pacing, and run history.
+4. Basilisk selects the next story segment and bounded audio and visual adjustments from curated banks.
+5. Hidden ritual state and score structure update.
+6. Story advances through scenes and chambers while the run accumulates symbolic, musical, and visual structure.
 
 ### End of run
 
@@ -148,7 +148,7 @@ The experience should feel premium in-browser, not like a compromised prototype.
 
 ### Player-facing fantasy
 
-“I entered a forbidden system, passed through an occult journey, and left with a coded ritual generated from my path.”
+â€œI entered a forbidden system, passed through an occult journey, and left with a coded ritual generated from my path.â€
 
 ### Emotional arc
 
@@ -174,13 +174,15 @@ The experience should feel premium in-browser, not like a compromised prototype.
 
 ## 8.1 Narrative gameplay
 
-The game presents a sequence of text-driven scenes. Each scene includes:
+The game presents a sequence of text-driven scenes or segments. Each segment includes:
 
 * descriptive text
 * optional symbolic glyphs / micro-UI elements
-* 2–4 player choices
+* 2-4 authored responses, a short ritual text prompt, or a hybrid response mode
 * hidden state modifications
 * optional scene events
+* audiovisual cue changes
+* orchestration tags that help the system choose what can surface next
 * audiovisual cue changes
 
 ### Narrative structure
@@ -188,9 +190,9 @@ The game presents a sequence of text-driven scenes. Each scene includes:
 For v1:
 
 * one contained run
-* 10–15 minutes average
-* 8–15 scenes
-* 3–5 endings
+* 10â€“15 minutes average
+* 8â€“15 scenes
+* 3â€“5 endings
 * moderate replayability through state differences and choice variations
 
 ## 8.2 Hidden ritual systems
@@ -215,7 +217,7 @@ During play:
 
 * visuals are rendered with Hydra
 * sound is rendered via Strudel/Tone.js-backed runtime approach
-* both are driven by compiled scene and state parameters
+* both are arranged by an orchestration layer operating on curated banks
 * runtime updates are bounded and smoothed
 
 ## 8.4 Export system
@@ -242,11 +244,11 @@ Player can move the generated artifact into basilisk-av where:
 
 The system should follow this pipeline:
 
-**Narrative state → Ritual state → Score model → Runtime renderers → Export artifacts**
+**Narrative input -> Response interpretation -> Ritual state -> Orchestration plan -> Score model -> Runtime renderers -> Export artifacts**
 
 This is the central architectural principle.
 
-The game should not directly treat Hydra and Strudel as uncontrolled engines constantly rewriting themselves. Instead, Basilisk should generate a **stable intermediate score model**, then use renderers to translate that model into runtime behavior and final scripts.
+The game should not directly treat Hydra and Strudel as uncontrolled engines constantly rewriting themselves. It also should not treat runtime AI as an unrestricted author. Instead, Basilisk should interpret player response into ritual state, let an orchestration layer arrange from curated content banks, generate a **stable intermediate score model**, then use renderers to translate that model into runtime behavior and final scripts.
 
 ---
 
@@ -277,7 +279,7 @@ Suggested stack:
 Responsibilities:
 
 * scene progression
-* choice evaluation
+* response intake and normalization
 * event triggering
 * ending resolution
 * run logging
@@ -290,18 +292,28 @@ Responsibilities:
 * maintain hidden occult variables
 * derive narrative and AV-facing parameters
 * smooth transitions
-* expose selectors for scoring and renderer updates
+* expose selectors for orchestration, scoring, and renderer updates
 
-## 10.4 Score compiler
+## 10.4 Orchestration engine
 
 Responsibilities:
 
-* convert run state into canonical audio/visual score data
+* interpret player response in context of ritual state, pacing, and run history
+* select the next valid story segment from a curated bank
+* choose audio and visual family adjustments within authored guardrails
+* maintain continuity, motif recurrence, and emotional arc
+* emit orchestration plans that downstream systems can apply deterministically
+
+## 10.5 Score compiler
+
+Responsibilities:
+
+* convert orchestration history and run state into canonical audio/visual score data
 * maintain scene timeline / chapter cues
 * preserve deterministic output
 * feed live runtime and end-of-run exporters
 
-## 10.5 Audio renderer
+## 10.6 Audio renderer
 
 Responsibilities:
 
@@ -311,7 +323,7 @@ Responsibilities:
 * route through Tone.js/Web Audio buses
 * smooth transitions and cue changes
 
-## 10.6 Visual renderer
+## 10.7 Visual renderer
 
 Responsibilities:
 
@@ -320,7 +332,7 @@ Responsibilities:
 * map ritual state to motion/color/feedback shifts
 * manage scene transitions
 
-## 10.7 Exporter
+## 10.8 Exporter
 
 Responsibilities:
 
@@ -465,11 +477,11 @@ The game should feel like moving through chambers of meaning rather than traditi
 
 Suggested chapter pattern:
 
-1. **Ingress** — entry into system, first signal
-2. **Threshold** — choices introduce ritual alignment
-3. **Chamber** — deeper symbolic confrontation
-4. **Witness** — recognition or corruption
-5. **Convergence** — consequence and ending
+1. **Ingress** â€” entry into system, first signal
+2. **Threshold** â€” choices introduce ritual alignment
+3. **Chamber** â€” deeper symbolic confrontation
+4. **Witness** â€” recognition or corruption
+5. **Convergence** â€” consequence and ending
 
 ## 12.3 Scene design principles
 
@@ -497,7 +509,7 @@ Choices should avoid generic RPG morality framing. Better axes:
 
 ## 13.1 Audio role
 
-Audio is not a background soundtrack. It is the audible manifestation of the player’s relationship with the system.
+Audio is not a background soundtrack. It is the audible manifestation of the playerâ€™s relationship with the system.
 
 ## 13.2 Runtime strategy
 
@@ -535,7 +547,7 @@ Each family includes:
 
 ## 13.4 Audio layers
 
-At runtime, prefer 3–6 simultaneous layers:
+At runtime, prefer 3â€“6 simultaneous layers:
 
 * drone bed
 * texture/noise bed
@@ -607,7 +619,7 @@ Each family includes:
 
 Hydra output should:
 
-* capture the run’s dominant visual grammar
+* capture the runâ€™s dominant visual grammar
 * remain editable
 * preserve family identity
 * include clear sections or comments where possible
@@ -799,7 +811,7 @@ Desktop web should be the primary target.
 
 ## 18.2 Audio constraints
 
-* 3–6 simultaneous audio layers
+* 3â€“6 simultaneous audio layers
 * shared FX buses
 * limited heavy effects
 * lazy-load larger asset groups
@@ -941,10 +953,12 @@ The goal is not huge combinatorial branching for its own sake. The goal is meani
 
 ## v1 MVP includes
 
-* one complete 10–15 minute run
-* 8–15 scenes
-* 3–5 endings
+* one complete 10â€“15 minute run
+* 8â€“15 scenes
+* 3â€“5 endings
 * hidden ritual state system
+* orchestration engine for story and AV arrangement
+* curated story, audio, and visual banks
 * bounded adaptive Hydra visuals
 * bounded adaptive Strudel/Tone-style sound system
 * end-of-run chronicle
@@ -955,6 +969,7 @@ The goal is not huge combinatorial branching for its own sake. The goal is meani
 ## v1 excludes
 
 * full freeform text parser
+* fully unconstrained runtime story generation
 * giant branching story map
 * user-authored in-game code editing
 * account system
@@ -969,10 +984,11 @@ The goal is not huge combinatorial branching for its own sake. The goal is meani
 
 Build:
 
-* one narrative path
+* one narrative path with orchestration hooks
 * one visual family
 * one audio family
 * hidden ritual state
+* one orchestration policy set
 * basic export prototype
 
 Goal:
@@ -984,6 +1000,7 @@ Build:
 
 * complete v1 run
 * multiple endings
+* multiple story segment banks
 * multiple AV families
 * polished export flow
 * basilisk-av import compatibility
@@ -1018,11 +1035,11 @@ Keep Basilisk constrained and guided. Let basilisk-av handle open-ended experime
 
 ## Risk 2: Generated output feels arbitrary
 
-If state mappings are weak, export will feel disconnected from the narrative.
+If orchestration policies are weak, output will feel disconnected from the narrative even if the ritual state model is sound.
 
 ### Mitigation
 
-Make symbolic choices map to motif tokens, palettes, and cue families in a deliberate way.
+Make player responses map to intent tags, then map those tags to segment candidates, motif tokens, palettes, and cue families in a deliberate way.
 
 ## Risk 3: Web performance issues
 
@@ -1040,11 +1057,19 @@ Occult fiction can become empty if it only gestures at mystery.
 
 Each scene needs concrete symbols, concrete stakes, and concrete consequences.
 
+## Risk 5: Orchestration dilutes authored voice
+
+If the orchestration layer is too free, the experience may lose tone consistency and feel like generic AI assembly.
+
+### Mitigation
+
+Constrain orchestration to curated banks, explicit policies, and strong authored segment voice.
+
 ---
 
 ## 26. Design principles for implementation
 
-1. **Compile intent, don’t improvise everything live.**
+1. **Orchestrate from curated banks, don't free-write the whole experience live.**
 2. **Prefer templates plus mutation over unconstrained generation.**
 3. **Narrative consequence must affect AV consequence.**
 4. **Export should feel like a relic, not a logfile.**
@@ -1054,6 +1079,6 @@ Each scene needs concrete symbols, concrete stakes, and concrete consequences.
 
 ## 27. Final product statement
 
-**Basilisk** is a browser-based occult text adventure that turns player choice into a living audiovisual ritual. Through hidden symbolic state, adaptive sound, and reactive Hydra visuals, each run produces a unique chronicle and a remixable Strudel/Hydra script. The experience culminates in a handoff to **basilisk-av**, where the player’s journey becomes an instrument.
+**Basilisk** is a browser-based occult text adventure that turns player response into an orchestrated audiovisual ritual. Through hidden symbolic state, curated story banks, adaptive sound, and reactive Hydra visuals, each run produces a unique chronicle and a remixable Strudel/Hydra script. The experience culminates in a handoff to **basilisk-av**, where the player's journey becomes an instrument.
 
-If you want, next I’ll turn this into either a **Confluence-style spec**, a **GitHub README/product brief**, or a **task-by-task engineering roadmap with epics and acceptance criteria**.
+If you want, next Iâ€™ll turn this into either a **Confluence-style spec**, a **GitHub README/product brief**, or a **task-by-task engineering roadmap with epics and acceptance criteria**.

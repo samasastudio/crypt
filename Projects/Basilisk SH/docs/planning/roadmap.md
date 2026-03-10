@@ -1,4 +1,4 @@
-# Roadmap
+﻿# Roadmap
 
 Use this document when deciding what to build first, where MVP boundaries sit, and how to sequence delivery.
 
@@ -10,6 +10,8 @@ Use this document when deciding what to build first, where MVP boundaries sit, a
 - 8-15 scenes
 - 3-5 endings
 - hidden ritual state system
+- orchestration engine for story and AV arrangement
+- curated story, audio, and visual banks
 - bounded adaptive Hydra visuals
 - bounded adaptive Strudel or Tone-style sound system
 - end-of-run chronicle
@@ -20,6 +22,7 @@ Use this document when deciding what to build first, where MVP boundaries sit, a
 ### v1 excludes
 
 - full freeform text parser
+- fully unconstrained runtime story generation
 - giant branching story map
 - user-authored in-game code editing
 - account system
@@ -32,10 +35,11 @@ Use this document when deciding what to build first, where MVP boundaries sit, a
 
 Build:
 
-- one narrative path
+- one narrative path with orchestration hooks
 - one visual family
 - one audio family
 - hidden ritual state
+- one orchestration policy set
 - basic export prototype
 
 Goal:
@@ -47,6 +51,7 @@ Build:
 
 - complete v1 run
 - multiple endings
+- multiple story segment banks
 - multiple AV families
 - polished export flow
 - basilisk-av import compatibility
@@ -80,7 +85,8 @@ expand the universe and strengthen retention
 ### Experience success
 
 - players describe the experience as atmospheric and coherent
-- AV output feels connected to choices
+- story and AV output feel connected to responses
+- orchestration feels intentional rather than random
 - export feels magical rather than gimmicky
 - generated scripts feel remixable
 

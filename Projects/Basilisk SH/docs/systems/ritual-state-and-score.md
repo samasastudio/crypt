@@ -6,9 +6,9 @@ Use this document when defining the hidden variables, transformation rules, and 
 
 The system should follow this pipeline:
 
-Narrative state -> Ritual state -> Score model -> Runtime renderers -> Export artifacts
+Narrative input -> Response interpretation -> Ritual state -> Orchestration plan -> Score model -> Runtime renderers -> Export artifacts
 
-This is the central architectural principle. Basilisk should not treat Hydra and Strudel as uncontrolled engines constantly rewriting themselves. Instead, Basilisk should generate a stable intermediate score model, then use renderers to translate that model into runtime behavior and final scripts.
+This is the central architectural principle. Basilisk should not treat Hydra and Strudel as uncontrolled engines constantly rewriting themselves. It also should not treat runtime AI as an unrestricted author. Instead, Basilisk should interpret player response into ritual state, let an orchestration layer arrange from curated content banks, generate a stable intermediate score model, and then use renderers to translate that model into runtime behavior and final scripts.
 
 ## Hidden ritual variables
 
@@ -22,18 +22,28 @@ Suggested v1 variables:
 - `grace`: unusual calm, surrender, lucidity
 - `hunger`: drive toward revelation or transgression
 
-These variables change through choices, scenes, and triggered events.
+These variables change through player responses, selected segments, and triggered events.
 
 ## State model responsibilities
 
 - maintain hidden occult variables
 - derive narrative and AV-facing parameters
 - smooth transitions
-- expose selectors for scoring and renderer updates
+- expose selectors for orchestration, scoring, and renderer updates
+
+## Orchestration intelligence
+
+The orchestration layer is the balancing mechanism between authored determinism and generative variation. It should:
+
+- interpret player response into bounded intent or motif tags
+- evaluate which story segments, audio families, and visual families are valid next
+- choose arrangements that preserve pacing, continuity, and ritual tone
+- emit explicit plan data that downstream score and runtime systems can consume
+- remain explainable to the design team and stable for engineering
 
 ## Mapping philosophy
 
-State mappings should be interpretable by the design team and stable for engineering. The system should prefer authored ranges and thresholds over opaque procedural behavior.
+State mappings should be interpretable by the design team and stable for engineering. The system should prefer authored ranges, thresholds, and curated content banks over opaque procedural behavior.
 
 ### Example mapping directions
 
@@ -46,7 +56,7 @@ State mappings should be interpretable by the design team and stable for enginee
 
 ## Canonical score model
 
-The score model is the translation layer between story state and AV output. It should:
+The score model is the translation layer between orchestration decisions and AV output. It should:
 
 - preserve deterministic output for a given run
 - track scene-level cues over time
@@ -58,12 +68,14 @@ The score model is the translation layer between story state and AV output. It s
 ### Runtime
 
 - updates should be bounded and smoothed
+- orchestration should issue sparse, meaningful plan updates
 - renderers should mutate within constrained families
 - transitions should avoid abrupt resets where possible
 
 ### Export
 
 - exports should reflect the full arc of the run
+- exports should reflect the orchestrated segment and cue history, not just final scalar state
 - the final artifact should preserve the dominant motifs and families that surfaced
 - the exported scripts should be editable and structurally understandable
 

@@ -4,11 +4,11 @@ Use this document when specifying Hydra behavior, visual families, state mapping
 
 ## Visual role
 
-Visuals should feel like a living ritual display rather than game illustration. Hydra should behave like an unstable occult signal surface.
+Visuals should feel like a living ritual display rather than game illustration. Hydra should behave like an unstable occult signal surface arranged by an unseen conductor rather than a patch rewritten from scratch every turn.
 
 ## Runtime strategy
 
-Hydra should run a bounded patch family system with controlled parameter mutation rather than arbitrary code churn every scene.
+Hydra should run a bounded patch family system with controlled parameter mutation, guided by orchestration plans rather than arbitrary code churn every scene.
 
 ## Visual families
 
@@ -30,20 +30,32 @@ Each family should define:
 - movement range
 - scene transition rules
 - symbolic associations
+- orchestration entry and exit notes
 
-## Mapping examples
+## Visual bank and orchestration rules
 
-- high `witness` increases clarity of recurring forms
-- high `static` increases fragmentation and interference
-- high `dread` intensifies contrast and destabilizes geometry
-- high `communion` creates recurrence and symmetry
-- high `veil` deepens recursive feedback and space distortion
+The visual bank should give the orchestration layer a palette of valid mutations rather than unlimited patch generation. Useful authoring dimensions include:
+
+- intensity states
+- recurrence behaviors
+- distortion ceilings
+- family handoff rules
+- forbidden combinations that muddy readability or overwhelm performance
+
+## Orchestration and mapping examples
+
+- high `witness` makes clearer recurring forms more eligible
+- high `static` raises the probability of fragmentation and interference behaviors
+- high `dread` intensifies contrast and destabilizes geometry within bounded limits
+- high `communion` biases the system toward recurrence and symmetry
+- high `veil` deepens recursive feedback and space distortion families
 
 ## Export behavior
 
 Hydra output should:
 
 - capture the run's dominant visual grammar
+- preserve the orchestrated family progression that shaped the run
 - remain editable
 - preserve family identity
 - include clear sections or comments where possible

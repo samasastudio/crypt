@@ -4,16 +4,17 @@ Use this document when specifying adaptive sound behavior, audio families, runti
 
 ## Audio role
 
-Audio is not a background soundtrack. It is the audible manifestation of the player's relationship with the system.
+Audio is not a background soundtrack. It is the audible manifestation of the player's relationship with the system, arranged by the orchestration layer from a curated sound bank.
 
 ## Runtime strategy
 
-Use Strudel-compatible generated pattern logic, but during gameplay treat the audio engine as a bounded adaptive system.
+Use Strudel-compatible generated pattern logic, but during gameplay treat the audio engine as a bounded adaptive system directed by orchestration plans rather than direct free generation.
 
 ### Recommended implementation
 
 - Tone.js or Web Audio for scheduling and buses
 - Strudel-derived pattern layer logic
+- orchestration layer that selects family, density band, motif tokens, and transition intent
 - pre-authored sample or stem palette
 - constrained parameter mutations during play
 - compiled full script at end of run
@@ -39,6 +40,17 @@ Each family should define:
 - FX profile
 - harmonic mode preferences
 - valid state triggers
+- orchestration transition notes
+
+## Audio bank and orchestration rules
+
+The audio bank should expose enough structure for the orchestration layer to act like a conductor instead of a generator. Useful authoring dimensions include:
+
+- intensity tiers
+- transition-safe layer combinations
+- recurring motif hooks
+- family handoff rules
+- forbidden combinations that break mood or performance
 
 ## Audio layers
 
@@ -51,19 +63,20 @@ Prefer 3-6 simultaneous layers at runtime:
 - ambience field
 - occasional stinger bus
 
-## Mapping examples
+## Orchestration and mapping examples
 
-- high `dread` increases pulse density and harmonic instability
-- high `veil` opens reverb and widens ambience
-- high `communion` introduces recurring motif coherence
-- high `static` adds glitch texture and noise modulation
-- high `grace` reduces harshness and slows transition intensity
+- high `dread` pushes the orchestration layer toward denser pulse states and less stable harmony
+- high `veil` encourages wider ambience, slower bloom, and deeper reverb families
+- high `communion` increases reuse of recurring motifs and smoother family continuity
+- high `static` makes glitch textures and noise modulation more eligible
+- high `grace` biases transitions toward softer entries and reduced harshness
 
 ## Export behavior
 
 End-of-run Strudel code should:
 
 - reflect the narrative path
+- reflect the orchestrated cue timeline, not only aggregate state totals
 - encode motifs tied to choices
 - remain readable enough to remix
 - avoid overlong unreadable output

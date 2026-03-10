@@ -13,6 +13,8 @@ The game should feel like moving through chambers of meaning rather than traditi
 - transgressing
 - interpreting signs
 
+The player should feel guided by an occult intelligence that is arranging the rite in response to them, not by a static branching script and not by a fully unbounded chatbot.
+
 ## Suggested chapter pattern for v1
 
 1. Ingress: entry into system, first signal.
@@ -23,7 +25,7 @@ The game should feel like moving through chambers of meaning rather than traditi
 
 ## Scene design principles
 
-Every scene should have:
+Every segment should have:
 
 - strong imagery
 - one central symbol
@@ -31,9 +33,22 @@ Every scene should have:
 - one gameplay consequence
 - one AV consequence
 
+## Story bank model
+
+Narrative content should be authored as a bank of reusable but strongly voiced segments. Each segment should carry enough metadata for the orchestration layer to decide when it is appropriate to surface.
+
+Useful segment metadata includes:
+
+- ritual tags
+- continuity hooks
+- allowed predecessor or successor patterns
+- pacing intensity
+- ending affinity
+- linked audio and visual cue families
+
 ## Choice design principles
 
-Choices should avoid generic RPG morality framing. Better axes:
+Player responses should avoid generic RPG morality framing. Better axes:
 
 - resist or surrender
 - observe or intervene
@@ -41,17 +56,29 @@ Choices should avoid generic RPG morality framing. Better axes:
 - preserve self or seek revelation
 - conceal or invoke
 
+For v1, free text should be interpreted into bounded intent tags rather than treated like an unrestricted parser.
+
 ## Narrative-facing system hooks
 
-Each scene can carry:
+Each segment can carry:
 
 - entry effects
 - exit effects
-- choice-gated state changes
+- response-gated state changes
 - optional conditions
 - audio cue references
 - visual cue references
 - next-scene resolution logic
+
+## Orchestration responsibilities
+
+The orchestration layer should:
+
+- interpret player response into usable intent tags
+- choose among valid segment candidates instead of writing whole scenes from scratch
+- preserve motif continuity across the run
+- vary pacing without breaking authored tone
+- resolve endings from accumulated path, symbolic tags, and ritual-state shape
 
 ## Ending design
 
@@ -62,7 +89,7 @@ Ending resolution should read as consequence, not score tally. Endings should be
 - Keep text concrete even when mysterious.
 - Let symbols recur so the player can feel pattern recognition.
 - Avoid over-explaining hidden systems during normal play.
-- Make each scene legible on first read, but richer on replay.
+- Make each segment legible on first read, but richer on replay.
 
 ## Related docs
 

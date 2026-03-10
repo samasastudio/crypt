@@ -7,11 +7,11 @@ Use this document when working on the player-facing flow, emotional pacing, and 
 ### During play
 
 1. Player enters Basilisk.
-2. Player reads narrative passages and makes decisions.
-3. Hidden ritual state changes.
-4. Sound and visuals adapt in response.
-5. Story advances through scenes and chambers.
-6. The run accumulates symbolic, musical, and visual structure.
+2. Player reads the current passage and responds through a ritual prompt, authored choice set, or hybrid input.
+3. An orchestration layer interprets that response against the current ritual state, pacing, and run history.
+4. Basilisk selects the next story segment and bounded audio and visual adjustments from curated banks.
+5. Hidden ritual state and score structure update.
+6. Story advances through scenes and chambers while the run accumulates symbolic, musical, and visual structure.
 
 ### End of run
 
@@ -56,14 +56,15 @@ Use this document when working on the player-facing flow, emotional pacing, and 
 
 ### Narrative gameplay
 
-The game presents a sequence of text-driven scenes. Each scene includes:
+The game presents a sequence of text-driven scenes or segments. Each segment includes:
 
 - descriptive text
 - optional symbolic glyphs or micro-UI elements
-- 2-4 player choices
+- 2-4 authored responses, a short ritual text prompt, or a hybrid response mode
 - hidden state modifications
 - optional scene events
 - audiovisual cue changes
+- orchestration tags that help the system choose what can surface next
 
 ### Narrative structure target
 
@@ -80,7 +81,7 @@ For v1:
 Replayability should come from:
 
 - different ritual stat accumulation
-- alternate scene variants
+- alternate segment arrangements
 - different endings
 - different AV outputs
 - different exports

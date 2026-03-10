@@ -4,53 +4,27 @@
     "type": "split",
     "children": [
       {
-        "id": "36d02ba9f3d479f8",
+        "id": "473c98efe3166702",
         "type": "tabs",
         "children": [
           {
-            "id": "f055fc4ccf64d2dc",
+            "id": "743265e6ceab4d51",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "canvas",
               "state": {
-                "file": "Cooking/Diet/Crash Diet.md",
-                "mode": "source",
-                "source": false
+                "file": "Basilisk Game Flow.canvas",
+                "viewState": {
+                  "x": 735.2419889030459,
+                  "y": 22.815712679093686,
+                  "zoom": -1.146386192573919
+                }
               },
-              "icon": "lucide-file",
-              "title": "Crash Diet"
-            }
-          },
-          {
-            "id": "ee1ea94852022b0a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Cooking/Cooking.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Cooking"
-            }
-          },
-          {
-            "id": "2feceb1c1b49afad",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Basilisk SH Master Spec.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Basilisk SH Master Spec"
+              "icon": "lucide-layout-dashboard",
+              "title": "Basilisk Game Flow"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -123,7 +97,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Cooking/Grocery/Orders/2025-12-29.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -133,7 +106,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 2025-12-29"
+              "title": "Backlinks"
             }
           },
           {
@@ -203,51 +176,53 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "canvas:Create new canvas": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
-      "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "bases:Create new base": false
     }
   },
-  "active": "2feceb1c1b49afad",
+  "active": "743265e6ceab4d51",
   "lastOpenFiles": [
+    "Basilisk Game Flow.canvas",
+    "Projects/Basilisk SH/docs/implementation/architecture.md",
+    "Untitled 1.canvas",
+    "Cooking/Diet/Crash Diet.md",
+    "Cooking/Cooking.md",
+    "Projects/Basilisk SH/docs/implementation/ux-performance-and-content.md",
+    "Projects/Basilisk SH/docs/planning/risks-and-open-questions.md",
+    "Projects/Basilisk SH/docs/planning/roadmap.md",
     "Basilisk SH Master Spec.md",
+    "Projects/Basilisk SH/docs/implementation/data-model.md",
+    "Projects/Basilisk SH/docs/implementation",
+    "Projects/Basilisk SH/docs/planning",
+    "Projects/Basilisk SH/docs/systems/audio-system.md",
+    "Projects/Basilisk SH/docs/systems/export-and-integration.md",
+    "Projects/Basilisk SH/docs/systems/ritual-state-and-score.md",
+    "Projects/Basilisk SH/docs/systems/visual-system.md",
+    "Projects/Basilisk SH/docs/systems",
+    "Projects/Basilisk SH/README.md",
+    "Projects/Basilisk SH/docs/product/experience-loop.md",
+    "Projects/Basilisk SH/docs/product/narrative-design.md",
+    "Projects/Basilisk SH/docs/product/foundation.md",
+    "Projects/Basilisk SH/docs/product",
+    "Projects/Basilisk SH/docs/README.md",
+    "Projects/Basilisk SH/docs",
     "Projects/Design System",
     "Projects/Basilisk SH.md",
     "Projects/Basilisk AV",
     "Projects/Basilisk SH",
-    "Cooking/Cooking.md",
     "Projects",
     "Cooking/Diet/Crash Diet Meal Plan.md",
     "Cooking/Diet/Crash Diet Meal Plan.md.tmp.69442.1771876000648",
-    "Cooking/Diet/Crash Diet Meal Plan.md.tmp.69142.1771875668700",
-    "Cooking/Diet/Crash Diet Meal Plan.md.tmp.68773.1771875405401",
-    "Cooking/Diet/Crash Diet.md.tmp.68492.1771875290146",
-    "Cooking/Diet/Crash Diet.md",
-    "Cooking/Diet",
     "Cooking/README.md",
-    "Cooking/README.md.tmp.9849.1771299386016",
     "Cooking/Grocery/Orders/2025-12-29.md",
     "2026-02-16.md",
     "Cooking/Recipes/Cookbook/Breakfasts/Apple & custard.md",
     "Cooking/Grocery/Grocery Analytics 2025.md",
-    "Cooking/Grocery/Grocery Hub.md",
-    "Cooking/Grocery/Orders/2025-04-08.md",
-    "Cooking/Grocery/Orders/2025-02-03.md",
-    "Cooking/Grocery/Orders/2025-01-16.md",
-    "Cooking/Grocery/Products/C2O Pure Coconut Water 8 pk Cans.md",
-    "Cooking/Grocery/Products/Banza 23g Protein Chickpea Penne.md",
-    "Cooking/Grocery/Products/Altoids Wintergreen Sugar Free Breath Mints.md",
-    "Cooking/Grocery/Views/Reorder Suggestions.md",
-    "Cooking/Grocery/Views/Product Search.md",
-    "Cooking/Grocery/Views/Price Tracker.md",
-    "Cooking/Grocery/Views/Shopping List Builder.md",
-    "Cooking/Grocery/Views/Spend Dashboard.md",
-    "Cooking/Grocery/Orders/2025-12-22.md",
-    "Cooking/Grocery/Orders/2025-12-15.md",
-    "Cooking/Grocery/Orders/2025-12-07.md"
+    "Cooking/Grocery/Grocery Hub.md"
   ]
 }
