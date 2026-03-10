@@ -11,17 +11,14 @@
             "id": "743265e6ceab4d51",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "markdown",
               "state": {
-                "file": "Basilisk Game Flow.canvas",
-                "viewState": {
-                  "x": 735.2419889030459,
-                  "y": 22.815712679093686,
-                  "zoom": -1.146386192573919
-                }
+                "file": "Projects/Basilisk SH/docs/planning/risks-and-open-questions.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-layout-dashboard",
-              "title": "Basilisk Game Flow"
+              "icon": "lucide-file",
+              "title": "risks-and-open-questions"
             }
           }
         ]
@@ -187,6 +184,8 @@
   },
   "active": "743265e6ceab4d51",
   "lastOpenFiles": [
+    "Projects/Codebase Documentation Commands.md",
+    "Projects/Basilisk SH/docs/planning/roadmap.md",
     "Basilisk Game Flow.canvas",
     "Projects/Basilisk SH/docs/implementation/architecture.md",
     "Untitled 1.canvas",
@@ -194,7 +193,6 @@
     "Cooking/Cooking.md",
     "Projects/Basilisk SH/docs/implementation/ux-performance-and-content.md",
     "Projects/Basilisk SH/docs/planning/risks-and-open-questions.md",
-    "Projects/Basilisk SH/docs/planning/roadmap.md",
     "Basilisk SH Master Spec.md",
     "Projects/Basilisk SH/docs/implementation/data-model.md",
     "Projects/Basilisk SH/docs/implementation",

@@ -1,4 +1,4 @@
-﻿# Roadmap
+# Roadmap
 
 Use this document when deciding what to build first, where MVP boundaries sit, and how to sequence delivery.
 
