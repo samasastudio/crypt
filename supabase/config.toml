@@ -1,0 +1,4 @@
+project_id = "crypt"
+
+[functions.search-vault]
+verify_jwt = false
