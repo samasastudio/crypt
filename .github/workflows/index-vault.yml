@@ -51,9 +51,15 @@ jobs:
           if [ "$BEFORE_SHA" = "0000000000000000000000000000000000000000" ]; then
             git ls-files > /tmp/changed-files.txt
             : > /tmp/deleted-files.txt
-          else
+          elif git cat-file -e "$BEFORE_SHA^{commit}" 2>/dev/null; then
             git diff --name-only --diff-filter=AMR "$BEFORE_SHA" "${{ github.sha }}" > /tmp/changed-files.txt
             git diff --name-only --diff-filter=D "$BEFORE_SHA" "${{ github.sha }}" > /tmp/deleted-files.txt
+          elif git rev-parse --verify HEAD~1 >/dev/null 2>&1; then
+            git diff --name-only --diff-filter=AMR HEAD~1 HEAD > /tmp/changed-files.txt
+            git diff --name-only --diff-filter=D HEAD~1 HEAD > /tmp/deleted-files.txt
+          else
+            git ls-files > /tmp/changed-files.txt
+            : > /tmp/deleted-files.txt
           fi
 
       - name: Full reindex
