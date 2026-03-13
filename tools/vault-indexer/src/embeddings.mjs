@@ -12,10 +12,16 @@ export function createEmbeddingClient() {
     throw new Error("Missing OPENAI_API_KEY");
   }
 
-  return new OpenAI({ apiKey });
+  const timeout = Number(process.env.OPENAI_TIMEOUT_MS || 120000);
+
+  return new OpenAI({
+    apiKey,
+    timeout,
+    maxRetries: 2
+  });
 }
 
-export async function embedChunks(client, chunks) {
+export async function embedChunks(client, chunks, options = {}) {
   if (chunks.length === 0) {
     return [];
   }
@@ -23,10 +29,12 @@ export async function embedChunks(client, chunks) {
   const model = process.env.OPENAI_EMBED_MODEL || DEFAULT_EMBED_MODEL;
   const dimensions = Number(process.env.OPENAI_EMBED_DIMENSIONS || DEFAULT_EMBED_DIMENSIONS);
   const batchSize = Number(process.env.OPENAI_EMBED_BATCH_SIZE || 32);
+  const logger = options.logger ?? (() => {});
   const vectors = [];
 
   for (let start = 0; start < chunks.length; start += batchSize) {
     const batch = chunks.slice(start, start + batchSize);
+    logger(`Embedding batch ${Math.floor(start / batchSize) + 1}/${Math.ceil(chunks.length / batchSize)} (${batch.length} chunks)`);
     const response = await withRetry(() =>
       client.embeddings.create({
         model,

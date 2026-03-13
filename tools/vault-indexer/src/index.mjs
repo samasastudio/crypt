@@ -23,6 +23,7 @@ const args = parseArgs(process.argv.slice(2));
 
 async function main() {
   const gitCommitSha = process.env.GITHUB_SHA || process.env.GIT_COMMIT_SHA || "local";
+  log(`Starting ${args.full ? "full" : "incremental"} vault index run for commit ${gitCommitSha}`);
   const changedPaths = args.full
     ? await discoverIndexableFiles()
     : await resolveChangedPaths(args.changed, args.changedFileList);
@@ -41,27 +42,32 @@ async function main() {
     return;
   }
 
-  const documents = [];
-  for (const repoPath of changedPaths) {
+  log(`Resolved ${changedPaths.length} changed/indexable paths and ${deletedPaths.length} deleted paths`);
+
+  const prepared = [];
+  for (const [index, repoPath] of changedPaths.entries()) {
     try {
       const document = await loadSourceDocument(repoPath);
-      documents.push(document);
+      const chunks = chunkDocument(document);
+      prepared.push({
+        document,
+        chunks
+      });
       summary.scanned += 1;
+      summary.indexed += 1;
+      summary.chunked += chunks.length;
+
+      if ((index + 1) % 25 === 0 || index === changedPaths.length - 1) {
+        log(`Prepared ${index + 1}/${changedPaths.length} files (${summary.chunked} chunks so far)`);
+      }
     } catch (error) {
       summary.failures.push({
         repoPath,
         error: error.message
       });
+      log(`Failed to prepare ${repoPath}: ${error.message}`);
     }
   }
-
-  const prepared = documents.map((document) => ({
-    document,
-    chunks: chunkDocument(document)
-  }));
-
-  summary.indexed = prepared.length;
-  summary.chunked = prepared.reduce((total, entry) => total + entry.chunks.length, 0);
 
   if (args.dryRun) {
     console.log(JSON.stringify({ dryRun: true, changedPaths, deletedPaths, ...summary }, null, 2));
@@ -70,24 +76,33 @@ async function main() {
 
   const supabase = createSupabase();
   const embeddingClient = createEmbeddingClient();
+  log(`Beginning remote indexing for ${prepared.length} documents`);
 
-  for (const entry of prepared) {
+  for (const [index, entry] of prepared.entries()) {
     try {
-      const embeddings = await embedChunks(embeddingClient, entry.chunks);
+      log(`Indexing ${index + 1}/${prepared.length}: ${entry.document.repoPath} (${entry.chunks.length} chunks)`);
+      const embeddings = await embedChunks(embeddingClient, entry.chunks, {
+        logger: (message) => log(`${entry.document.repoPath}: ${message}`)
+      });
+      log(`Writing ${entry.chunks.length} chunks to Supabase for ${entry.document.repoPath}`);
       await replaceDocumentChunks(supabase, entry.document, entry.chunks, embeddings, gitCommitSha);
+      log(`Finished ${entry.document.repoPath}`);
     } catch (error) {
       summary.failures.push({
         repoPath: entry.document.repoPath,
         error: error.message
       });
+      log(`Failed to index ${entry.document.repoPath}: ${error.message}`);
     }
   }
 
   if (deletedPaths.length > 0) {
+    log(`Deleting ${deletedPaths.length} removed documents from Supabase`);
     await deleteDocuments(supabase, deletedPaths, gitCommitSha);
   }
 
   if (args.full) {
+    log("Pruning stale documents missing from the current vault snapshot");
     summary.deleted += await pruneMissingDocuments(supabase, changedPaths, gitCommitSha);
   }
 
@@ -158,6 +173,10 @@ async function resolveChangedPaths(directPaths, fileListPath) {
   }
 
   return unique(filterExplicitPaths(explicitPaths));
+}
+
+function log(message) {
+  console.log(`[vault-indexer] ${message}`);
 }
 
 main().catch((error) => {
