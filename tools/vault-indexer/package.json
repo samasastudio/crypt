@@ -1,0 +1,19 @@
+{
+  "name": "vault-indexer",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "index:vault": "node src/index.mjs",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.57.4",
+    "dotenv": "^17.2.3",
+    "gray-matter": "^4.0.3",
+    "openai": "^6.8.1"
+  }
+}

@@ -1,0 +1,3 @@
+tools/vault-indexer/node_modules/
+tools/vault-indexer/.env
+tools/vault-indexer/.env.local
