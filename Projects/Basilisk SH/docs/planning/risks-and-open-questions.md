@@ -1,4 +1,4 @@
-﻿# Risks And Open Questions
+# Risks And Open Questions
 
 Use this document to track implementation risks, design guardrails, and unresolved decisions that should be answered before or during the first build phases.
 

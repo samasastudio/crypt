@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Projects/Basilisk SH/docs/planning/risks-and-open-questions.md",
+                "file": "tools/vault-indexer/README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "risks-and-open-questions"
+              "title": "README"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "20260311110000_create_vault_index",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -74,7 +74,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -184,43 +185,43 @@
   },
   "active": "743265e6ceab4d51",
   "lastOpenFiles": [
-    "Projects/Codebase Documentation Commands.md",
-    "Projects/Basilisk SH/docs/planning/roadmap.md",
-    "Basilisk Game Flow.canvas",
-    "Projects/Basilisk SH/docs/implementation/architecture.md",
-    "Untitled 1.canvas",
-    "Cooking/Diet/Crash Diet.md",
-    "Cooking/Cooking.md",
-    "Projects/Basilisk SH/docs/implementation/ux-performance-and-content.md",
     "Projects/Basilisk SH/docs/planning/risks-and-open-questions.md",
-    "Basilisk SH Master Spec.md",
-    "Projects/Basilisk SH/docs/implementation/data-model.md",
-    "Projects/Basilisk SH/docs/implementation",
-    "Projects/Basilisk SH/docs/planning",
-    "Projects/Basilisk SH/docs/systems/audio-system.md",
-    "Projects/Basilisk SH/docs/systems/export-and-integration.md",
-    "Projects/Basilisk SH/docs/systems/ritual-state-and-score.md",
-    "Projects/Basilisk SH/docs/systems/visual-system.md",
-    "Projects/Basilisk SH/docs/systems",
-    "Projects/Basilisk SH/README.md",
-    "Projects/Basilisk SH/docs/product/experience-loop.md",
-    "Projects/Basilisk SH/docs/product/narrative-design.md",
-    "Projects/Basilisk SH/docs/product/foundation.md",
-    "Projects/Basilisk SH/docs/product",
-    "Projects/Basilisk SH/docs/README.md",
-    "Projects/Basilisk SH/docs",
-    "Projects/Design System",
-    "Projects/Basilisk SH.md",
-    "Projects/Basilisk AV",
-    "Projects/Basilisk SH",
-    "Projects",
-    "Cooking/Diet/Crash Diet Meal Plan.md",
-    "Cooking/Diet/Crash Diet Meal Plan.md.tmp.69442.1771876000648",
-    "Cooking/README.md",
-    "Cooking/Grocery/Orders/2025-12-29.md",
-    "2026-02-16.md",
-    "Cooking/Recipes/Cookbook/Breakfasts/Apple & custard.md",
-    "Cooking/Grocery/Grocery Analytics 2025.md",
-    "Cooking/Grocery/Grocery Hub.md"
+    "tools/vault-indexer/node_modules/esprima/dist/esprima.js",
+    "tools/vault-indexer/node_modules/esprima/dist",
+    "tools/vault-indexer/package-lock.json",
+    "tools/vault-indexer/node_modules/openai/beta/realtime/ws.mjs",
+    "tools/vault-indexer/node_modules/openai/beta/realtime/ws.js.map",
+    "tools/vault-indexer/node_modules/openai/beta/realtime/ws.js",
+    "tools/vault-indexer/node_modules/openai/beta/realtime/ws.mjs.map",
+    "tools/vault-indexer/node_modules/openai/beta/realtime/ws.d.ts.map",
+    "tools/vault-indexer/node_modules/openai/beta/realtime/websocket.mjs.map",
+    "tools/vault-indexer/node_modules/openai/beta/realtime/ws.d.mts.map",
+    "tools/vault-indexer/node_modules/openai/src/_vendor/zod-to-json-schema/README.md",
+    "tools/vault-indexer/node_modules/openai/src/_vendor/partial-json-parser/README.md",
+    "tools/vault-indexer/node_modules/openai/src/resources/webhooks/api.md",
+    "tools/vault-indexer/node_modules/openai/src/resources/responses/api.md",
+    "tools/vault-indexer/node_modules/openai/src/resources/realtime/api.md",
+    "tools/vault-indexer/node_modules/openai/src/resources/conversations/api.md",
+    "tools/vault-indexer/node_modules/openai/src/internal/qs/README.md",
+    "tools/vault-indexer/node_modules/openai/src/internal/qs/LICENSE.md",
+    "tools/vault-indexer/node_modules/openai/src/core/README.md",
+    "tools/vault-indexer/node_modules/openai/src/internal/README.md",
+    "tools/vault-indexer/node_modules/@supabase/realtime-js/README.md",
+    "tools/vault-indexer/node_modules/@supabase/functions-js/README.md",
+    "tools/vault-indexer/node_modules/@supabase/supabase-js/README.md",
+    "tools/vault-indexer/node_modules/@types/ws/README.md",
+    "tools/vault-indexer/node_modules/@supabase/storage-js/README.md",
+    "tools/vault-indexer/node_modules/@supabase/postgrest-js/README.md",
+    "tools/vault-indexer/node_modules/gray-matter/README.md",
+    "tools/vault-indexer/node_modules/iceberg-js/README.md",
+    "tools/vault-indexer/node_modules/dotenv/README-es.md",
+    "tools/vault-indexer/node_modules/openai/CHANGELOG.md",
+    "tools/vault-indexer/node_modules/kind-of/README.md",
+    "tools/vault-indexer/node_modules/argparse/README.md",
+    "tools/vault-indexer/README.md",
+    "roadmap_link.md",
+    "Projects/Codebase Documentation Commands.md",
+    "Basilisk Game Flow.canvas",
+    "Untitled 1.canvas"
   ]
 }
