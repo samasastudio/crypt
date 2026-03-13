@@ -12,12 +12,6 @@ on:
       - "tools/vault-indexer/**"
       - "supabase/migrations/**"
   workflow_dispatch:
-    inputs:
-      full_reindex:
-        description: "Run a full vault rebuild"
-        required: false
-        default: false
-        type: boolean
 
 concurrency:
   group: vault-index-${{ github.ref }}
@@ -63,7 +57,7 @@ jobs:
           fi
 
       - name: Full reindex
-        if: ${{ github.event_name == 'workflow_dispatch' && inputs.full_reindex }}
+        if: ${{ github.event_name == 'workflow_dispatch' }}
         working-directory: tools/vault-indexer
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}

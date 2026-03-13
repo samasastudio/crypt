@@ -18,6 +18,16 @@ test("chunkSection splits large paragraphs deterministically", () => {
   assert.ok(firstRun.length > 1);
 });
 
+test("chunkSection keeps oversized flat blobs under the token budget", () => {
+  const line = "root.items[0].description: " + "x".repeat(50000);
+  const chunks = chunkSection(line, 1000, 150);
+
+  assert.ok(chunks.length > 1);
+  chunks.forEach((chunk) => {
+    assert.ok(chunk.length <= 4000);
+  });
+});
+
 test("chunkDocument preserves heading path metadata", () => {
   const chunks = chunkDocument({
     repoPath: "Projects/Basilisk SH/docs/README.md",

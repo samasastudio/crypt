@@ -94,21 +94,36 @@ export function chunkSection(text, targetTokens = DEFAULT_TARGET_TOKENS, overlap
 }
 
 function chunkLargeParagraph(paragraph, targetTokens, overlapTokens) {
-  const words = paragraph.split(/\s+/).filter(Boolean);
-  const wordsPerChunk = Math.max(150, targetTokens * 3);
-  const overlapWords = Math.max(30, overlapTokens * 3);
+  const normalized = paragraph.trim();
+  const maxChars = Math.max(400, targetTokens * 4);
+  const overlapChars = Math.max(80, overlapTokens * 4);
   const chunks = [];
 
-  for (let start = 0; start < words.length; start += wordsPerChunk - overlapWords) {
-    const chunkWords = words.slice(start, start + wordsPerChunk);
-    if (chunkWords.length === 0) {
+  if (normalized.length <= maxChars) {
+    return [normalized];
+  }
+
+  let start = 0;
+  while (start < normalized.length) {
+    const remaining = normalized.length - start;
+    if (remaining <= maxChars) {
+      chunks.push(normalized.slice(start).trim());
       break;
     }
 
-    chunks.push(chunkWords.join(" "));
-    if (start + wordsPerChunk >= words.length) {
-      break;
+    let end = start + maxChars;
+    const boundary = normalized.lastIndexOf(" ", end);
+    if (boundary > start + Math.floor(maxChars / 2)) {
+      end = boundary;
     }
+
+    const chunk = normalized.slice(start, end).trim();
+    if (!chunk) {
+      end = Math.min(normalized.length, start + maxChars);
+    }
+
+    chunks.push(normalized.slice(start, end).trim());
+    start = Math.max(end - overlapChars, start + 1);
   }
 
   return chunks;
