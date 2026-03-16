@@ -12,6 +12,7 @@ import {
   createQueryEmbedding
 } from "./lib/openai.mjs";
 import {
+  getCandidateMatchCount,
   postProcessResults
 } from "./lib/results.mjs";
 import {
@@ -113,7 +114,7 @@ Deno.serve(async (request) => {
 
     const { data, error } = await supabase.rpc("match_vault_chunks", {
       query_embedding: embedding,
-      match_count: searchRequest.match_count,
+      match_count: getCandidateMatchCount(searchRequest),
       filter: buildMatchFilter(searchRequest)
     });
 

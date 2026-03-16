@@ -1,7 +1,10 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 
-import { postProcessResults } from "../lib/results.mjs";
+import {
+  getCandidateMatchCount,
+  postProcessResults
+} from "../lib/results.mjs";
 
 const rows = [
   {
@@ -61,6 +64,7 @@ test("postProcessResults filters weak matches and caps repeated sources", () => 
 
 test("postProcessResults can omit content", () => {
   const processed = postProcessResults(rows, {
+    match_count: 8,
     min_similarity: 0.65,
     max_per_source: 2,
     include_content: false
@@ -68,4 +72,51 @@ test("postProcessResults can omit content", () => {
 
   assert.equal("content" in processed[0], false);
   assert.deepEqual(processed[0].heading_path, ["One"]);
+});
+
+test("postProcessResults fills requested count from later sources when earlier rows are capped", () => {
+  const processed = postProcessResults(
+    [
+      ...rows,
+      {
+        repo_path: "Projects/Basilisk SH/docs/b.md",
+        title: "B",
+        heading_path: ["Overview"],
+        content: "chunk-b1",
+        similarity: 0.87,
+        source_type: "markdown",
+        metadata: { kind: "doc" }
+      },
+      {
+        repo_path: "Projects/Basilisk SH/docs/c.md",
+        title: "C",
+        heading_path: ["Overview"],
+        content: "chunk-c2",
+        similarity: 0.86,
+        source_type: "markdown",
+        metadata: { kind: "doc" }
+      }
+    ],
+    {
+      match_count: 3,
+      min_similarity: 0.65,
+      max_per_source: 2,
+      include_content: true
+    }
+  );
+
+  assert.equal(processed.length, 3);
+  assert.deepEqual(
+    processed.map((row) => row.repo_path),
+    [
+      "Projects/Basilisk SH/docs/a.md",
+      "Projects/Basilisk SH/docs/a.md",
+      "Projects/Basilisk SH/docs/b.md"
+    ]
+  );
+});
+
+test("getCandidateMatchCount over-fetches while preserving an upper bound", () => {
+  assert.equal(getCandidateMatchCount({ match_count: 8 }), 24);
+  assert.equal(getCandidateMatchCount({ match_count: 20 }), 50);
 });
