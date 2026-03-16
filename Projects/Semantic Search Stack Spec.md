@@ -167,6 +167,7 @@ Implemented baseline:
 - `match_vault_chunks(...)` RPC calls
 - post-processing for similarity thresholding and per-source caps
 - unit tests around auth, request parsing, and result post-processing
+- deployment validated against the production Supabase project
 
 Remaining work at this layer is mostly deployment, evaluation, and policy tuning rather than first-pass implementation.
 
@@ -191,7 +192,7 @@ Recommended request body:
   "repo_path_prefix": "Projects/Basilisk SH",
   "source_type": "markdown",
   "match_count": 8,
-  "min_similarity": 0.65,
+  "min_similarity": 0.3,
   "max_per_source": 2
 }
 ```
@@ -271,9 +272,14 @@ Do not expose direct database credentials to agents or browser clients.
 Recommended defaults:
 
 - `match_count`: `8`
-- `min_similarity`: `0.65`
+- `min_similarity`: start around `0.2-0.3` and tune from live evaluation
 - `max_per_source`: `2`
 - prefer multiple distinct sources over many adjacent chunks from one file
+
+Current evaluation note:
+
+- live Basilisk validation returned useful matches around `0.48-0.60`
+- the previous default of `0.65` is too strict for the current corpus
 
 ### Edge Function non-goals
 
@@ -437,8 +443,8 @@ Deliverable:
 
 ### Build next in Supabase
 
-- deploy and verify `search-vault`
-- tune retrieval defaults based on real questions
+- keep `search-vault` deployed and healthy
+- lower the default similarity threshold and retest on representative questions
 - add lightweight debug or ops support only if evaluation shows a need
 
 ### Build after that in a new repo
@@ -484,7 +490,8 @@ The most practical next step is:
 
 1. keep this repo as-is for indexing
 2. deploy or locally serve `search-vault` and validate it through `tools/vault-mcp/`
-3. evaluate `search_basilisk` against representative Basilisk queries
-4. add broader MCP tools only after retrieval quality is acceptable
+3. lower the default similarity threshold and redeploy
+4. evaluate `search_basilisk` against representative Basilisk queries
+5. add broader MCP tools only after retrieval quality is acceptable
 
 That path gives you the smallest possible production retrieval surface first, while keeping room for a much richer agent layer later.

@@ -32,6 +32,7 @@ Current baseline:
 - Retrieval function: `public.match_vault_chunks(...)`
 - Retrieval API: `supabase/functions/search-vault/`
 - MCP server: `tools/vault-mcp/` with `search_basilisk`
+- Retrieval API deployment: live in Supabase and validated against the indexed vault
 - Last successful full-index baseline: `262` sources and `1267` chunks
 
 Indexed source types:
@@ -110,6 +111,12 @@ That function is the main bridge point for future agent tools and RAG services.
 
 The first shared retrieval API now also exists as `search-vault` in `supabase/functions/search-vault/`. Use that function when you want server-side embedding, filtering, deduping, and a response format ready for agent consumers.
 
+Deployment note:
+
+- the hosted `search-vault` function is now live
+- manual validation confirmed end-to-end retrieval against the production Supabase project
+- current observed Basilisk match scores are commonly below `0.65`, so retrieval tuning is now the main quality task
+
 ## Known Issues And Fixes We Already Hit
 
 - Initial GitHub push: the workflow needed a first-push-safe diff strategy
@@ -124,8 +131,8 @@ The vault is ready for the next layer: agent integration, retrieval evaluation, 
 Recommended near-term path:
 
 1. Run `tools/vault-mcp/` against a deployed or locally served `search-vault`.
-2. Evaluate `search_basilisk` on `10-20` representative questions before adding more tools.
-3. Tune retrieval policy only after reviewing real misses and false positives.
+2. Lower the default similarity threshold from the current `0.65` after reviewing the first live Basilisk queries.
+3. Evaluate `search_basilisk` on `10-20` representative questions before adding more tools.
 4. Build a citation-first answer layer that always returns source paths and chunk excerpts.
 5. Expand into broader tools such as `search_vault` or `search_cooking` after retrieval quality is stable.
 

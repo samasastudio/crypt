@@ -23,6 +23,7 @@ The current stack already gives us the retrieval substrate:
 - Similarity search is available through `public.match_vault_chunks(...)`
 - A shared retrieval API now exists at `supabase/functions/search-vault/`
 - An initial MCP wrapper now exists at `tools/vault-mcp/` with `search_basilisk`
+- The hosted Edge Function has been deployed and manually validated end-to-end
 - GitHub Actions keeps the index fresh on pushes to `main`
 - Request parsing and retrieval post-processing already have unit test coverage
 
@@ -66,9 +67,9 @@ The current retrieval layer already:
 
 This phase is now about operationalizing that runtime:
 
-- deploy or locally serve the Edge Function consistently
-- verify auth, secrets, and caller expectations
-- validate response quality on real vault questions
+- keep deployment and secrets stable
+- verify caller expectations through the MCP wrapper and direct API tests
+- tune retrieval defaults based on real vault questions
 
 Recommended first interface:
 
@@ -231,6 +232,11 @@ Run `10-20` representative questions and inspect:
 - whether `min_similarity` and `max_per_source` need tuning
 - which questions need better chunking or metadata
 
+Initial live finding:
+
+- useful Basilisk hits are currently showing up around `0.48-0.60`
+- the current default `min_similarity` of `0.65` is too strict for the validated production corpus
+
 ### Build 4: RAG response layer
 
 Add:
@@ -242,8 +248,8 @@ Add:
 ## Recommended Near-Term Order
 
 1. Add a local semantic query script for manual testing
-2. Evaluate `search_basilisk` on `10-20` representative questions
-3. Tune retrieval policy only after seeing real misses
+2. Lower the default `min_similarity` and redeploy `search-vault`
+3. Evaluate `search_basilisk` on `10-20` representative questions
 4. Add either `search_vault` or `search_cooking` only after Basilisk retrieval is solid
 5. Add a RAG answer layer after retrieval quality is acceptable
 
@@ -275,4 +281,4 @@ Use scoped agents when:
 
 ## Next Move
 
-The best next implementation step is to evaluate `tools/vault-mcp/` on a representative Basilisk question set and tune retrieval quality before adding broader MCP tools or a citation-first answer layer.
+The best next implementation step is to lower the default similarity threshold in `search-vault`, redeploy it, and then evaluate `tools/vault-mcp/` on a representative Basilisk question set before adding broader MCP tools or a citation-first answer layer.
