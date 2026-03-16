@@ -8,7 +8,7 @@ tags:
 
 # Crypt Vault
 
-This vault combines project documentation, product specs, and a structured cooking and grocery knowledge base inside Obsidian. It now also has a working semantic indexing pipeline that persists embeddings into Supabase so agents and retrieval workflows can query the vault by meaning instead of only by filename or keyword.
+This vault combines project documentation, product specs, and a structured cooking and grocery knowledge base inside Obsidian. It now has both a working semantic indexing pipeline and a retrieval API on top of Supabase so agents and retrieval workflows can query the vault by meaning instead of only by filename or keyword.
 
 ## Start Here
 
@@ -30,6 +30,8 @@ Current baseline:
 - Indexer code: `tools/vault-indexer/`
 - Supabase migration: `supabase/migrations/20260311110000_create_vault_index.sql`
 - Retrieval function: `public.match_vault_chunks(...)`
+- Retrieval API: `supabase/functions/search-vault/`
+- MCP server: `tools/vault-mcp/` with `search_basilisk`
 - Last successful full-index baseline: `262` sources and `1267` chunks
 
 Indexed source types:
@@ -106,6 +108,8 @@ from public.match_vault_chunks(
 
 That function is the main bridge point for future agent tools and RAG services.
 
+The first shared retrieval API now also exists as `search-vault` in `supabase/functions/search-vault/`. Use that function when you want server-side embedding, filtering, deduping, and a response format ready for agent consumers.
+
 ## Known Issues And Fixes We Already Hit
 
 - Initial GitHub push: the workflow needed a first-push-safe diff strategy
@@ -115,14 +119,14 @@ That function is the main bridge point for future agent tools and RAG services.
 
 ## Agent And RAG Direction
 
-The vault is ready for the next layer: agents and retrieval-augmented generation.
+The vault is ready for the next layer: agent integration, retrieval evaluation, and citation-first answer generation.
 
 Recommended near-term path:
 
-1. Start with a small retrieval tool that embeds a query, calls `match_vault_chunks(...)`, and returns top chunks with citations.
-2. Put that tool behind a simple API or server-side function so multiple agents can use the same retrieval logic.
-3. Add scope filters so agents can search only `Cooking/` or only `Projects/Basilisk SH/` when appropriate.
+1. Run `tools/vault-mcp/` against a deployed or locally served `search-vault`.
+2. Evaluate `search_basilisk` on `10-20` representative questions before adding more tools.
+3. Tune retrieval policy only after reviewing real misses and false positives.
 4. Build a citation-first answer layer that always returns source paths and chunk excerpts.
-5. Add evaluation queries and known-good prompts before expanding to more autonomous multi-step agents.
+5. Expand into broader tools such as `search_vault` or `search_cooking` after retrieval quality is stable.
 
 See [Semantic search and agent RAG plan](Projects/Semantic%20Search%20and%20Agent%20RAG.md) for the retrieval/RAG roadmap and [Semantic search stack spec](Projects/Semantic%20Search%20Stack%20Spec.md) for the full repo-plus-Edge-Function-plus-MCP architecture.
