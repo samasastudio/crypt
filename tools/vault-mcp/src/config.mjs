@@ -1,6 +1,7 @@
 export function loadConfig(env = process.env) {
   const searchVaultUrl = normalizeRequiredEnv(env.SEARCH_VAULT_URL);
   const searchVaultToken = normalizeRequiredEnv(env.SEARCH_VAULT_TOKEN);
+  const searchVaultTimeoutMs = normalizeOptionalTimeout(env.SEARCH_VAULT_TIMEOUT_MS);
 
   const missingVars = [];
 
@@ -24,7 +25,8 @@ export function loadConfig(env = process.env) {
 
   return {
     searchVaultUrl,
-    searchVaultToken
+    searchVaultToken,
+    searchVaultTimeoutMs
   };
 }
 
@@ -34,4 +36,19 @@ function normalizeRequiredEnv(value) {
   }
 
   return value.trim();
+}
+
+function normalizeOptionalTimeout(value) {
+  if (value === undefined || value === null || value === "") {
+    return 10000;
+  }
+
+  const normalized = typeof value === "string" ? value.trim() : value;
+  const timeoutMs = Number(normalized);
+
+  if (!Number.isInteger(timeoutMs) || timeoutMs <= 0) {
+    throw new Error("SEARCH_VAULT_TIMEOUT_MS must be a positive integer when provided.");
+  }
+
+  return timeoutMs;
 }

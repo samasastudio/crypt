@@ -46,6 +46,7 @@ test("createSearchVaultClient sends POST requests with auth and JSON body", asyn
   assert.equal(seenOptions.method, "POST");
   assert.equal(seenOptions.headers.authorization, "Bearer secret-token");
   assert.equal(seenOptions.headers["content-type"], "application/json");
+  assert.ok(seenOptions.signal instanceof AbortSignal);
   assert.deepEqual(JSON.parse(seenOptions.body), {
     query: "ritual state",
     repo_path_prefix: "Projects/Basilisk SH",
@@ -153,6 +154,31 @@ test("createSearchVaultClient maps upstream and network failures to service erro
       assert.ok(error instanceof SearchVaultClientError);
       assert.equal(error.kind, "service");
       assert.equal(error.status, null);
+      return true;
+    }
+  );
+});
+
+test("createSearchVaultClient aborts requests that exceed the timeout", async () => {
+  const client = createSearchVaultClient({
+    searchVaultUrl: "https://example.com/functions/v1/search-vault",
+    searchVaultToken: "secret-token",
+    searchVaultTimeoutMs: 10,
+    fetchImpl: async (url, options) => new Promise((resolve, reject) => {
+      options.signal.addEventListener("abort", () => {
+        reject(new Error("aborted"));
+      });
+    })
+  });
+
+  await assert.rejects(
+    () => client.search({
+      query: "ritual state"
+    }),
+    (error) => {
+      assert.ok(error instanceof SearchVaultClientError);
+      assert.equal(error.kind, "service");
+      assert.equal(error.message, "Vault retrieval service timed out after 10ms.");
       return true;
     }
   );

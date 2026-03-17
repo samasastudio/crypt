@@ -10,11 +10,14 @@ export class SearchVaultClientError extends Error {
 export function createSearchVaultClient({
   searchVaultUrl,
   searchVaultToken,
+  searchVaultTimeoutMs = 10000,
   fetchImpl = fetch
 }) {
   return {
     async search(requestBody) {
       let response;
+      const abortController = new AbortController();
+      const timeoutId = setTimeout(() => abortController.abort(), searchVaultTimeoutMs);
 
       try {
         response = await fetchImpl(searchVaultUrl, {
@@ -23,9 +26,19 @@ export function createSearchVaultClient({
             "content-type": "application/json",
             authorization: `Bearer ${searchVaultToken}`
           },
-          body: JSON.stringify(requestBody)
+          body: JSON.stringify(requestBody),
+          signal: abortController.signal
         });
       } catch (error) {
+        if (abortController.signal.aborted) {
+          throw new SearchVaultClientError(
+            `Vault retrieval service timed out after ${searchVaultTimeoutMs}ms.`,
+            {
+              kind: "service"
+            }
+          );
+        }
+
         throw new SearchVaultClientError(
           "Vault retrieval service is unreachable.",
           {
@@ -33,6 +46,8 @@ export function createSearchVaultClient({
             cause: error
           }
         );
+      } finally {
+        clearTimeout(timeoutId);
       }
 
       const payload = await parseJsonResponse(response);

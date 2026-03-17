@@ -1,4 +1,5 @@
 export const BASILISK_SCOPE = "Projects/Basilisk SH";
+const BASILISK_MIN_SIMILARITY = 0.3;
 const DEFAULT_MATCH_COUNT = 8;
 const MIN_MATCH_COUNT = 1;
 const MAX_MATCH_COUNT = 8;
@@ -17,6 +18,7 @@ export function normalizeSearchBasiliskInput(input) {
     query,
     repo_path_prefix: BASILISK_SCOPE,
     match_count: matchCount,
+    min_similarity: BASILISK_MIN_SIMILARITY,
     include_content: includeContent
   };
 }

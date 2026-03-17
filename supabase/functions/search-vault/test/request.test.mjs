@@ -13,7 +13,7 @@ test("parseSearchRequest applies defaults", () => {
     repo_path_prefix: null,
     source_type: null,
     match_count: 8,
-    min_similarity: 0.65,
+    min_similarity: 0.3,
     max_per_source: 2,
     include_content: true
   });

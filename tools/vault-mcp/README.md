@@ -16,12 +16,14 @@ Set these before starting the server:
 ```bash
 SEARCH_VAULT_URL=...
 SEARCH_VAULT_TOKEN=...
+SEARCH_VAULT_TIMEOUT_MS=10000
 ```
 
 - `SEARCH_VAULT_URL`: full `search-vault` function URL
 - `SEARCH_VAULT_TOKEN`: bearer token expected by `search-vault`
+- `SEARCH_VAULT_TIMEOUT_MS`: optional HTTP timeout in milliseconds when calling `search-vault`
 
-See [search-vault README](/C:/Users/Owner/projects/crypt/supabase/functions/search-vault/README.md) for the retrieval API setup and local serving instructions.
+See the [search-vault README](../../supabase/functions/search-vault/README.md) for the retrieval API setup and local serving instructions.
 
 ## Run Locally
 
@@ -53,16 +55,19 @@ Example local MCP client entry:
     "vault-mcp": {
       "command": "node",
       "args": [
-        "C:/Users/Owner/projects/crypt/tools/vault-mcp/src/index.mjs"
+        "<path-to-your-checkout>/tools/vault-mcp/src/index.mjs"
       ],
       "env": {
         "SEARCH_VAULT_URL": "https://<project-ref>.supabase.co/functions/v1/search-vault",
-        "SEARCH_VAULT_TOKEN": "<internal-search-token>"
+        "SEARCH_VAULT_TOKEN": "<internal-search-token>",
+        "SEARCH_VAULT_TIMEOUT_MS": "10000"
       }
     }
   }
 }
 ```
+
+Replace `<path-to-your-checkout>` with the absolute path to your local clone.
 
 ## V1 Scope
 

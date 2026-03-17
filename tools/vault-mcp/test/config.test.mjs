@@ -24,11 +24,32 @@ test("loadConfig returns normalized configuration", () => {
   assert.deepEqual(
     loadConfig({
       SEARCH_VAULT_URL: " https://example.com/functions/v1/search-vault ",
-      SEARCH_VAULT_TOKEN: " secret-token "
+      SEARCH_VAULT_TOKEN: " secret-token ",
+      SEARCH_VAULT_TIMEOUT_MS: " 15000 "
     }),
     {
       searchVaultUrl: "https://example.com/functions/v1/search-vault",
-      searchVaultToken: "secret-token"
+      searchVaultToken: "secret-token",
+      searchVaultTimeoutMs: 15000
     }
+  );
+});
+
+test("loadConfig defaults and validates timeout", () => {
+  assert.equal(
+    loadConfig({
+      SEARCH_VAULT_URL: "https://example.com/functions/v1/search-vault",
+      SEARCH_VAULT_TOKEN: "secret-token"
+    }).searchVaultTimeoutMs,
+    10000
+  );
+
+  assert.throws(
+    () => loadConfig({
+      SEARCH_VAULT_URL: "https://example.com/functions/v1/search-vault",
+      SEARCH_VAULT_TOKEN: "secret-token",
+      SEARCH_VAULT_TIMEOUT_MS: "0"
+    }),
+    /positive integer/i
   );
 });

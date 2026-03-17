@@ -27,6 +27,7 @@ test("normalizeSearchBasiliskInput clamps match_count and defaults include_conte
       query: "ritual state",
       repo_path_prefix: BASILISK_SCOPE,
       match_count: 8,
+      min_similarity: 0.3,
       include_content: true
     }
   );
@@ -41,6 +42,7 @@ test("normalizeSearchBasiliskInput clamps match_count and defaults include_conte
       query: "ritual state",
       repo_path_prefix: BASILISK_SCOPE,
       match_count: 1,
+      min_similarity: 0.3,
       include_content: false
     }
   );
@@ -86,6 +88,7 @@ test("createSearchBasiliskHandler always scopes requests to Basilisk and preserv
     query: "How does Basilisk map ritual state to AV output?",
     repo_path_prefix: BASILISK_SCOPE,
     match_count: 8,
+    min_similarity: 0.3,
     include_content: true
   });
   assert.equal(result.scope, BASILISK_SCOPE);
