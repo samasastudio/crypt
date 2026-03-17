@@ -21,9 +21,13 @@ The current stack already gives us the retrieval substrate:
 - Embeddings are stored in Supabase in `public.vault_chunks`
 - File-level state is tracked in `public.vault_sources`
 - Similarity search is available through `public.match_vault_chunks(...)`
+- A shared retrieval API now exists at `supabase/functions/search-vault/`
+- An initial MCP wrapper now exists at `tools/vault-mcp/` with `search_basilisk`
+- The hosted Edge Function has been deployed and manually validated end-to-end
 - GitHub Actions keeps the index fresh on pushes to `main`
+- Request parsing and retrieval post-processing already have unit test coverage
 
-This means the next work is not "build vector storage." It is "design the query layer and agent interface cleanly."
+This means the next work is not "build vector storage" or "build the first retrieval API." It is "connect consumers to the shared retrieval layer, evaluate search quality, and then add citation-first answer assembly."
 
 ## Recommended Architecture
 
@@ -49,24 +53,23 @@ Do not let each agent invent its own retrieval flow. Put one shared retrieval se
 - citation formatting
 - failure handling
 
-## Phase 1: Retrieval Tool
+## Phase 1: Shared Retrieval Runtime
 
-Build a small server-side tool or endpoint that:
+Status: baseline complete in `supabase/functions/search-vault/`
 
-- accepts:
-  - `query`
-  - optional `repo_path_prefix`
-  - optional `source_type`
-  - optional `match_count`
+The current retrieval layer already:
+
+- accepts `query` plus optional path, source, and ranking controls
 - generates an embedding for the query
 - calls `match_vault_chunks(...)`
-- returns:
-  - `repo_path`
-  - `title`
-  - `heading_path`
-  - `content`
-  - `similarity`
-  - `metadata`
+- filters weak matches and caps repeated chunks from the same source
+- returns paths, headings, metadata, and optional content
+
+This phase is now about operationalizing that runtime:
+
+- keep deployment and secrets stable
+- verify caller expectations through the MCP wrapper and direct API tests
+- tune retrieval defaults based on real vault questions
 
 Recommended first interface:
 
@@ -198,35 +201,41 @@ Return human-readable source references every time:
 - title
 - heading when available
 
-## First Practical Builds
+## Practical Build Sequence From Here
 
-### Build 1: Query script
+### Build 1: Retrieval validation harness
 
-Create a local script that:
+Create a local script or repeatable curl flow that:
 
 - accepts a plain-language question
-- embeds it
-- queries Supabase
+- calls `search-vault`
 - prints the top matches with paths and scores
 
-This is the fastest way to validate retrieval quality.
+This is the fastest way to validate retrieval quality against real questions from Basilisk and Cooking.
 
-### Build 2: Retrieval API
+### Build 2: Thin consumer or wrapper
 
-Wrap the query logic in:
+Expose the shared retrieval API to one real consumer:
 
-- a small Node service
-- or a Supabase Edge Function
+- a local query script
+- an app-side server helper
+- or an MCP tool such as `search_basilisk`
 
-The API should centralize auth, filters, and ranking rules.
+The goal here is not a second retrieval backend. It is a small, opinionated wrapper around `search-vault`.
 
-### Build 3: Agent tool wrapper
+### Build 3: Retrieval evaluation set
 
-Expose the retrieval API to agents as a single tool:
+Run `10-20` representative questions and inspect:
 
-- `search_vault(query, repo_path_prefix?, match_count?)`
+- whether the top results are from the right domain
+- whether path scoping improves precision
+- whether `min_similarity` and `max_per_source` need tuning
+- which questions need better chunking or metadata
 
-This keeps the agent side simple and auditable.
+Initial live finding:
+
+- useful Basilisk hits are currently showing up around `0.48-0.60`
+- the current default `min_similarity` of `0.65` is too strict for the validated production corpus
 
 ### Build 4: RAG response layer
 
@@ -239,9 +248,9 @@ Add:
 ## Recommended Near-Term Order
 
 1. Add a local semantic query script for manual testing
-2. Create a shared retrieval API
-3. Connect one scoped agent to that API
-4. Evaluate search quality on 10-20 representative questions
+2. Lower the default `min_similarity` and redeploy `search-vault`
+3. Evaluate `search_basilisk` on `10-20` representative questions
+4. Add either `search_vault` or `search_cooking` only after Basilisk retrieval is solid
 5. Add a RAG answer layer after retrieval quality is acceptable
 
 ## Example Questions To Evaluate
@@ -272,4 +281,4 @@ Use scoped agents when:
 
 ## Next Move
 
-The best next implementation step is a query script or small retrieval API that sits on top of `match_vault_chunks(...)`. Once that exists, multiple agents can share it without duplicating search logic in prompts.
+The best next implementation step is to lower the default similarity threshold in `search-vault`, redeploy it, and then evaluate `tools/vault-mcp/` on a representative Basilisk question set before adding broader MCP tools or a citation-first answer layer.

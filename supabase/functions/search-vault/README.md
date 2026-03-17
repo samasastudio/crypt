@@ -2,6 +2,12 @@
 
 `search-vault` is the first production retrieval API for the vault. It is retrieval-only: it embeds a query, calls `public.match_vault_chunks(...)`, filters and dedupes the results, and returns ranked chunks with citations and metadata.
 
+Current status:
+
+- deployed to the production Supabase project
+- manually validated end-to-end against the indexed vault
+- current live evaluation suggests the default similarity threshold should be lowered from `0.65`
+
 ## Required Secrets
 
 Set these in Supabase Edge Functions secrets before deploying:
@@ -52,7 +58,7 @@ curl -i \
     "repo_path_prefix": "Projects/Basilisk SH",
     "source_type": "markdown",
     "match_count": 8,
-    "min_similarity": 0.65,
+    "min_similarity": 0.3,
     "max_per_source": 2,
     "include_content": true
   }'
@@ -79,7 +85,7 @@ curl -i \
     "match_count": 8,
     "repo_path_prefix": "Projects/Basilisk SH",
     "source_type": "markdown",
-    "min_similarity": 0.65,
+    "min_similarity": 0.3,
     "max_per_source": 2,
     "model": "text-embedding-3-small"
   }
@@ -93,3 +99,8 @@ curl -i \
 - `400` for malformed JSON or invalid request input
 - `502` for upstream OpenAI or Supabase failures
 - `200` with empty `results` when no rows survive filtering
+
+## Evaluation Notes
+
+- if you are seeing empty `results` with a healthy index, inspect the returned `meta.min_similarity`
+- current Basilisk validation returned useful matches below `0.65`, so a lower threshold is recommended for production retrieval quality

@@ -1,5 +1,9 @@
 tools/vault-indexer/node_modules/
 tools/vault-indexer/.env
 tools/vault-indexer/.env.local
+tools/vault-mcp/node_modules/
+tools/vault-mcp/.env
+tools/vault-mcp/.env.local
+supabase/.temp/
 .obsidian/workspace.json
 .obsidian/graph.json

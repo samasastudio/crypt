@@ -1,5 +1,5 @@
 const DEFAULT_MATCH_COUNT = 8;
-const DEFAULT_MIN_SIMILARITY = 0.65;
+const DEFAULT_MIN_SIMILARITY = 0.3;
 const DEFAULT_MAX_PER_SOURCE = 2;
 
 export function parseSearchRequest(input) {

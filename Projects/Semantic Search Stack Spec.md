@@ -123,7 +123,7 @@ This repo should not become the home for:
 
 ## Layer 2: Supabase Edge Function Spec
 
-The Edge Function should be the first production retrieval runtime.
+The Edge Function is now the first production retrieval runtime.
 
 ### Why Edge Functions first
 
@@ -155,6 +155,33 @@ Optional follow-on functions:
 - `answer-vault-question`
 - `summarize-vault-sources`
 
+### Current implementation status
+
+This repo now includes the initial Edge Function implementation at `supabase/functions/search-vault/`.
+
+Implemented baseline:
+
+- bearer-token authentication for trusted callers
+- request validation and defaulting
+- OpenAI query embedding
+- `match_vault_chunks(...)` RPC calls
+- post-processing for similarity thresholding and per-source caps
+- unit tests around auth, request parsing, and result post-processing
+- deployment validated against the production Supabase project
+
+Remaining work at this layer is mostly deployment, evaluation, and policy tuning rather than first-pass implementation.
+
+### Current MCP status
+
+This repo now also includes the first local MCP wrapper at `tools/vault-mcp/`.
+
+Implemented baseline:
+
+- stdio MCP server for local agent use
+- one production tool, `search_basilisk`
+- HTTP calls from MCP to `search-vault`
+- local unit tests for config loading, request construction, and error mapping
+
 ### Request contract
 
 Recommended request body:
@@ -165,7 +192,7 @@ Recommended request body:
   "repo_path_prefix": "Projects/Basilisk SH",
   "source_type": "markdown",
   "match_count": 8,
-  "min_similarity": 0.65,
+  "min_similarity": 0.3,
   "max_per_source": 2
 }
 ```
@@ -245,9 +272,14 @@ Do not expose direct database credentials to agents or browser clients.
 Recommended defaults:
 
 - `match_count`: `8`
-- `min_similarity`: `0.65`
+- `min_similarity`: start around `0.2-0.3` and tune from live evaluation
 - `max_per_source`: `2`
 - prefer multiple distinct sources over many adjacent chunks from one file
+
+Current evaluation note:
+
+- live Basilisk validation returned useful matches around `0.48-0.60`
+- the previous default of `0.65` is too strict for the current corpus
 
 ### Edge Function non-goals
 
@@ -411,10 +443,9 @@ Deliverable:
 
 ### Build next in Supabase
 
-- `search-vault` Edge Function
-- request validation
-- query embedding
-- result filtering and deduping
+- keep `search-vault` deployed and healthy
+- lower the default similarity threshold and retest on representative questions
+- add lightweight debug or ops support only if evaluation shows a need
 
 ### Build after that in a new repo
 
@@ -422,6 +453,11 @@ Deliverable:
 - `search_vault`
 - `search_basilisk`
 - `search_cooking`
+
+Current note:
+
+- the initial MCP server now exists in-repo at `tools/vault-mcp/` for fast iteration
+- move it to a separate repo later only if deployment/versioning needs justify the split
 
 ### Build after retrieval quality is proven
 
@@ -453,7 +489,9 @@ Deliverable:
 The most practical next step is:
 
 1. keep this repo as-is for indexing
-2. build `search-vault` as a Supabase Edge Function
-3. create a new repo for the MCP server that wraps the Edge Function
+2. deploy or locally serve `search-vault` and validate it through `tools/vault-mcp/`
+3. lower the default similarity threshold and redeploy
+4. evaluate `search_basilisk` against representative Basilisk queries
+5. add broader MCP tools only after retrieval quality is acceptable
 
 That path gives you the smallest possible production retrieval surface first, while keeping room for a much richer agent layer later.
