@@ -125,41 +125,143 @@ Hard-scoped to `Cooking/` for cooking and grocery queries.
 
 Surface `max_per_source` and `min_similarity` as optional MCP tool parameters so agents can tune retrieval behavior per-query.
 
-## Priority 5 — RAG Answer Layer
+## Priority 5 — MCP Deployment
 
-Not recommended until Priorities 1–3 are addressed.
+The MCP server currently runs as a local stdio process. To make it accessible to remote agents, hosted tools, and multi-user workflows, it needs to be deployed as a remote service using Streamable HTTP transport (the current MCP spec standard, replacing the deprecated SSE transport).
 
-### 5a. Context pack builder
+### Current state
+
+- Transport: `StdioServerTransport` (local only)
+- Entry point: `tools/vault-mcp/src/index.mjs`
+- Dependency: `@modelcontextprotocol/sdk ^1.27.1`
+- Auth: inherits from the `search-vault` Edge Function bearer token
+
+### 5a. Add Streamable HTTP transport
+
+The MCP SDK supports multiple transports. Add a `StreamableHTTPServerTransport` alongside the existing stdio transport so the server can run as a remote HTTP service.
+
+Code change in `index.mjs`:
+
+```js
+import { StreamableHTTPServerTransport } from "@modelcontextprotocol/sdk/server/streamableHttp.js";
+```
+
+The server should expose a single `/mcp` endpoint that accepts POST and GET requests per the MCP spec. Keep the stdio transport available as a fallback for local use.
+
+### 5b. Choose a hosting platform
+
+Recommended options, in order of fit for this stack:
+
+| Platform | Pros | Cons |
+|---|---|---|
+| **Cloudflare Workers** (recommended) | Free tier, edge-deployed, built-in MCP support via `McpAgent` class, OAuth provider included, git-push deploys | Requires porting to Cloudflare Workers runtime (not Node.js, but close) |
+| **Google Cloud Run** | Supports Node.js directly, scales to zero, Streamable HTTP works out of the box | Requires GCP account, more setup than Cloudflare |
+| **Railway** | Simple Node.js deploys, good DX, persistent processes | Costs scale with uptime, not usage |
+| **Self-hosted + Cloudflare Tunnel** | Full control, access to local network resources | More ops burden, requires a running machine |
+
+**Cloudflare Workers** is the best fit because:
+- The MCP server is stateless (it just proxies to the Edge Function)
+- Cloudflare provides `createMcpHandler()` for stateless MCP servers with minimal boilerplate
+- Free tier is generous for low-traffic personal use
+- Built-in OAuth support if you want to add auth later
+- The `search-vault` Edge Function is already on Supabase, so the MCP server on Cloudflare would call it over the network — clean separation
+
+### 5c. Deploy to Cloudflare Workers
+
+Step-by-step:
+
+1. Create a new Cloudflare Worker project:
+   ```bash
+   npm create cloudflare@latest vault-mcp-remote -- --template cloudflare/workers-mcp
+   ```
+
+2. Port the tool registrations from `server.mjs` to the Cloudflare `McpAgent` or `createMcpHandler()` format. The tool logic (calling `search-vault` over HTTP) stays the same.
+
+3. Set environment secrets:
+   ```bash
+   npx wrangler secret put SEARCH_VAULT_URL
+   npx wrangler secret put SEARCH_VAULT_TOKEN
+   ```
+
+4. Deploy:
+   ```bash
+   npx wrangler deploy
+   ```
+
+5. The MCP server will be live at `https://vault-mcp-remote.<your-account>.workers.dev/mcp`
+
+6. Any MCP client can connect by entering that URL — no local install needed.
+
+### 5d. Authentication for remote access
+
+For v1 (personal use), the `SEARCH_VAULT_TOKEN` bearer check inherited from the Edge Function is sufficient. For multi-user or public access:
+
+- Use Cloudflare's `workers-oauth-provider` to add OAuth 2.1
+- Or add a simple API key check at the MCP transport layer
+- The MCP spec supports standard HTTP authentication mechanisms on the Streamable HTTP transport
+
+### 5e. Client configuration for remote MCP
+
+Once deployed, agents connect with just the URL:
+
+```json
+{
+  "mcpServers": {
+    "vault-mcp": {
+      "url": "https://vault-mcp-remote.<your-account>.workers.dev/mcp"
+    }
+  }
+}
+```
+
+For clients that only support stdio (e.g., older Claude Desktop versions), use the `mcp-remote` adapter:
+
+```json
+{
+  "mcpServers": {
+    "vault-mcp": {
+      "command": "npx",
+      "args": ["mcp-remote", "https://vault-mcp-remote.<your-account>.workers.dev/mcp"]
+    }
+  }
+}
+```
+
+## Priority 6 — RAG Answer Layer
+
+Not recommended until Priorities 1–4 are addressed.
+
+### 6a. Context pack builder
 
 Assemble retrieved chunks into a citation-preserving prompt context suitable for LLM consumption.
 
-### 5b. Citation-first answer tool
+### 6b. Citation-first answer tool
 
 An MCP tool that retrieves, assembles context, and produces an answer with mandatory source citations (repo paths and heading paths).
 
-### 5c. Answer quality guardrails
+### 6c. Answer quality guardrails
 
 Require evidence for all claims, flag low-confidence answers, and refuse to answer when retrieval returns insufficient evidence.
 
-## Priority 6 — Infrastructure Improvements
+## Priority 7 — Infrastructure Improvements
 
-### 6a. Consolidate retry layers
+### 7a. Consolidate retry layers
 
 The indexer has both OpenAI SDK retries (`maxRetries: 2`) and manual `withRetry` (4 attempts) in `embeddings.mjs`. This means a single failed batch could attempt up to 12 API calls. Pick one retry strategy.
 
-### 6b. Align OpenAI timeout in Edge Function
+### 7b. Align OpenAI timeout in Edge Function
 
 The 120-second timeout in `openai.mjs` may exceed the Edge Function's execution ceiling (60s free tier, 150s Pro). Reduce to fit within platform limits.
 
-### 6c. Consider `text-embedding-3-large`
+### 7c. Consider `text-embedding-3-large`
 
 If retrieval quality remains too low after heading context injection, upgrading to `text-embedding-3-large` (3072 dimensions) would improve semantic discrimination at ~6x the embedding cost. Requires a schema migration and full reindex.
 
-### 6d. Per-record JSON sectioning
+### 7d. Per-record JSON sectioning
 
 Modify `content.mjs` to produce one section per top-level JSON object/array entry instead of one flat section for the whole file. This would improve retrieval precision for large files like `GROCERY_DATA_2026_UPDATED.json`.
 
-### 6e. Move MCP server to separate repo
+### 7e. Move MCP server to separate repo
 
 The Stack Spec recommends this for cleaner deployment and versioning. Only do this if deployment or versioning complexity justifies it — the current in-repo placement is fine for iteration.
 
