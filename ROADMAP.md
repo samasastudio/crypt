@@ -111,160 +111,56 @@ Mock the Supabase client and verify replace/delete/prune behavior, especially th
 
 ## Priority 4 — Expand MCP Tools
 
-Only pursue after retrieval quality is validated through the evaluation harness.
+### 4a. Add `search_vault` (general-purpose tool) — DONE
 
-### 4a. Add `search_vault` (general-purpose tool)
+Deployed in the `vault-mcp` Edge Function. Exposes `repo_path_prefix` and `source_type` as optional parameters.
 
-Same as `search_basilisk` but without scope restriction. Expose `repo_path_prefix` as an optional parameter so agents can search the full vault or any sub-path.
+### 4b. Add `search_cooking` tool — DONE
 
-### 4b. Add `search_cooking` tool
-
-Hard-scoped to `Cooking/` for cooking and grocery queries.
+Deployed in the `vault-mcp` Edge Function, hard-scoped to `Cooking/`.
 
 ### 4c. Expose tuning parameters
 
 Surface `max_per_source` and `min_similarity` as optional MCP tool parameters so agents can tune retrieval behavior per-query.
 
-## Priority 5 — MCP Deployment
+## Priority 5 — MCP Deployment — DONE
 
-The MCP server currently runs as a local stdio process. To make it accessible to remote agents, hosted tools, and multi-user workflows, it needs to be deployed as a remote service using Streamable HTTP transport (the current MCP spec standard, replacing the deprecated SSE transport).
+The MCP server is now deployed as both a local stdio process and a remote Streamable HTTP service on Supabase Edge Functions.
 
 ### Current state
 
-- Transport: `StdioServerTransport` (local only)
-- Entry point: `tools/vault-mcp/src/index.mjs`
-- Dependency: `@modelcontextprotocol/sdk ^1.27.1`
+- Local transport: `StdioServerTransport` — `tools/vault-mcp/src/index.mjs`
+- Remote transport: `WebStandardStreamableHTTPServerTransport` — `supabase/functions/vault-mcp/index.ts`
+- Remote endpoint: `https://zjghdtmnhjgzhgnwnjre.supabase.co/functions/v1/vault-mcp`
+- Tools (remote): `search_basilisk`, `search_vault`, `search_cooking`
+- Dependency: `@modelcontextprotocol/sdk ^1.25.3` (Edge Function), `^1.27.1` (local)
 - Auth: inherits from the `search-vault` Edge Function bearer token
 
-### 5a. Add Streamable HTTP transport
+### 5a. Add Streamable HTTP transport — DONE
 
-The MCP SDK supports multiple transports. Add a `StreamableHTTPServerTransport` alongside the existing stdio transport so the server can run as a remote HTTP service.
+Implemented in `supabase/functions/vault-mcp/index.ts` using `WebStandardStreamableHTTPServerTransport` with Hono routing. The local stdio server at `tools/vault-mcp/` remains intact for local use.
 
-Code change in `index.mjs`:
+### 5b. Hosting platform — DONE
 
-```js
-import { StreamableHTTPServerTransport } from "@modelcontextprotocol/sdk/server/streamableHttp.js";
+Deployed to Supabase Edge Functions alongside `search-vault`. Shares secrets (`SEARCH_VAULT_URL`, `INTERNAL_SEARCH_TOKEN`) across both functions.
+
+### 5c. Supabase Edge Function implementation — DONE
+
+The `vault-mcp` Edge Function lives at `supabase/functions/vault-mcp/index.ts` and is configured in `supabase/config.toml` with `verify_jwt = false`.
+
+Deploy with:
+```bash
+supabase functions deploy --no-verify-jwt vault-mcp
 ```
 
-The server should expose a single `/mcp` endpoint that accepts POST and GET requests per the MCP spec. Keep the stdio transport available as a fallback for local use.
+The MCP server is live at:
+```
+https://zjghdtmnhjgzhgnwnjre.supabase.co/functions/v1/vault-mcp
+```
 
-### 5b. Choose a hosting platform
+### 5d. Vercel alternative
 
-Recommended options, in order of fit for this stack:
-
-| Platform | Pros | Cons |
-|---|---|---|
-| **Supabase Edge Functions** (recommended) | Already hosting `search-vault`, zero new accounts, Deno runtime matches existing code, official MCP deploy guide, `--no-verify-jwt` flag for MCP | Auth support for MCP on Edge Functions is still in progress |
-| **Vercel** | Already in use, `mcp-handler` package with built-in OAuth, scales to zero, git-push deploys | 60s timeout on Hobby plan (300s on Pro), cold starts on serverless |
-| **Cloudflare Workers** | Free tier, built-in `McpAgent` class, OAuth provider included | Requires porting to Workers runtime, new account/service |
-| **Google Cloud Run** | Supports Node.js directly, scales to zero | Requires GCP account, more setup |
-
-**Supabase Edge Functions** is the best fit because:
-- `search-vault` already lives there — the MCP function can call it internally with minimal latency
-- No new accounts, billing, or infrastructure to manage
-- The existing code uses the MCP SDK with Zod schemas, which maps directly to the Supabase MCP deploy pattern
-- Supabase has an [official MCP deployment guide](https://supabase.com/docs/guides/getting-started/byo-mcp) using `WebStandardStreamableHTTPServerTransport`
-- Secrets (`SEARCH_VAULT_URL`, `SEARCH_VAULT_TOKEN`) can be shared across Edge Functions
-
-**Vercel** is a strong second option, especially if you want OAuth or need longer execution times on a Pro plan. Vercel's `mcp-handler` package provides a clean `createMcpHandler()` wrapper with built-in auth support.
-
-### 5c. Option A — Deploy to Supabase Edge Functions (recommended)
-
-Since `search-vault` is already deployed here, adding the MCP server as a sibling function keeps everything in one place.
-
-Step-by-step:
-
-1. Create the MCP Edge Function:
-   ```bash
-   supabase functions new vault-mcp
-   ```
-
-2. Implement `supabase/functions/vault-mcp/index.ts` using the Supabase MCP pattern:
-   ```ts
-   import 'jsr:@supabase/functions-js/edge-runtime.d.ts'
-   import { McpServer } from 'npm:@modelcontextprotocol/sdk/server/mcp.js'
-   import { WebStandardStreamableHTTPServerTransport } from 'npm:@modelcontextprotocol/sdk/server/webStandardStreamableHttp.js'
-   import { Hono } from 'npm:hono'
-   import { z } from 'npm:zod'
-
-   const app = new Hono().basePath('/vault-mcp')
-   const server = new McpServer({ name: 'vault-mcp', version: '1.0.0' })
-
-   // Register search_basilisk, search_vault, search_cooking tools here
-   // Tool handlers call the search-vault Edge Function internally
-
-   app.all('*', async (c) => {
-     const transport = new WebStandardStreamableHTTPServerTransport()
-     await server.connect(transport)
-     return transport.handleRequest(c.req.raw)
-   })
-
-   Deno.serve(app.fetch)
-   ```
-
-3. Port tool registrations from `tools/vault-mcp/src/server.mjs` into the new function. The `search-vault` call can use the internal Supabase URL (same project, no external network hop).
-
-4. Deploy:
-   ```bash
-   supabase functions deploy --no-verify-jwt vault-mcp
-   ```
-
-5. The MCP server will be live at:
-   ```
-   https://zjghdtmnhjgzhgnwnjre.supabase.co/functions/v1/vault-mcp
-   ```
-
-6. Any MCP client can connect by entering that URL.
-
-### 5d. Option B — Deploy to Vercel
-
-If you prefer Vercel or need OAuth support now:
-
-1. Create an API route at `app/api/mcp/route.ts`:
-   ```ts
-   import { createMcpHandler } from 'mcp-handler'
-   import { z } from 'zod'
-
-   const handler = createMcpHandler(
-     (server) => {
-       server.tool(
-         'search_basilisk',
-         'Semantic search scoped to Basilisk SH docs',
-         { query: z.string(), match_count: z.number().int().optional() },
-         async ({ query, match_count }) => {
-           // Call search-vault Edge Function
-           const res = await fetch(process.env.SEARCH_VAULT_URL, {
-             method: 'POST',
-             headers: {
-               'content-type': 'application/json',
-               'authorization': `Bearer ${process.env.SEARCH_VAULT_TOKEN}`
-             },
-             body: JSON.stringify({
-               query,
-               match_count: match_count ?? 8,
-               repo_path_prefix: 'Projects/Basilisk SH'
-             })
-           })
-           const data = await res.json()
-           return { content: [{ type: 'text', text: JSON.stringify(data, null, 2) }] }
-         }
-       )
-       // Register additional tools here
-     },
-     {},
-     { basePath: '/api' }
-   )
-
-   export { handler as GET, handler as POST, handler as DELETE }
-   ```
-
-2. Add environment variables in Vercel dashboard:
-   - `SEARCH_VAULT_URL`
-   - `SEARCH_VAULT_TOKEN`
-
-3. Deploy via `vercel deploy` or git push.
-
-4. MCP endpoint: `https://your-app.vercel.app/api/mcp`
+Not pursued — Supabase Edge Functions met all requirements. Vercel remains a viable option if OAuth or longer execution times are needed later.
 
 ### 5e. Authentication for remote access
 
@@ -359,9 +255,10 @@ The Stack Spec recommends this for cleaner deployment and versioning. Only do th
 | Supabase schema + `match_vault_chunks` RPC | Deployed |
 | GitHub Actions indexer workflow | Deployed |
 | `search-vault` Edge Function | Deployed |
-| `vault-mcp` MCP server | Local only |
+| `vault-mcp` MCP server (local stdio) | Deployed |
+| `vault-mcp` Edge Function (remote Streamable HTTP) | Deployed |
+| `search_vault` (general) MCP tool | Deployed (remote) |
+| `search_cooking` MCP tool | Deployed (remote) |
 | Retrieval evaluation harness | Not built |
-| `search_vault` (general) MCP tool | Not implemented |
-| `search_cooking` MCP tool | Not implemented |
 | RAG answer assembly layer | Not implemented |
 | Citation-first answer tool | Not implemented |

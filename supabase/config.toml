@@ -2,3 +2,6 @@ project_id = "crypt"
 
 [functions.search-vault]
 verify_jwt = false
+
+[functions.vault-mcp]
+verify_jwt = false

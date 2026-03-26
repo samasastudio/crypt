@@ -31,7 +31,9 @@ Current baseline:
 - Supabase migration: `supabase/migrations/20260311110000_create_vault_index.sql`
 - Retrieval function: `public.match_vault_chunks(...)`
 - Retrieval API: `supabase/functions/search-vault/`
-- MCP server: `tools/vault-mcp/` with `search_basilisk`
+- MCP server (local): `tools/vault-mcp/` with `search_basilisk` (stdio transport)
+- MCP server (remote): `supabase/functions/vault-mcp/` with `search_basilisk`, `search_vault`, `search_cooking` (Streamable HTTP transport)
+- Remote MCP endpoint: `https://zjghdtmnhjgzhgnwnjre.supabase.co/functions/v1/vault-mcp`
 - Retrieval API deployment: live in Supabase and validated against the indexed vault
 - Last successful full-index baseline: `262` sources and `1267` chunks
 
@@ -116,6 +118,39 @@ Deployment note:
 - the hosted `search-vault` function is now live
 - manual validation confirmed end-to-end retrieval against the production Supabase project
 - current observed Basilisk match scores are commonly below `0.65`, so retrieval tuning is now the main quality task
+
+## Remote MCP Client Configuration
+
+Any MCP client that supports Streamable HTTP transport can connect directly:
+
+```json
+{
+  "mcpServers": {
+    "vault-mcp": {
+      "url": "https://zjghdtmnhjgzhgnwnjre.supabase.co/functions/v1/vault-mcp"
+    }
+  }
+}
+```
+
+For clients that only support stdio (e.g., older Claude Desktop versions), use the `mcp-remote` adapter:
+
+```json
+{
+  "mcpServers": {
+    "vault-mcp": {
+      "command": "npx",
+      "args": ["mcp-remote", "https://zjghdtmnhjgzhgnwnjre.supabase.co/functions/v1/vault-mcp"]
+    }
+  }
+}
+```
+
+The remote server exposes three tools:
+
+- `search_basilisk` — scoped to `Projects/Basilisk SH`
+- `search_cooking` — scoped to `Cooking`
+- `search_vault` — general-purpose, full-vault search
 
 ## Known Issues And Fixes We Already Hit
 
