@@ -15,9 +15,12 @@ Current baseline (as of March 2026):
 
 - 265 sources, 1,354 chunks indexed
 - `search-vault` Edge Function deployed and live
-- `vault-mcp` running locally with `search_basilisk`
+- `vault-mcp` local stdio server with `search_basilisk`
+- `vault-mcp` remote Edge Function with `search_basilisk`, `search_vault`, `search_cooking` (ready to deploy)
 - GitHub Actions pipeline running on push to `main`
 - Retrieval match scores for useful Basilisk hits: 0.48–0.60
+
+See [README.md Deployment Checklist](README.md#deployment-checklist) for step-by-step deployment instructions.
 
 ## Priority 1 — Retrieval Quality (Critical Path)
 

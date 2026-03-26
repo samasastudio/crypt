@@ -12,6 +12,8 @@ This vault combines project documentation, product specs, and a structured cooki
 
 ## Start Here
 
+- [Optimization Roadmap](ROADMAP.md)
+- [Deployment Checklist](#deployment-checklist)
 - [Cooking system](Cooking/README.md)
 - [Basilisk SH](Projects/Basilisk%20SH/README.md)
 - [Spec hub](Projects/Basilisk%20SH/docs/README.md)
@@ -161,14 +163,82 @@ The remote server exposes three tools:
 
 ## Agent And RAG Direction
 
-The vault is ready for the next layer: agent integration, retrieval evaluation, and citation-first answer generation.
+The retrieval stack is deployed end-to-end. The next priorities are retrieval quality tuning and building toward a citation-first answer layer.
+
+Current status:
+
+- `search_basilisk`, `search_vault`, and `search_cooking` are all live on the remote MCP endpoint
+- Any MCP-compatible agent (Claude, Cursor, Windsurf, ChatGPT, custom clients) can connect via Streamable HTTP
+- The local stdio MCP server at `tools/vault-mcp/` is also available for local development
 
 Recommended near-term path:
 
-1. Run `tools/vault-mcp/` against a deployed or locally served `search-vault`.
-2. Lower the default similarity threshold from the current `0.65` after reviewing the first live Basilisk queries.
-3. Evaluate `search_basilisk` on `10-20` representative questions before adding more tools.
-4. Build a citation-first answer layer that always returns source paths and chunk excerpts.
-5. Expand into broader tools such as `search_vault` or `search_cooking` after retrieval quality is stable.
+1. Deploy the `vault-mcp` Edge Function (see [Deployment Checklist](#deployment-checklist) below).
+2. Build a retrieval evaluation harness for 10–20 representative queries.
+3. Improve retrieval quality by prepending heading context to chunk content.
+4. Add content-hash skip to the indexer to reduce embedding costs.
+5. Build a citation-first answer layer once retrieval quality is proven.
 
-See [Semantic search and agent RAG plan](Projects/Semantic%20Search%20and%20Agent%20RAG.md) for the retrieval/RAG roadmap and [Semantic search stack spec](Projects/Semantic%20Search%20Stack%20Spec.md) for the full repo-plus-Edge-Function-plus-MCP architecture.
+See [Optimization Roadmap](ROADMAP.md) for the full prioritized plan, [Semantic search and agent RAG plan](Projects/Semantic%20Search%20and%20Agent%20RAG.md) for the retrieval/RAG strategy, and [Semantic search stack spec](Projects/Semantic%20Search%20Stack%20Spec.md) for the architecture.
+
+## Deployment Checklist
+
+The `vault-mcp` Edge Function is ready to deploy. Run these commands from your local checkout with the Supabase CLI:
+
+### 1. Link your Supabase project (if not already linked)
+
+```bash
+supabase link --project-ref zjghdtmnhjgzhgnwnjre
+```
+
+### 2. Set the required secrets
+
+The `vault-mcp` function needs two environment variables. If `search-vault` is already deployed, `INTERNAL_SEARCH_TOKEN` is already set — you only need to add `SEARCH_VAULT_URL`:
+
+```bash
+supabase secrets set SEARCH_VAULT_URL=https://zjghdtmnhjgzhgnwnjre.supabase.co/functions/v1/search-vault
+```
+
+If `INTERNAL_SEARCH_TOKEN` is not yet set:
+
+```bash
+supabase secrets set INTERNAL_SEARCH_TOKEN=<your-token>
+```
+
+### 3. Deploy the function
+
+```bash
+supabase functions deploy --no-verify-jwt vault-mcp
+```
+
+### 4. Verify the deployment
+
+Test with curl:
+
+```bash
+curl -X POST 'https://zjghdtmnhjgzhgnwnjre.supabase.co/functions/v1/vault-mcp' \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json, text/event-stream' \
+  -d '{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "tools/list",
+    "params": {}
+  }'
+```
+
+You should see the three tools listed: `search_basilisk`, `search_vault`, and `search_cooking`.
+
+### 5. Connect an MCP client
+
+Add this to your MCP client configuration (Claude Desktop, Cursor, etc.):
+
+```json
+{
+  "mcpServers": {
+    "vault-mcp": {
+      "url": "https://zjghdtmnhjgzhgnwnjre.supabase.co/functions/v1/vault-mcp"
+    }
+  }
+}
+```
