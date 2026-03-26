@@ -154,53 +154,128 @@ Recommended options, in order of fit for this stack:
 
 | Platform | Pros | Cons |
 |---|---|---|
-| **Cloudflare Workers** (recommended) | Free tier, edge-deployed, built-in MCP support via `McpAgent` class, OAuth provider included, git-push deploys | Requires porting to Cloudflare Workers runtime (not Node.js, but close) |
-| **Google Cloud Run** | Supports Node.js directly, scales to zero, Streamable HTTP works out of the box | Requires GCP account, more setup than Cloudflare |
-| **Railway** | Simple Node.js deploys, good DX, persistent processes | Costs scale with uptime, not usage |
-| **Self-hosted + Cloudflare Tunnel** | Full control, access to local network resources | More ops burden, requires a running machine |
+| **Supabase Edge Functions** (recommended) | Already hosting `search-vault`, zero new accounts, Deno runtime matches existing code, official MCP deploy guide, `--no-verify-jwt` flag for MCP | Auth support for MCP on Edge Functions is still in progress |
+| **Vercel** | Already in use, `mcp-handler` package with built-in OAuth, scales to zero, git-push deploys | 60s timeout on Hobby plan (300s on Pro), cold starts on serverless |
+| **Cloudflare Workers** | Free tier, built-in `McpAgent` class, OAuth provider included | Requires porting to Workers runtime, new account/service |
+| **Google Cloud Run** | Supports Node.js directly, scales to zero | Requires GCP account, more setup |
 
-**Cloudflare Workers** is the best fit because:
-- The MCP server is stateless (it just proxies to the Edge Function)
-- Cloudflare provides `createMcpHandler()` for stateless MCP servers with minimal boilerplate
-- Free tier is generous for low-traffic personal use
-- Built-in OAuth support if you want to add auth later
-- The `search-vault` Edge Function is already on Supabase, so the MCP server on Cloudflare would call it over the network — clean separation
+**Supabase Edge Functions** is the best fit because:
+- `search-vault` already lives there — the MCP function can call it internally with minimal latency
+- No new accounts, billing, or infrastructure to manage
+- The existing code uses the MCP SDK with Zod schemas, which maps directly to the Supabase MCP deploy pattern
+- Supabase has an [official MCP deployment guide](https://supabase.com/docs/guides/getting-started/byo-mcp) using `WebStandardStreamableHTTPServerTransport`
+- Secrets (`SEARCH_VAULT_URL`, `SEARCH_VAULT_TOKEN`) can be shared across Edge Functions
 
-### 5c. Deploy to Cloudflare Workers
+**Vercel** is a strong second option, especially if you want OAuth or need longer execution times on a Pro plan. Vercel's `mcp-handler` package provides a clean `createMcpHandler()` wrapper with built-in auth support.
+
+### 5c. Option A — Deploy to Supabase Edge Functions (recommended)
+
+Since `search-vault` is already deployed here, adding the MCP server as a sibling function keeps everything in one place.
 
 Step-by-step:
 
-1. Create a new Cloudflare Worker project:
+1. Create the MCP Edge Function:
    ```bash
-   npm create cloudflare@latest vault-mcp-remote -- --template cloudflare/workers-mcp
+   supabase functions new vault-mcp
    ```
 
-2. Port the tool registrations from `server.mjs` to the Cloudflare `McpAgent` or `createMcpHandler()` format. The tool logic (calling `search-vault` over HTTP) stays the same.
+2. Implement `supabase/functions/vault-mcp/index.ts` using the Supabase MCP pattern:
+   ```ts
+   import 'jsr:@supabase/functions-js/edge-runtime.d.ts'
+   import { McpServer } from 'npm:@modelcontextprotocol/sdk/server/mcp.js'
+   import { WebStandardStreamableHTTPServerTransport } from 'npm:@modelcontextprotocol/sdk/server/webStandardStreamableHttp.js'
+   import { Hono } from 'npm:hono'
+   import { z } from 'npm:zod'
 
-3. Set environment secrets:
-   ```bash
-   npx wrangler secret put SEARCH_VAULT_URL
-   npx wrangler secret put SEARCH_VAULT_TOKEN
+   const app = new Hono().basePath('/vault-mcp')
+   const server = new McpServer({ name: 'vault-mcp', version: '1.0.0' })
+
+   // Register search_basilisk, search_vault, search_cooking tools here
+   // Tool handlers call the search-vault Edge Function internally
+
+   app.all('*', async (c) => {
+     const transport = new WebStandardStreamableHTTPServerTransport()
+     await server.connect(transport)
+     return transport.handleRequest(c.req.raw)
+   })
+
+   Deno.serve(app.fetch)
    ```
+
+3. Port tool registrations from `tools/vault-mcp/src/server.mjs` into the new function. The `search-vault` call can use the internal Supabase URL (same project, no external network hop).
 
 4. Deploy:
    ```bash
-   npx wrangler deploy
+   supabase functions deploy --no-verify-jwt vault-mcp
    ```
 
-5. The MCP server will be live at `https://vault-mcp-remote.<your-account>.workers.dev/mcp`
+5. The MCP server will be live at:
+   ```
+   https://zjghdtmnhjgzhgnwnjre.supabase.co/functions/v1/vault-mcp
+   ```
 
-6. Any MCP client can connect by entering that URL — no local install needed.
+6. Any MCP client can connect by entering that URL.
 
-### 5d. Authentication for remote access
+### 5d. Option B — Deploy to Vercel
+
+If you prefer Vercel or need OAuth support now:
+
+1. Create an API route at `app/api/mcp/route.ts`:
+   ```ts
+   import { createMcpHandler } from 'mcp-handler'
+   import { z } from 'zod'
+
+   const handler = createMcpHandler(
+     (server) => {
+       server.tool(
+         'search_basilisk',
+         'Semantic search scoped to Basilisk SH docs',
+         { query: z.string(), match_count: z.number().int().optional() },
+         async ({ query, match_count }) => {
+           // Call search-vault Edge Function
+           const res = await fetch(process.env.SEARCH_VAULT_URL, {
+             method: 'POST',
+             headers: {
+               'content-type': 'application/json',
+               'authorization': `Bearer ${process.env.SEARCH_VAULT_TOKEN}`
+             },
+             body: JSON.stringify({
+               query,
+               match_count: match_count ?? 8,
+               repo_path_prefix: 'Projects/Basilisk SH'
+             })
+           })
+           const data = await res.json()
+           return { content: [{ type: 'text', text: JSON.stringify(data, null, 2) }] }
+         }
+       )
+       // Register additional tools here
+     },
+     {},
+     { basePath: '/api' }
+   )
+
+   export { handler as GET, handler as POST, handler as DELETE }
+   ```
+
+2. Add environment variables in Vercel dashboard:
+   - `SEARCH_VAULT_URL`
+   - `SEARCH_VAULT_TOKEN`
+
+3. Deploy via `vercel deploy` or git push.
+
+4. MCP endpoint: `https://your-app.vercel.app/api/mcp`
+
+### 5e. Authentication for remote access
 
 For v1 (personal use), the `SEARCH_VAULT_TOKEN` bearer check inherited from the Edge Function is sufficient. For multi-user or public access:
 
-- Use Cloudflare's `workers-oauth-provider` to add OAuth 2.1
-- Or add a simple API key check at the MCP transport layer
+- On Vercel: use `mcp-handler`'s built-in `withMcpAuth` wrapper for OAuth 2.1
+- On Supabase: auth support for MCP on Edge Functions is coming soon; in the meantime, bearer token auth works
+- On Cloudflare: use `workers-oauth-provider`
 - The MCP spec supports standard HTTP authentication mechanisms on the Streamable HTTP transport
 
-### 5e. Client configuration for remote MCP
+### 5f. Client configuration for remote MCP
 
 Once deployed, agents connect with just the URL:
 
@@ -208,7 +283,19 @@ Once deployed, agents connect with just the URL:
 {
   "mcpServers": {
     "vault-mcp": {
-      "url": "https://vault-mcp-remote.<your-account>.workers.dev/mcp"
+      "url": "https://zjghdtmnhjgzhgnwnjre.supabase.co/functions/v1/vault-mcp"
+    }
+  }
+}
+```
+
+Or if deployed to Vercel:
+
+```json
+{
+  "mcpServers": {
+    "vault-mcp": {
+      "url": "https://your-app.vercel.app/api/mcp"
     }
   }
 }
@@ -221,7 +308,7 @@ For clients that only support stdio (e.g., older Claude Desktop versions), use t
   "mcpServers": {
     "vault-mcp": {
       "command": "npx",
-      "args": ["mcp-remote", "https://vault-mcp-remote.<your-account>.workers.dev/mcp"]
+      "args": ["mcp-remote", "https://zjghdtmnhjgzhgnwnjre.supabase.co/functions/v1/vault-mcp"]
     }
   }
 }
